@@ -1,0 +1,3 @@
+SUBDIRS = \
+	providers \
+	services

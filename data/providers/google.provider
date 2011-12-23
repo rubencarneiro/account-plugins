@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<provider id="google">
+  <name>Google</name>
+  <icon>icon_google</icon>
+</provider>

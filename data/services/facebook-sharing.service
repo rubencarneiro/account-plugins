@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service id="service">
+  <type>sharing</type>
+  <name>Facebook</name>
+  <icon>icon_facebook</icon>
+  <provider>facebook</provider>
+
+  <!-- default settings (account settings have precedence over these) -->
+  <template>
+    <group name="auth">
+      <setting name="method">oauth2</setting>
+      <setting name="mechanism">user_agent</setting>
+    </group>
+  </template>
+
+</service>

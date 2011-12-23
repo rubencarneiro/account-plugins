@@ -1,0 +1,387 @@
+#! /usr/bin/env python
+
+import argparse
+import glib
+import sys
+
+from gi.repository import GObject
+from gi.repository import Accounts
+from gi.repository import Signon
+
+class AccountConsole:
+    def __init__(self):
+        self.manager = Accounts.Manager()
+
+    def list_accounts(self, args):
+        accounts = self.manager.list()
+        if not accounts:
+            print 'No accounts'
+            return
+
+        for account_id in accounts:
+            account = self.manager.get_account(account_id)
+            enabledness = 'enabled' if account.get_enabled() else 'disabled'
+            print 'account: id %s, %s, provider: %s' % (account_id, enabledness, account.get_provider_name())
+        main_loop.quit()
+
+
+    def show_account(self, args):
+        self.args = args
+        account = self.manager.get_account(args.account)
+        if not account:
+            print >> sys.stderr, 'Account "%s" not found' % args.account
+            sys.exit(1)
+
+        enabledness = 'enabled' if account.get_enabled() else 'disabled'
+        print 'account: id %s, %s, provider: %s' % (account.id, enabledness, account.get_provider_name())
+        print '  Global settings:'
+        i = account.get_settings_iter(None)
+        self.enumerate_settings(i)
+
+        # enumerate services and their settings
+        services = account.list_services()
+        for s in services:
+            service = Accounts.AccountService.new(account, s)
+            print '  Settings for %s' % (s.get_name(),)
+            i = service.get_settings_iter(None)
+            self.enumerate_settings(i)
+        main_loop.quit()
+
+
+    def create_account(self, args):
+        self.args = args
+        account = self.manager.create_account(args.provider)
+        account.set_enabled(not args.disabled)
+        for setting in args.s:
+            (name, value) = self.parse_setting(setting)
+            account.set_value(name, value)
+        account.store(self.on_account_stored, None)
+
+    def edit_account(self, args):
+        self.args = args
+        account = self.manager.get_account(args.account)
+        if not account:
+            print >> sys.stderr, 'Account "%s" not found' % args.account
+            sys.exit(1)
+        self.account = account
+
+        if args.service:
+            service = self.manager.get_service(args.service)
+            if not service:
+                print >> sys.stderr, 'Service "%s" not found' % args.service
+                sys.exit(1)
+            account.select_service(service)
+
+        if args.enable:
+            account.set_enabled(True)
+        elif args.disable:
+            account.set_enabled(False)
+
+        for setting in args.s:
+            (name, value) = self.parse_setting(setting)
+            account.set_value(name, value)
+
+        for setting in args.u:
+            account.set_value(setting, None)
+
+        if args.username or args.password or args.caption:
+            value = GObject.Value()
+            value.init(GObject.TYPE_UINT)
+            signon_id = account.get_value(args.signon_id_field, value)
+            if signon_id != Accounts.SettingSource.NONE:
+                self.identity = Signon.Identity.new_from_db(value.get_uint())
+                self.identity.query_info(self.on_info_ready, None)
+            else:
+                self.identity = Signon.Identity.new()
+                info = Signon.IdentityInfo.new()
+                self.write_signon_info(info)
+        else:
+            account.store(self.on_account_stored, None)
+
+
+    def on_info_ready(self, identity, info, error, userdata):
+        if error:
+            print >> sys.stderr, 'Couldn\'t get identity info'
+            sys.exit(1)
+
+        self.write_signon_info(info)
+
+
+    def write_signon_info(self, info):
+        if self.args.username:
+            info.set_username(self.args.username)
+        if self.args.caption or self.args.username:
+            info.set_caption(self.args.caption or self.args.username)
+        if self.args.password or info.get_id() == 0:
+            info.set_secret(self.args.password, True)
+
+        self.identity.store_credentials_with_info(info,
+                self.on_credentials_stored, self.account)
+
+
+    def on_credentials_stored(self, identity, id, error, account):
+        print 'On credentials stored', id
+        account.set_value(self.args.signon_id_field, int(id))
+        account.store(self.on_account_stored, None)
+
+
+
+    def delete_account(self, args):
+        self.args = args
+        account = self.manager.get_account(args.account)
+        if not account:
+            print >> sys.stderr, 'Account "%s" not found' % args.account
+            sys.exit(1)
+
+        account.delete()
+        account.store(self.on_account_stored_deleted, None)
+
+
+    def login_identity(self, args):
+        session_data = {}
+        for parameter in args.p:
+            (key, value) = self.parse_setting(parameter)
+            session_data[key] = value
+
+        self.login(args.identity, args.method, args.mechanism,session_data)
+
+
+    def login_account(self, args):
+        self.args = args
+        account = self.manager.get_account(args.account)
+        if not account:
+            print >> sys.stderr, 'Account "%s" not found' % args.account
+            sys.exit(1)
+        self.account = account
+
+        # get the signon identity
+        value = GObject.Value()
+        value.init(GObject.TYPE_UINT)
+        if account.get_value(args.signon_id_field, value) != Accounts.SettingSource.NONE:
+            identity = value.get_uint()
+
+        session_data = {}
+        # first, read session data from the global account settings
+        i = account.get_settings_iter('auth/')
+        self.load_auth_parameters(i, session_data)
+
+        # then, add session data from the service
+        auth_settings = {}
+        if args.service:
+            service = self.manager.get_service(args.service)
+            if not service:
+                print >> sys.stderr, 'Service "%s" not found' % args.service
+                sys.exit(1)
+            account_service = Accounts.AccountService.new(account, service)
+            i = account_service.get_settings_iter('auth/')
+            self.load_auth_parameters(i, session_data, auth_settings)
+
+        method = auth_settings.get('method', args.method)
+        mechanism = auth_settings.get('mechanism', args.mechanism)
+
+        if not session_data.has_key(method):
+            session_data[method] = {}
+        # last, add session data from the command line
+        for parameter in args.p:
+            (key, value) = self.parse_setting(parameter)
+            session_data[method][key] = value
+
+        #self.lists_to_strv(session_data[method])
+        self.login(identity, method, mechanism, session_data[method])
+
+
+    def login(self, identity, method, mechanism, session_data):
+        if identity:
+            self.session = Signon.AuthSession.new(identity, method)
+        else:
+            self.session = Signon.AuthSession.new(0, method)
+
+        print session_data
+        self.session.process(session_data, mechanism,
+                self.login_process_cb, None)
+
+
+    def load_auth_parameters(self, iterator, parameters, settings=None):
+        allsettings = {}
+        (ok, key, value) = iterator.next()
+        while ok:
+            allsettings[key] = value
+            (ok, key, value) = iterator.next()
+
+        for (key, value) in allsettings.iteritems():
+            if not '/' in key:
+                if settings is not None:
+                    settings[key] = value
+                continue
+            (method, param_key) = key.split('/', 1)
+            if not parameters.has_key(method):
+                parameters[method] = {}
+            # if the param key itself contains a '/', assume it's a list
+            if '/' in param_key:
+                (param_key, item_id) = param_key.split('/', 1)
+                if not item_id.startswith('item'):
+                    continue
+                if not parameters[method].has_key(param_key):
+                    parameters[method][param_key] = []
+                parameters[method][param_key].append(value)
+            else:
+                parameters[method][param_key] = value
+
+    def lists_to_strv(self, parameters):
+        # convert lists into GStrv
+        for (key, value) in parameters.iteritems():
+            if isinstance(value, list):
+                value = GObject.Value()
+                value.init(GObject.TYPE_BOXED)
+                print value
+
+
+    def login_process_cb(self, session, reply, error, userdata):
+        if error:
+            print >> sys.stderr, 'Got authentication error:', error.message
+            sys.exit(1)
+
+        print 'Got reply: ', reply
+        main_loop.quit()
+
+
+    def on_account_stored_deleted(self, account, error, userdata):
+        if not error:
+            print 'OK'
+        else:
+            print >> sys.stderr, 'Error occurred: ', error.message
+        main_loop.quit()
+
+    def on_account_stored(self, account, error, userdata):
+        if not error:
+            if 'print_id' in self.args and self.args.print_id:
+                print '%s' % (account.id)
+            else:
+                print 'OK %s' % (account.id)
+        else:
+            print >> sys.stderr, 'Error occurred: ', error.message
+        main_loop.quit()
+
+    def enumerate_settings(self, iterator):
+        settings = []
+        (ok, key, value) = iterator.next()
+        while ok:
+            settings.append((key, value))
+            (ok, key, value) = iterator.next()
+
+        settings.sort()
+        for (key, value) in settings:
+            print '    %s: %s (%s)' % (key, value, type(value))
+
+    def parse_setting(self, setting):
+        (name, value_str) = setting.split('=')
+        if ':' in name:
+            (type, name) = name.split(':')
+        else:
+            type = 's'
+
+        if type == 'i':
+            value = int(value_str)
+        elif type == 'u':
+            value = GObject.Value()
+            value.init(GObject.TYPE_UINT)
+            value.set_uint(int(value_str))
+        elif type == 'b':
+            value = bool(value_str)
+        elif type == 's':
+            value = value_str
+        return (name, value)
+
+app = AccountConsole()
+
+parser = argparse.ArgumentParser(description='Command-line tool for account handling')
+subparsers = parser.add_subparsers(title='Valid actions')
+
+subparser = subparsers.add_parser('list',
+        help='List existing accounts')
+subparser.set_defaults(func=app.list_accounts)
+
+subparser = subparsers.add_parser('show',
+        help='Show an account\'s settings')
+subparser.add_argument('account', type=int,
+        help='Id of the account')
+subparser.set_defaults(func=app.show_account)
+
+subparser = subparsers.add_parser('create',
+        help='Create a new account')
+subparser.add_argument('provider',
+        help='Provider name (see /usr/share/accounts/providers)')
+subparser.add_argument('--disabled', action='store_true',
+        help='Create the account in disabled state')
+subparser.add_argument('--print-id', action='store_true',
+        help='Print the account ID on stdout')
+subparser.add_argument('-s', action='append', default=[],
+        help='Add a service setting, in the form [<type>:]<name>=<value>')
+subparser.set_defaults(func=app.create_account)
+
+subparser = subparsers.add_parser('edit',
+        help='Edit an existing account')
+subparser.add_argument('account', type=int,
+        help='Id of the account')
+subparser.add_argument('--disable', action='store_true',
+        help='Disable the account')
+subparser.add_argument('--enable', action='store_true',
+        help='Enable the account')
+subparser.add_argument('--service', type=str,
+        help='Operates on the given service')
+subparser.add_argument('-s', action='append', default=[], metavar='SETTING',
+        help='Add or changes a service setting, in the form [<type>:]<name>=<value>')
+subparser.add_argument('-u', action='append', default=[],
+        metavar='SETTING_NAME', help='Unset a setting')
+subparser.add_argument('--signon-id-field', type=str, default='signon-id',
+        help='Name of the key holding the SignOn ID')
+subparser.add_argument('--caption', type=str,
+        help='SignOn caption (username description)')
+subparser.add_argument('--username', type=str,
+        help='SignOn username')
+subparser.add_argument('--password', type=str,
+        help='SignOn password')
+subparser.set_defaults(func=app.edit_account)
+
+subparser = subparsers.add_parser('delete',
+        help='Deletes an existing account')
+subparser.add_argument('account', type=int,
+        help='Id of the account')
+subparser.set_defaults(func=app.delete_account)
+
+subparser = subparsers.add_parser('signon_login',
+        help='Authenticate the given identity')
+subparser.add_argument('identity', type=int,
+        help='Id of the SignOn identity')
+subparser.add_argument('method', type=str,
+        help='Authentication method')
+subparser.add_argument('mechanism', type=str,
+        help='Authentication mechanism')
+subparser.add_argument('-p', action='append', default=[], metavar='PARAMETER',
+        help='Session parameter, in the form [<type>:]<name>=<value>')
+subparser.set_defaults(func=app.login_identity)
+
+subparser = subparsers.add_parser('login',
+        help='Authenticate the given identity')
+subparser.add_argument('account', type=int,
+        help='Id of the SignOn identity')
+subparser.add_argument('--service', type=str,
+        help='Account service')
+subparser.add_argument('--signon-id-field', type=str, default='signon-id',
+        help='Name of the key holding the SignOn ID')
+mm = subparser.add_argument_group()
+mm.add_argument('--method', type=str,
+        help='Authentication method')
+mm.add_argument('--mechanism', type=str,
+        help='Authentication mechanism')
+subparser.add_argument('-p', action='append', default=[], metavar='PARAMETER',
+        help='Session parameter, in the form [<type>:]<name>=<value>')
+subparser.set_defaults(func=app.login_account)
+
+args = parser.parse_args()
+
+main_loop = glib.MainLoop()
+glib.idle_add(args.func, args)
+
+main_loop.run()
+
