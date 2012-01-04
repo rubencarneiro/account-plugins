@@ -26,5 +26,6 @@ AC_OUTPUT([
 	data/Makefile
 	data/providers/Makefile
 	data/services/Makefile
+	data/webkit-options/Makefile
 	tools/Makefile
 ])

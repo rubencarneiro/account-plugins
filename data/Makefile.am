@@ -1,3 +1,4 @@
 SUBDIRS = \
 	providers \
-	services
+	services \
+	webkit-options
