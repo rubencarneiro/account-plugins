@@ -8,12 +8,22 @@
   <!-- default settings (account settings have precedence over these) -->
   <template>
     <group name="auth">
+      <setting name="method">google</setting>
+      <setting name="mechanism">ClientLogin</setting>
+      <!--
       <setting name="method">oauth2</setting>
       <setting name="mechanism">user_agent</setting>
+      -->
+
       <group name="oauth2">
         <group name="Scope">
           <setting name="item0">https://picasaweb.google.com/data/</setting>
         </group>
+      </group>
+
+      <group name="google">
+        <setting name="Service">lh2</setting>
+        <setting name="Source">Ubuntu-sharing-1.0</setting>
       </group>
     </group>
   </template>
