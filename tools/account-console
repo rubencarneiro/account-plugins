@@ -194,7 +194,6 @@ class AccountConsole:
             (key, value) = self.parse_setting(parameter)
             session_data[key] = value
 
-        #self.lists_to_strv(session_data[method])
         self.login(identity, method, mechanism, session_data)
 
 
@@ -227,14 +226,6 @@ class AccountConsole:
                 parameters[key].append(value)
             else:
                 parameters[key] = value
-
-    def lists_to_strv(self, parameters):
-        # convert lists into GStrv
-        for (key, value) in parameters.iteritems():
-            if isinstance(value, list):
-                value = GObject.Value()
-                value.init(GObject.TYPE_BOXED)
-                print value
 
 
     def login_process_cb(self, session, reply, error, userdata):
