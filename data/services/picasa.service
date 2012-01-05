@@ -16,14 +16,18 @@
       -->
 
       <group name="oauth2">
-        <group name="Scope">
-          <setting name="item0">https://picasaweb.google.com/data/</setting>
+        <group name="user_agent">
+          <group name="Scope">
+            <setting name="item0">https://picasaweb.google.com/data/</setting>
+          </group>
         </group>
       </group>
 
       <group name="google">
-        <setting name="Service">lh2</setting>
-        <setting name="Source">Ubuntu-sharing-1.0</setting>
+        <group name="ClientLogin">
+          <setting name="Service">lh2</setting>
+          <setting name="Source">Ubuntu-sharing-1.0</setting>
+        </group>
       </group>
     </group>
   </template>

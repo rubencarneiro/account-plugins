@@ -154,40 +154,48 @@ class AccountConsole:
             sys.exit(1)
         self.account = account
 
-        # get the signon identity
-        value = GObject.Value()
-        value.init(GObject.TYPE_UINT)
-        if account.get_value(args.signon_id_field, value) != Accounts.SettingSource.NONE:
-            identity = value.get_uint()
-
-        session_data = {}
-        # first, read session data from the global account settings
-        i = account.get_settings_iter('auth/')
-        self.load_auth_parameters(i, session_data)
-
-        # then, add session data from the service
-        auth_settings = {}
+        service = None
         if args.service:
             service = self.manager.get_service(args.service)
             if not service:
                 print >> sys.stderr, 'Service "%s" not found' % args.service
                 sys.exit(1)
+
+        # get the signon identity
+        identity = self.get_account_setting(account, args.signon_id_field,
+                GObject.TYPE_UINT)
+
+        # get the method and mechanism to use, from the account (or command
+        # line)
+        if service:
+            account.select_service(service)
+        method = self.get_account_setting(account, 'auth/method',
+                GObject.TYPE_STRING,
+                args.method)
+        mechanism = self.get_account_setting(account, 'auth/mechanism',
+                GObject.TYPE_STRING,
+                args.mechanism)
+
+        session_data = {}
+        account.select_service(None)
+        # first, read session data from the global account settings
+        i = account.get_settings_iter('auth/%s/%s/' % (method, mechanism))
+        self.load_auth_parameters(i, session_data)
+
+        # then, add session data from the service
+        if service:
             account_service = Accounts.AccountService.new(account, service)
-            i = account_service.get_settings_iter('auth/')
-            self.load_auth_parameters(i, session_data, auth_settings)
+            i = account_service.get_settings_iter('auth/%s/%s/' % (method,
+                mechanism))
+            self.load_auth_parameters(i, session_data)
 
-        method = auth_settings.get('method', args.method)
-        mechanism = auth_settings.get('mechanism', args.mechanism)
-
-        if not session_data.has_key(method):
-            session_data[method] = {}
         # last, add session data from the command line
         for parameter in args.p:
             (key, value) = self.parse_setting(parameter)
-            session_data[method][key] = value
+            session_data[key] = value
 
         #self.lists_to_strv(session_data[method])
-        self.login(identity, method, mechanism, session_data[method])
+        self.login(identity, method, mechanism, session_data)
 
 
     def login(self, identity, method, mechanism, session_data):
@@ -201,7 +209,7 @@ class AccountConsole:
                 self.login_process_cb, None)
 
 
-    def load_auth_parameters(self, iterator, parameters, settings=None):
+    def load_auth_parameters(self, iterator, parameters):
         allsettings = {}
         (ok, key, value) = iterator.next()
         while ok:
@@ -209,23 +217,16 @@ class AccountConsole:
             (ok, key, value) = iterator.next()
 
         for (key, value) in allsettings.iteritems():
-            if not '/' in key:
-                if settings is not None:
-                    settings[key] = value
-                continue
-            (method, param_key) = key.split('/', 1)
-            if not parameters.has_key(method):
-                parameters[method] = {}
             # if the param key itself contains a '/', assume it's a list
-            if '/' in param_key:
-                (param_key, item_id) = param_key.split('/', 1)
+            if '/' in key:
+                (key, item_id) = key.split('/', 1)
                 if not item_id.startswith('item'):
                     continue
-                if not parameters[method].has_key(param_key):
-                    parameters[method][param_key] = []
-                parameters[method][param_key].append(value)
+                if not parameters.has_key(key):
+                    parameters[key] = []
+                parameters[key].append(value)
             else:
-                parameters[method][param_key] = value
+                parameters[key] = value
 
     def lists_to_strv(self, parameters):
         # convert lists into GStrv
@@ -291,6 +292,18 @@ class AccountConsole:
         elif type == 's':
             value = value_str
         return (name, value)
+
+    def get_account_setting(self, account, key, type, default_value=None):
+        value = GObject.Value()
+        value.init(type)
+        if account.get_value(key, value) != Accounts.SettingSource.NONE:
+            if type == GObject.TYPE_STRING:
+                return value.get_string()
+            elif type == GObject.TYPE_INT:
+                return value.get_int()
+            elif type == GObject.TYPE_UINT:
+                return value.get_uint()
+        return default_value
 
 app = AccountConsole()
 
