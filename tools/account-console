@@ -113,7 +113,7 @@ class AccountConsole:
         if self.args.caption or self.args.username:
             info.set_caption(self.args.caption or self.args.username)
         if self.args.password or info.get_id() == 0:
-            info.set_secret(self.args.password, True)
+            info.set_secret(self.args.password or '', True)
 
         self.identity.store_credentials_with_info(info,
                 self.on_credentials_stored, self.account)
