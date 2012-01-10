@@ -3,3 +3,6 @@ services_DATA = \
 	gmail.service \
 	google-talk.service \
 	picasa.service
+
+EXTRA_DIST = \
+	$(services_DATA)
