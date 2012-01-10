@@ -84,7 +84,7 @@ class AccountConsole:
         for setting in args.u:
             account.set_value(setting, None)
 
-        if args.username or args.password or args.caption:
+        if args.username is not None or args.password is not None or args.caption:
             value = GObject.Value()
             value.init(GObject.TYPE_UINT)
             signon_id = account.get_value(args.signon_id_field, value)
@@ -108,11 +108,11 @@ class AccountConsole:
 
 
     def write_signon_info(self, info):
-        if self.args.username:
+        if self.args.username is not None:
             info.set_username(self.args.username)
         if self.args.caption or self.args.username:
             info.set_caption(self.args.caption or self.args.username)
-        if self.args.password or info.get_id() == 0:
+        if self.args.password is not None or info.get_id() == 0:
             info.set_secret(self.args.password or '', True)
 
         self.identity.store_credentials_with_info(info,
