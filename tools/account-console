@@ -8,6 +8,9 @@ from gi.repository import GObject
 from gi.repository import Accounts
 from gi.repository import Signon
 
+class GStrv(list):
+    __gtype__ = GObject.type_from_name('GStrv')
+
 class AccountConsole:
     def __init__(self):
         self.manager = Accounts.Manager()
@@ -162,32 +165,13 @@ class AccountConsole:
                 sys.exit(1)
 
         # get the signon identity
-        identity = self.get_account_setting(account, args.signon_id_field,
-                GObject.TYPE_UINT)
+        identity = account.get_int(args.signon_id_field)
 
-        # get the method and mechanism to use, from the account (or command
-        # line)
-        if service:
-            account.select_service(service)
-        method = self.get_account_setting(account, 'auth/method',
-                GObject.TYPE_STRING,
-                args.method)
-        mechanism = self.get_account_setting(account, 'auth/mechanism',
-                GObject.TYPE_STRING,
-                args.mechanism)
-
-        session_data = {}
-        account.select_service(None)
-        # first, read session data from the global account settings
-        i = account.get_settings_iter('auth/%s/%s/' % (method, mechanism))
-        self.load_auth_parameters(i, session_data)
-
-        # then, add session data from the service
-        if service:
-            account_service = Accounts.AccountService.new(account, service)
-            i = account_service.get_settings_iter('auth/%s/%s/' % (method,
-                mechanism))
-            self.load_auth_parameters(i, session_data)
+        account_service = Accounts.AccountService.new(account, service)
+        auth_data = account_service.get_auth_data()
+        method = auth_data.get_method()
+        mechanism = auth_data.get_mechanism()
+        session_data = auth_data.get_parameters()
 
         # last, add session data from the command line
         for parameter in args.p:
@@ -282,19 +266,9 @@ class AccountConsole:
             value = bool(value_str)
         elif type == 's':
             value = value_str
+        elif type == 'as':
+            value = GStrv(eval(value_str))
         return (name, value)
-
-    def get_account_setting(self, account, key, type, default_value=None):
-        value = GObject.Value()
-        value.init(type)
-        if account.get_value(key, value) != Accounts.SettingSource.NONE:
-            if type == GObject.TYPE_STRING:
-                return value.get_string()
-            elif type == GObject.TYPE_INT:
-                return value.get_int()
-            elif type == GObject.TYPE_UINT:
-                return value.get_uint()
-        return default_value
 
 app = AccountConsole()
 
