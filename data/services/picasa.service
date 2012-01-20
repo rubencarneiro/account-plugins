@@ -17,7 +17,7 @@
 
       <group name="oauth2">
         <group name="user_agent">
-          <setting name="Scope">["https://picasaweb.google.com/data/"]</setting>
+          <setting name="Scope" type="as">["https://picasaweb.google.com/data/"]</setting>
         </group>
       </group>
 
