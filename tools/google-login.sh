@@ -5,6 +5,6 @@
 	-p AuthPath=o/oauth2/auth \
 	-p RedirectUri=http://www.mardy.it/oauth2callback \
 	-p ClientId=1041829795610-htf69c529db58qcq8jvf58bijn1ie3oi.apps.googleusercontent.com \
-	-p ResponseType=token \
-	-p Scope=lh2
+	-p "as:ResponseType=['token']" \
+	-p Scope=https://picasaweb.google.com/data/
 
