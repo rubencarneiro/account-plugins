@@ -311,7 +311,7 @@ subparser.add_argument('-s', action='append', default=[], metavar='SETTING',
         help='Add or changes a service setting, in the form [<type>:]<name>=<value>')
 subparser.add_argument('-u', action='append', default=[],
         metavar='SETTING_NAME', help='Unset a setting')
-subparser.add_argument('--signon-id-field', type=str, default='signon-id',
+subparser.add_argument('--signon-id-field', type=str, default='CredentialsId',
         help='Name of the key holding the SignOn ID')
 subparser.add_argument('--caption', type=str,
         help='SignOn caption (username description)')
@@ -345,7 +345,7 @@ subparser.add_argument('account', type=int,
         help='Id of the SignOn identity')
 subparser.add_argument('--service', type=str,
         help='Account service')
-subparser.add_argument('--signon-id-field', type=str, default='signon-id',
+subparser.add_argument('--signon-id-field', type=str, default='CredentialsId',
         help='Name of the key holding the SignOn ID')
 mm = subparser.add_argument_group()
 mm.add_argument('--method', type=str,
