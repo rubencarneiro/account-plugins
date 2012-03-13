@@ -19,6 +19,7 @@ class AccountConsole:
         accounts = self.manager.list()
         if not accounts:
             print 'No accounts'
+            main_loop.quit()
             return
 
         for account_id in accounts:
