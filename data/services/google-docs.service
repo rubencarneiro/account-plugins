@@ -8,13 +8,6 @@
   <!-- default settings (account settings have precedence over these) -->
   <template>
     <group name="auth">
-      <setting name="method">google</setting>
-      <setting name="mechanism">ClientLogin</setting>
-      <!--
-      <setting name="method">oauth2</setting>
-      <setting name="mechanism">user_agent</setting>
-      -->
-
       <group name="oauth2">
         <group name="user_agent">
           <setting name="Scope" type="as">["https://docs.google.com/feeds/"]</setting>
