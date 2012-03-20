@@ -35,7 +35,11 @@ public class GooglePlugin : Ap.OAuthPlugin {
         oauth_params.insert ("ClientId",
                              "1041829795610-htf69c529db58qcq8jvf58bijn1ie3oi.apps.googleusercontent.com");
         oauth_params.insert ("ResponseType", "token");
-        oauth_params.insert ("Scope", "https://picasaweb.google.com/data/");
+        string[] scopes = {
+            "https://docs.google.com/feeds/",
+            "https://picasaweb.google.com/data/"
+        };
+        oauth_params.insert ("Scope", scopes);
         set_oauth_parameters (oauth_params);
     }
 }
