@@ -34,6 +34,15 @@ public class FacebookPlugin : Ap.OAuthPlugin {
                              "https://www.facebook.com/connect/login_success.html");
         oauth_params.insert ("ClientId", "213156715390803");
         oauth_params.insert ("Display", "popup");
+        string[] scopes = {
+            "publish_stream",
+            "read_stream",
+            "status_update",
+            "offline_access",
+            "user_photos",
+            "friends_photos"
+        };
+        oauth_params.insert ("Scope", scopes);
         set_oauth_parameters (oauth_params);
     }
 }
