@@ -4,7 +4,7 @@ IDENTITY="$1"
 shift
 ./account-console signon_login "$IDENTITY" oauth2 user_agent \
 	-p Host=www.facebook.com \
-	-p AuthPath=/dialog/oauth \
+	-p AuthPath=dialog/oauth \
 	-p RedirectUri=https://www.facebook.com/connect/login_success.html \
 	-p ClientId=213156715390803 \
 	-p Display=popup "$@"
