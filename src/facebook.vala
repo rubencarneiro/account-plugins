@@ -32,7 +32,7 @@ public class FacebookPlugin : Ap.OAuthPlugin {
         oauth_params.insert ("AuthPath", "/dialog/oauth");
         oauth_params.insert ("RedirectUri",
                              "https://www.facebook.com/connect/login_success.html");
-        oauth_params.insert ("ClientId", "213156715390803");
+        oauth_params.insert ("ClientId", "302061903208115");
         oauth_params.insert ("Display", "popup");
         string[] scopes = {
             "publish_stream",

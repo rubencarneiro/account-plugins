@@ -33,7 +33,7 @@ public class GooglePlugin : Ap.OAuthPlugin {
         oauth_params.insert ("RedirectUri",
                              "http://www.mardy.it/oauth2callback");
         oauth_params.insert ("ClientId",
-                             "1041829795610-htf69c529db58qcq8jvf58bijn1ie3oi.apps.googleusercontent.com");
+                             "995235780104-c3nepmjkcetqua2ao9797r5j38leb3e4.apps.googleusercontent.com");
         oauth_params.insert ("ResponseType", "token");
         string[] scopes = {
             "https://docs.google.com/feeds/",
