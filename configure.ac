@@ -22,7 +22,7 @@ PKG_CHECK_MODULES(ACCOUNT_PLUGINS,
 AC_SUBST(ACCOUNT_PLUGINS_CFLAGS)
 AC_SUBST(ACCOUNT_PLUGINS_LIBS)
 
-plugindir=`$PKG_CONFIG --variable plugindir account-plugin`
+plugindir=`$PKG_CONFIG --variable provider_plugindir account-plugin`
 AC_SUBST(plugindir)
 
 providersdir=`$PKG_CONFIG --variable providerfilesdir libaccounts-glib`
