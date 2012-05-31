@@ -2,4 +2,5 @@
 <provider id="facebook">
   <name>Facebook</name>
   <icon>icon_facebook</icon>
+  <domains>.*facebook\.com</domains>
 </provider>

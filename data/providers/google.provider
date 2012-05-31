@@ -2,4 +2,5 @@
 <provider id="google">
   <name>Google</name>
   <icon>icon_google</icon>
+  <domains>.*google\.com</domains>
 </provider>
