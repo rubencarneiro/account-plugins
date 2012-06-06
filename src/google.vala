@@ -41,6 +41,8 @@ public class GooglePlugin : Ap.OAuthPlugin {
         };
         oauth_params.insert ("Scope", scopes);
         set_oauth_parameters (oauth_params);
+
+        set_ignore_cookies (true);
     }
 }
 
