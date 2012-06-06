@@ -34,6 +34,7 @@ AC_SUBST(servicesdir)
 AC_OUTPUT([
 	Makefile
 	data/Makefile
+	data/icons/Makefile
 	data/providers/Makefile
 	data/services/Makefile
 	data/webkit-options/Makefile

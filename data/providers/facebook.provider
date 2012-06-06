@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <provider id="facebook">
   <name>Facebook</name>
-  <icon>icon_facebook</icon>
+  <icon>facebook</icon>
   <domains>.*facebook\.com</domains>
 </provider>
