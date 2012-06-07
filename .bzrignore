@@ -26,5 +26,6 @@ stamp-h1
 .dirstamp
 .libs
 /src/facebook.c
+/src/flickr.c
 /src/google.c
 

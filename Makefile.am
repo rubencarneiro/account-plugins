@@ -5,6 +5,7 @@ SUBDIRS = \
 # Plugins.
 plugin_LTLIBRARIES = \
 	libfacebook.la \
+	libflickr.la \
 	libgoogle.la
 
 VALAFLAGS = \
@@ -36,6 +37,12 @@ libfacebook_la_LIBADD = $(plugin_libadd)
 libfacebook_la_LDFLAGS = $(plugin_ldflags)
 libfacebook_la_SOURCES = \
 	src/facebook.vala
+
+libflickr_la_CPPFLAGS = $(plugin_cppflags)
+libflickr_la_LIBADD = $(plugin_libadd)
+libflickr_la_LDFLAGS = $(plugin_ldflags)
+libflickr_la_SOURCES = \
+	src/flickr.vala
 
 libgoogle_la_CPPFLAGS = $(plugin_cppflags)
 libgoogle_la_LIBADD = $(plugin_libadd)

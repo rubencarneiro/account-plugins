@@ -20,6 +20,7 @@ namespace Ap {
 	public class OAuthPlugin : Ap.Plugin {
 		[CCode (has_construct_function = false)]
 		protected OAuthPlugin ();
+		public void set_mechanism (Ap.OAuthMechanism mechanism);
 		public void set_oauth_parameters (GLib.HashTable<string,GLib.Value?> oauth_params);
 		[NoAccessorMethod]
 		public GLib.HashTable<weak void*,weak void*> oauth_params { owned get; construct; }
@@ -50,6 +51,14 @@ namespace Ap {
 		public Ag.Account account { get; construct; }
 		public bool need_authentication { get; set; }
 		public signal void finished ();
+	}
+	[CCode (cheader_filename = "libaccount-plugin/account-plugin.h", cprefix = "AP_OAUTH_MECHANISM_")]
+	public enum OAuthMechanism {
+		USER_AGENT,
+		WEB_SERVER,
+		HMAC_SHA1,
+		PLAINTEXT,
+		RSA_SHA1
 	}
 	[CCode (cheader_filename = "libaccount-plugin/account-plugin.h", cname = "AP_PLUGIN_CREDENTIALS_ID_FIELD")]
 	public const string PLUGIN_CREDENTIALS_ID_FIELD;
