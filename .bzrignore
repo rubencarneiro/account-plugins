@@ -28,4 +28,5 @@ stamp-h1
 /src/facebook.c
 /src/flickr.c
 /src/google.c
+/src/twitter.c
 
