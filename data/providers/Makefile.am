@@ -1,4 +1,5 @@
 dist_providers_DATA = \
 	facebook.provider \
 	flickr.provider \
-	google.provider
+	google.provider \
+	twitter.provider

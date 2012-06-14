@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<provider id="twitter">
+  <name>Twitter</name>
+  <icon>twitter</icon>
+  <domains>.*twitter\.com</domains>
+</provider>
