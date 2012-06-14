@@ -6,7 +6,8 @@ SUBDIRS = \
 plugin_LTLIBRARIES = \
 	libfacebook.la \
 	libflickr.la \
-	libgoogle.la
+	libgoogle.la \
+	libtwitter.la
 
 VALAFLAGS = \
 	--vapidir $(top_srcdir)/src \
@@ -49,6 +50,12 @@ libgoogle_la_LIBADD = $(plugin_libadd)
 libgoogle_la_LDFLAGS = $(plugin_ldflags)
 libgoogle_la_SOURCES = \
 	src/google.vala
+
+libtwitter_la_CPPFLAGS = $(plugin_cppflags)
+libtwitter_la_LIBADD = $(plugin_libadd)
+libtwitter_la_LDFLAGS = $(plugin_ldflags)
+libtwitter_la_SOURCES = \
+	src/twitter.vala
 
 dist_noinst_DATA = \
 	src/accounts.deps \
