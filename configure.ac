@@ -31,6 +31,21 @@ AC_SUBST(providersdir)
 servicesdir=`$PKG_CONFIG --variable servicefilesdir libaccounts-glib`
 AC_SUBST(servicesdir)
 
+# Set Twitter consumer key/secret
+AC_ARG_WITH(twitter-consumer-key,
+            [AS_HELP_STRING([--with-twitter-consumer-key],
+                            [Twitter consumer key])],
+                            [twitter_consumer_key=$withval],
+                            [twitter_consumer_key="mkFv4kTQ89G6J8fB3rxg"])
+AC_ARG_WITH(twitter-consumer-secret,
+            [AS_HELP_STRING([--with-twitter-consumer-secret],
+                            [Twitter consumer secret])],
+                            [twitter_consumer_secret=$withval],
+                            [twitter_consumer_secret="9fvOe8rtOXUeO5MynIaU1JtDEKeQaYmvOt1AjLavHw"])
+
+AC_DEFINE_UNQUOTED(TWITTER_CONSUMER_KEY, ["$twitter_consumer_key"], [Twitter consumer key])
+AC_DEFINE_UNQUOTED(TWITTER_CONSUMER_SECRET, ["$twitter_consumer_secret"], [Twitter consumer secret])
+
 AC_OUTPUT([
 	Makefile
 	data/Makefile

@@ -11,6 +11,7 @@ plugin_LTLIBRARIES = \
 
 VALAFLAGS = \
 	--vapidir $(top_srcdir)/src \
+	--pkg config \
 	--pkg AccountPlugin \
 	--pkg accounts \
 	--pkg posix \
@@ -58,6 +59,7 @@ libtwitter_la_SOURCES = \
 	src/twitter.vala
 
 dist_noinst_DATA = \
+	src/config.vapi \
 	src/accounts.deps \
 	src/accounts.vapi \
 	src/signon.vapi \

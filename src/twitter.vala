@@ -34,8 +34,8 @@ public class TwitterPlugin : Ap.OAuthPlugin {
                              "https://api.twitter.com/oauth/access_token");
         oauth_params.insert ("AuthorizationEndpoint",
                              "https://api.twitter.com/oauth/authorize");
-        oauth_params.insert ("ConsumerKey", "mkFv4kTQ89G6J8fB3rxg");
-        oauth_params.insert ("ConsumerSecret", "9fvOe8rtOXUeO5MynIaU1JtDEKeQaYmvOt1AjLavHw");
+        oauth_params.insert ("ConsumerKey", Config.TWITTER_CONSUMER_KEY);
+        oauth_params.insert ("ConsumerSecret", Config.TWITTER_CONSUMER_SECRET);
         oauth_params.insert ("Callback", "http://www.ubuntu.com/");
         set_oauth_parameters (oauth_params);
 
