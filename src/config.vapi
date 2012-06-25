@@ -27,4 +27,5 @@ namespace Config {
   public const string FACEBOOK_CLIENT_ID;
   public const string FLICKR_CONSUMER_KEY;
   public const string FLICKR_CONSUMER_SECRET;
+  public const string GOOGLE_CLIENT_ID;
 }
