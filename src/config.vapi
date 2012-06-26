@@ -18,6 +18,7 @@
  *
  * Authors:
  *      Ken VanDine <ken.vandine@canonical.com>
+ *      David King <david.king@canonical.com>
  */
 
 [CCode (cprefix = "", lower_case_cprefix = "", cheader_filename = "config.h")]
@@ -28,4 +29,5 @@ namespace Config {
   public const string FLICKR_CONSUMER_KEY;
   public const string FLICKR_CONSUMER_SECRET;
   public const string GOOGLE_CLIENT_ID;
+  public const string FOURSQUARE_CLIENT_ID;
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service id="foursquare-microblog">
+  <type>microblogging</type>
+  <name>Foursquare</name>
+  <icon>foursquare</icon>
+  <provider>foursquare</provider>
+</service>

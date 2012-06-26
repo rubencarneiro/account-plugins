@@ -75,6 +75,14 @@ AC_ARG_WITH(google-client-id,
                             [google_client_id="995235780104-c3nepmjkcetqua2ao9797r5j38leb3e4.apps.googleusercontent.com"])
 AC_DEFINE_UNQUOTED(GOOGLE_CLIENT_ID, ["$google_client_id"], [Google client ID])
 
+# Set Foursquare client id
+AC_ARG_WITH(foursquare-client-id,
+            [AS_HELP_STRING([--with-foursquare-client-id],
+                            [Foursquare client ID])],
+                            [foursquare_client_id=$withval],
+                            [foursquare_client_id="BA0GOA0K3PTRS1KUJ5TTZ1P3GDRH3VJEEXY4N44ROPUJYKPW"])
+AC_DEFINE_UNQUOTED(FOURSQUARE_CLIENT_ID, ["$foursquare_client_id"], [Foursquare client ID])
+
 AC_OUTPUT([
 	Makefile
 	data/Makefile
