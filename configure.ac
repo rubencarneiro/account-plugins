@@ -1,8 +1,12 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT(account-plugins, 0.3)
+AC_INIT([account-plugins],
+        [0.3],
+        [https://bugs.launchpad.net/opensesame-account-plugins/+filebug],
+        [account-plugins],
+        [https://launchpad.net/opensesame-account-plugins])
 
-AM_INIT_AUTOMAKE([subdir-objects])
+AM_INIT_AUTOMAKE([1.10 -Wall -Wno-portability subdir-objects])
 AM_CONFIG_HEADER(config.h)
 
 # Gobject Introspection
@@ -97,7 +101,7 @@ AC_ARG_WITH(identica-consumer-secret,
 AC_DEFINE_UNQUOTED(IDENTICA_CONSUMER_KEY, ["$identica_consumer_key"], [identi.ca consumer key])
 AC_DEFINE_UNQUOTED(IDENTICA_CONSUMER_SECRET, ["$identica_consumer_secret"], [identi.ca consumer secret])
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 	Makefile
 	data/Makefile
 	data/icons/Makefile
@@ -106,3 +110,4 @@ AC_OUTPUT([
 	data/webkit-options/Makefile
 	tools/Makefile
 ])
+AC_OUTPUT
