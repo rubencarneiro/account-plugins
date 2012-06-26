@@ -34,8 +34,8 @@ public class FlickrPlugin : Ap.OAuthPlugin {
                              "http://www.flickr.com/services/oauth/access_token");
         oauth_params.insert ("AuthorizationEndpoint",
                              "http://www.flickr.com/services/oauth/authorize");
-        oauth_params.insert ("ConsumerKey", "4aa0260d1eccfe968bb9f214f18e46fe");
-        oauth_params.insert ("ConsumerSecret", "cbb9e94a8c3fe831");
+        oauth_params.insert ("ConsumerKey", Config.FLICKR_CONSUMER_KEY);
+        oauth_params.insert ("ConsumerSecret", Config.FLICKR_CONSUMER_SECRET);
         /* According to Flickr documentation, the callback is ignored */
         oauth_params.insert ("Callback", "http://www.ubuntu.com/");
         set_oauth_parameters (oauth_params);

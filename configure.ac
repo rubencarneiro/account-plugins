@@ -53,6 +53,20 @@ AC_ARG_WITH(facebook-client-id,
                             [facebook_client_id="302061903208115"])
 AC_DEFINE_UNQUOTED(FACEBOOK_CLIENT_ID, ["$facebook_client_id"], [Facebook client ID])
 
+# Set Flickr consumer key/secret
+AC_ARG_WITH(flickr-consumer-key,
+            [AS_HELP_STRING([--with-flickr-consumer-key],
+                            [Flickr consumer key])],
+                            [flickr_consumer_key=$withval],
+                            [flickr_consumer_key="4aa0260d1eccfe968bb9f214f18e46fe"])
+AC_ARG_WITH(flickr-consumer-secret,
+            [AS_HELP_STRING([--with-flickr-consumer-secret],
+                            [Flickr consumer secret])],
+                            [flickr_consumer_secret=$withval],
+                            [flickr_consumer_secret="cbb9e94a8c3fe831"])
+AC_DEFINE_UNQUOTED(FLICKR_CONSUMER_KEY, ["$flickr_consumer_key"], [Flickr consumer key])
+AC_DEFINE_UNQUOTED(FLICKR_CONSUMER_SECRET, ["$flickr_consumer_secret"], [Flickr consumer secret])
+
 AC_OUTPUT([
 	Makefile
 	data/Makefile
