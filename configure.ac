@@ -67,6 +67,14 @@ AC_ARG_WITH(flickr-consumer-secret,
 AC_DEFINE_UNQUOTED(FLICKR_CONSUMER_KEY, ["$flickr_consumer_key"], [Flickr consumer key])
 AC_DEFINE_UNQUOTED(FLICKR_CONSUMER_SECRET, ["$flickr_consumer_secret"], [Flickr consumer secret])
 
+# Set Google client id
+AC_ARG_WITH(google-client-id,
+            [AS_HELP_STRING([--with-google-client-id],
+                            [Google client ID])],
+                            [google_client_id=$withval],
+                            [google_client_id="995235780104-c3nepmjkcetqua2ao9797r5j38leb3e4.apps.googleusercontent.com"])
+AC_DEFINE_UNQUOTED(GOOGLE_CLIENT_ID, ["$google_client_id"], [Google client ID])
+
 AC_OUTPUT([
 	Makefile
 	data/Makefile
