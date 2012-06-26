@@ -83,6 +83,20 @@ AC_ARG_WITH(foursquare-client-id,
                             [foursquare_client_id="BA0GOA0K3PTRS1KUJ5TTZ1P3GDRH3VJEEXY4N44ROPUJYKPW"])
 AC_DEFINE_UNQUOTED(FOURSQUARE_CLIENT_ID, ["$foursquare_client_id"], [Foursquare client ID])
 
+# Set identi.ca consumer key/secret
+AC_ARG_WITH(identica-consumer-key,
+            [AS_HELP_STRING([--with-identica-consumer-key],
+                            [identi.ca consumer key])],
+                            [identica_consumer_key=$withval],
+                            [identica_consumer_key="anonymous"])
+AC_ARG_WITH(identica-consumer-secret,
+            [AS_HELP_STRING([--with-identica-consumer-secret],
+                            [identi.ca consumer secret])],
+                            [identica_consumer_secret=$withval],
+                            [identica_consumer_secret="anonymous"])
+AC_DEFINE_UNQUOTED(IDENTICA_CONSUMER_KEY, ["$identica_consumer_key"], [identi.ca consumer key])
+AC_DEFINE_UNQUOTED(IDENTICA_CONSUMER_SECRET, ["$identica_consumer_secret"], [identi.ca consumer secret])
+
 AC_OUTPUT([
 	Makefile
 	data/Makefile

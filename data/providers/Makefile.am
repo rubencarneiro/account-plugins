@@ -3,4 +3,5 @@ dist_providers_DATA = \
 	flickr.provider \
 	foursquare.provider \
 	google.provider \
+	identica.provider \
 	twitter.provider

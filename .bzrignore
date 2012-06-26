@@ -29,4 +29,5 @@ stamp-h1
 /src/flickr.c
 /src/foursquare.c
 /src/google.c
+/src/identica.c
 /src/twitter.c

@@ -4,4 +4,5 @@ dist_icons_DATA = \
 	flickr.png \
 	foursquare.png \
 	google.png \
+	identica.png \
 	twitter.png

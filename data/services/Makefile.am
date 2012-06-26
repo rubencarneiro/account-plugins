@@ -4,5 +4,6 @@ dist_services_DATA = \
 	flickr-microblog.service \
 	foursquare-microblog.service \
 	google-docs.service \
+	identica-microblog.service \
 	picasa.service \
 	twitter-microblog.service

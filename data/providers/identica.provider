@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<provider id="identica">
+  <name>identi.ca</name>
+  <icon>identica</icon>
+  <domains>.*identi\.ca</domains>
+</provider>
