@@ -42,9 +42,16 @@ AC_ARG_WITH(twitter-consumer-secret,
                             [Twitter consumer secret])],
                             [twitter_consumer_secret=$withval],
                             [twitter_consumer_secret="9fvOe8rtOXUeO5MynIaU1JtDEKeQaYmvOt1AjLavHw"])
-
 AC_DEFINE_UNQUOTED(TWITTER_CONSUMER_KEY, ["$twitter_consumer_key"], [Twitter consumer key])
 AC_DEFINE_UNQUOTED(TWITTER_CONSUMER_SECRET, ["$twitter_consumer_secret"], [Twitter consumer secret])
+
+# Set Facebook client id
+AC_ARG_WITH(facebook-client-id,
+            [AS_HELP_STRING([--with-facebook-client-id],
+                            [Facebook client ID])],
+                            [facebook_client_id=$withval],
+                            [facebook_client_id="302061903208115"])
+AC_DEFINE_UNQUOTED(FACEBOOK_CLIENT_ID, ["$facebook_client_id"], [Facebook client ID])
 
 AC_OUTPUT([
 	Makefile
