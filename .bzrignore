@@ -30,4 +30,6 @@ stamp-h1
 /src/foursquare.c
 /src/google.c
 /src/identica.c
+/src/sina.c
+/src/sohu.c
 /src/twitter.c

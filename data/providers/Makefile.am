@@ -4,4 +4,6 @@ dist_providers_DATA = \
 	foursquare.provider \
 	google.provider \
 	identica.provider \
+	sina.provider \
+	sohu.provider \
 	twitter.provider

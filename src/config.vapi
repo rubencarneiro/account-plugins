@@ -32,4 +32,8 @@ namespace Config {
   public const string FOURSQUARE_CLIENT_ID;
   public const string IDENTICA_CONSUMER_KEY;
   public const string IDENTICA_CONSUMER_SECRET;
+  public const string SINA_CONSUMER_KEY;
+  public const string SINA_CONSUMER_SECRET;
+  public const string SOHU_CONSUMER_KEY;
+  public const string SOHU_CONSUMER_SECRET;
 }
