@@ -4,4 +4,12 @@
   <name>Flickr</name>
   <icon>flickr</icon>
   <provider>flickr</provider>
+
+  <!-- default settings (account settings have precedence over these) -->
+  <template>
+    <group name="gwibber">
+      <setting name="color">#A63FF4</setting>
+    </group>
+  </template>
+
 </service>
