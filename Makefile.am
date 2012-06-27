@@ -6,7 +6,9 @@ SUBDIRS = \
 plugin_LTLIBRARIES = \
 	libfacebook.la \
 	libflickr.la \
+	libfoursquare.la \
 	libgoogle.la \
+	libidentica.la \
 	libtwitter.la
 
 VALAFLAGS = \
@@ -46,11 +48,23 @@ libflickr_la_LDFLAGS = $(plugin_ldflags)
 libflickr_la_SOURCES = \
 	src/flickr.vala
 
+libfoursquare_la_CPPFLAGS = $(plugin_cppflags)
+libfoursquare_la_LIBADD = $(plugin_libadd)
+libfoursquare_la_LDFLAGS = $(plugin_ldflags)
+libfoursquare_la_SOURCES = \
+	src/foursquare.vala
+
 libgoogle_la_CPPFLAGS = $(plugin_cppflags)
 libgoogle_la_LIBADD = $(plugin_libadd)
 libgoogle_la_LDFLAGS = $(plugin_ldflags)
 libgoogle_la_SOURCES = \
 	src/google.vala
+
+libidentica_la_CPPFLAGS = $(plugin_cppflags)
+libidentica_la_LIBADD = $(plugin_libadd)
+libidentica_la_LDFLAGS = $(plugin_ldflags)
+libidentica_la_SOURCES = \
+	src/identica.vala
 
 libtwitter_la_CPPFLAGS = $(plugin_cppflags)
 libtwitter_la_LIBADD = $(plugin_libadd)

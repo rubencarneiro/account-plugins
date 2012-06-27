@@ -1,8 +1,12 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT(account-plugins, 0.3)
+AC_INIT([account-plugins],
+        [0.3],
+        [https://bugs.launchpad.net/opensesame-account-plugins/+filebug],
+        [account-plugins],
+        [https://launchpad.net/opensesame-account-plugins])
 
-AM_INIT_AUTOMAKE([subdir-objects])
+AM_INIT_AUTOMAKE([1.10 -Wall -Wno-portability subdir-objects])
 AM_CONFIG_HEADER(config.h)
 
 # Gobject Introspection
@@ -75,7 +79,29 @@ AC_ARG_WITH(google-client-id,
                             [google_client_id="995235780104-c3nepmjkcetqua2ao9797r5j38leb3e4.apps.googleusercontent.com"])
 AC_DEFINE_UNQUOTED(GOOGLE_CLIENT_ID, ["$google_client_id"], [Google client ID])
 
-AC_OUTPUT([
+# Set Foursquare client id
+AC_ARG_WITH(foursquare-client-id,
+            [AS_HELP_STRING([--with-foursquare-client-id],
+                            [Foursquare client ID])],
+                            [foursquare_client_id=$withval],
+                            [foursquare_client_id="BA0GOA0K3PTRS1KUJ5TTZ1P3GDRH3VJEEXY4N44ROPUJYKPW"])
+AC_DEFINE_UNQUOTED(FOURSQUARE_CLIENT_ID, ["$foursquare_client_id"], [Foursquare client ID])
+
+# Set identi.ca consumer key/secret
+AC_ARG_WITH(identica-consumer-key,
+            [AS_HELP_STRING([--with-identica-consumer-key],
+                            [identi.ca consumer key])],
+                            [identica_consumer_key=$withval],
+                            [identica_consumer_key="anonymous"])
+AC_ARG_WITH(identica-consumer-secret,
+            [AS_HELP_STRING([--with-identica-consumer-secret],
+                            [identi.ca consumer secret])],
+                            [identica_consumer_secret=$withval],
+                            [identica_consumer_secret="anonymous"])
+AC_DEFINE_UNQUOTED(IDENTICA_CONSUMER_KEY, ["$identica_consumer_key"], [identi.ca consumer key])
+AC_DEFINE_UNQUOTED(IDENTICA_CONSUMER_SECRET, ["$identica_consumer_secret"], [identi.ca consumer secret])
+
+AC_CONFIG_FILES([
 	Makefile
 	data/Makefile
 	data/icons/Makefile
@@ -84,3 +110,4 @@ AC_OUTPUT([
 	data/webkit-options/Makefile
 	tools/Makefile
 ])
+AC_OUTPUT

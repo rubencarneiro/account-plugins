@@ -27,6 +27,7 @@ stamp-h1
 .libs
 /src/facebook.c
 /src/flickr.c
+/src/foursquare.c
 /src/google.c
+/src/identica.c
 /src/twitter.c
-
