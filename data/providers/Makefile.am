@@ -5,4 +5,5 @@ dist_providers_DATA = \
 	google.provider \
 	identica.provider \
 	sina.provider \
+	sohu.provider \
 	twitter.provider

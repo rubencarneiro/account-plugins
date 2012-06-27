@@ -31,4 +31,5 @@ stamp-h1
 /src/google.c
 /src/identica.c
 /src/sina.c
+/src/sohu.c
 /src/twitter.c

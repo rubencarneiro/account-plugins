@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service id="sohu-microblog">
+  <type>microblogging</type>
+  <name>Sohu</name>
+  <icon>sohu</icon>
+  <provider>sohu</provider>
+</service>

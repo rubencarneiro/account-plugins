@@ -7,4 +7,5 @@ dist_services_DATA = \
 	identica-microblog.service \
 	picasa.service \
 	sina-microblog.service \
+	sohu-microblog.service \
 	twitter-microblog.service

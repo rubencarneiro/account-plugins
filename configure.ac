@@ -115,6 +115,20 @@ AC_ARG_WITH(sina-consumer-secret,
 AC_DEFINE_UNQUOTED(SINA_CONSUMER_KEY, ["$sina_consumer_key"], [Sina consumer key])
 AC_DEFINE_UNQUOTED(SINA_CONSUMER_SECRET, ["$sina_consumer_secret"], [Sina consumer secret])
 
+# Set Sohu consumer key/secret
+AC_ARG_WITH(sohu-consumer-key,
+            [AS_HELP_STRING([--with-sohu-consumer-key],
+                            [Sohu consumer key])],
+                            [sohu_consumer_key=$withval],
+                            [sohu_consumer_key="YcRgcVD31M241lWRJuU0"])
+AC_ARG_WITH(sohu-consumer-secret,
+            [AS_HELP_STRING([--with-sohu-consumer-secret],
+                            [Sohu consumer secret])],
+                            [sohu_consumer_secret=$withval],
+                            [sohu_consumer_secret="!2(z%LRmy7xTN(x3cm$)2m*domKNT(s00=qN4Vxh"])
+AC_DEFINE_UNQUOTED(SOHU_CONSUMER_KEY, ["$sohu_consumer_key"], [Sohu consumer key])
+AC_DEFINE_UNQUOTED(SOHU_CONSUMER_SECRET, ["$sohu_consumer_secret"], [Sohu consumer secret])
+
 AC_CONFIG_FILES([
 	Makefile
 	data/Makefile
