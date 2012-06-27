@@ -6,4 +6,5 @@ dist_services_DATA = \
 	google-docs.service \
 	identica-microblog.service \
 	picasa.service \
+	sina-microblog.service \
 	twitter-microblog.service

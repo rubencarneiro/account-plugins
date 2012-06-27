@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service id="sina-microblog">
+  <type>microblogging</type>
+  <name>Sina</name>
+  <icon>sina</icon>
+  <provider>sina</provider>
+</service>

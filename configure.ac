@@ -101,6 +101,20 @@ AC_ARG_WITH(identica-consumer-secret,
 AC_DEFINE_UNQUOTED(IDENTICA_CONSUMER_KEY, ["$identica_consumer_key"], [identi.ca consumer key])
 AC_DEFINE_UNQUOTED(IDENTICA_CONSUMER_SECRET, ["$identica_consumer_secret"], [identi.ca consumer secret])
 
+# Set Sina consumer key/secret
+AC_ARG_WITH(sina-consumer-key,
+            [AS_HELP_STRING([--with-sina-consumer-key],
+                            [Sina consumer key])],
+                            [sina_consumer_key=$withval],
+                            [sina_consumer_key="1472971394"])
+AC_ARG_WITH(sina-consumer-secret,
+            [AS_HELP_STRING([--with-sina-consumer-secret],
+                            [Sina consumer secret])],
+                            [sina_consumer_secret=$withval],
+                            [sina_consumer_secret="49443ea72f7545486143f3f074b0b66e"])
+AC_DEFINE_UNQUOTED(SINA_CONSUMER_KEY, ["$sina_consumer_key"], [Sina consumer key])
+AC_DEFINE_UNQUOTED(SINA_CONSUMER_SECRET, ["$sina_consumer_secret"], [Sina consumer secret])
+
 AC_CONFIG_FILES([
 	Makefile
 	data/Makefile

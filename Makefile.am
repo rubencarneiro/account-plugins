@@ -9,6 +9,7 @@ plugin_LTLIBRARIES = \
 	libfoursquare.la \
 	libgoogle.la \
 	libidentica.la \
+	libsina.la \
 	libtwitter.la
 
 VALAFLAGS = \
@@ -65,6 +66,12 @@ libidentica_la_LIBADD = $(plugin_libadd)
 libidentica_la_LDFLAGS = $(plugin_ldflags)
 libidentica_la_SOURCES = \
 	src/identica.vala
+
+libsina_la_CPPFLAGS = $(plugin_cppflags)
+libsina_la_LIBADD = $(plugin_libadd)
+libsina_la_LDFLAGS = $(plugin_ldflags)
+libsina_la_SOURCES = \
+	src/sina.vala
 
 libtwitter_la_CPPFLAGS = $(plugin_cppflags)
 libtwitter_la_LIBADD = $(plugin_libadd)
