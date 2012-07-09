@@ -4,4 +4,11 @@
   <name>Foursquare</name>
   <icon>foursquare</icon>
   <provider>foursquare</provider>
+
+  <!-- default settings (account settings have precedence over these) -->
+  <template>
+    <group name="gwibber">
+      <setting name="color">#990099</setting>
+    </group>
+  </template>
 </service>
