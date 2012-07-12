@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service id="facebook-im">
+  <type>IM</type>
+  <name>Facebook</name>
+  <icon>icon_facebook</icon>
+  <provider>facebook</provider>
+</service>
