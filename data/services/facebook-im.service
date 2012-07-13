@@ -2,6 +2,19 @@
 <service id="facebook-im">
   <type>IM</type>
   <name>Facebook</name>
-  <icon>icon_facebook</icon>
+  <icon>facebook</icon>
   <provider>facebook</provider>
+
+  <!-- default settings (account settings have precedence over these) -->
+  <template>
+    <group name="telepathy">
+      <setting name="manager">gabble</setting>
+      <setting name="protocol">jabber</setting>
+
+      <setting name="param-account">chat.facebook.com</setting>
+      <setting name="param-server">chat.facebook.com</setting>
+      <setting name="param-fallback-servers">chat.facebook.com:443</setting>
+    </group>
+  </template>
+
 </service>
