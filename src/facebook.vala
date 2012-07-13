@@ -40,7 +40,8 @@ public class FacebookPlugin : Ap.OAuthPlugin {
             "status_update",
             "offline_access",
             "user_photos",
-            "friends_photos"
+            "friends_photos",
+            "xmpp_login"
         };
         oauth_params.insert ("Scope", scopes);
         set_oauth_parameters (oauth_params);
