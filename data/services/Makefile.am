@@ -1,6 +1,7 @@
 dist_services_DATA = \
-	facebook-sharing.service \
+	facebook-im.service \
 	facebook-microblog.service \
+	facebook-sharing.service \
 	flickr-microblog.service \
 	flickr-sharing.service \
 	foursquare-microblog.service \
