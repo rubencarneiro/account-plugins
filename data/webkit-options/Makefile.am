@@ -1,4 +1,4 @@
-webkitoptionsdir = "/etc/signon-ui/webkit-options.d/"
+webkitoptionsdir = $(sysconfdir)/signon-ui/webkit-options.d
 dist_webkitoptions_DATA = \
 	accounts.google.com.conf \
 	api.t.sina.com.cn.conf \
