@@ -77,7 +77,13 @@ AC_ARG_WITH(google-client-id,
                             [Google client ID])],
                             [google_client_id=$withval],
                             [google_client_id="995235780104-c3nepmjkcetqua2ao9797r5j38leb3e4.apps.googleusercontent.com"])
+AC_ARG_WITH(google-client-secret,
+            [AS_HELP_STRING([--with-google-client-secret],
+                            [Google client secret])],
+                            [google_client_secret=$withval],
+                            [google_client_secret="NCB6sQ1OHn3-OamBu8-98M31"])
 AC_DEFINE_UNQUOTED(GOOGLE_CLIENT_ID, ["$google_client_id"], [Google client ID])
+AC_DEFINE_UNQUOTED(GOOGLE_CLIENT_SECRET, ["$google_client_secret"], [Google client secret])
 
 # Set Foursquare client id
 AC_ARG_WITH(foursquare-client-id,
