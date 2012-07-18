@@ -22,6 +22,7 @@ namespace Ap {
 		protected OAuthPlugin ();
 		public void set_mechanism (Ap.OAuthMechanism mechanism);
 		public void set_oauth_parameters (GLib.HashTable<string,GLib.Value?> oauth_params);
+		public void set_account_oauth_parameters (GLib.HashTable<string,GLib.Value?> oauth_params);
 		[NoAccessorMethod]
 		public GLib.HashTable<weak void*,weak void*> oauth_params { owned get; construct; }
 	}
