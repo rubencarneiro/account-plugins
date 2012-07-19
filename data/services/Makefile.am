@@ -11,4 +11,5 @@ dist_services_DATA = \
 	picasa.service \
 	sina-microblog.service \
 	sohu-microblog.service \
-	twitter-microblog.service
+	twitter-microblog.service \
+	wlm.service

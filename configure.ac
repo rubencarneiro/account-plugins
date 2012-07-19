@@ -135,6 +135,14 @@ AC_ARG_WITH(sohu-consumer-secret,
 AC_DEFINE_UNQUOTED(SOHU_CONSUMER_KEY, ["$sohu_consumer_key"], [Sohu consumer key])
 AC_DEFINE_UNQUOTED(SOHU_CONSUMER_SECRET, ["$sohu_consumer_secret"], [Sohu consumer secret])
 
+# Set Windows Live client id
+AC_ARG_WITH(windows-live-client-id,
+            [AS_HELP_STRING([--with-windows-live-client-id],
+                            [Windows Live client ID])],
+                            [windows_live_client_id=$withval],
+                            [windows_live_client_id="0000000044067703"])
+AC_DEFINE_UNQUOTED(WINDOWS_LIVE_CLIENT_ID, ["$windows_live_client_id"], [Windows Live client ID])
+
 AC_CONFIG_FILES([
 	Makefile
 	data/Makefile

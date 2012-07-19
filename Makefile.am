@@ -11,7 +11,8 @@ plugin_LTLIBRARIES = \
 	libidentica.la \
 	libsina.la \
 	libsohu.la \
-	libtwitter.la
+	libtwitter.la \
+	libwindows-live.la
 
 VALAFLAGS = \
 	--vapidir $(top_srcdir)/src \
@@ -85,6 +86,12 @@ libtwitter_la_LIBADD = $(plugin_libadd)
 libtwitter_la_LDFLAGS = $(plugin_ldflags)
 libtwitter_la_SOURCES = \
 	src/twitter.vala
+
+libwindows_live_la_CPPFLAGS = $(plugin_cppflags)
+libwindows_live_la_LIBADD = $(plugin_libadd)
+libwindows_live_la_LDFLAGS = $(plugin_ldflags)
+libwindows_live_la_SOURCES = \
+	src/windows-live.vala
 
 dist_noinst_DATA = \
 	src/config.vapi \
