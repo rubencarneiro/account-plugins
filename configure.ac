@@ -140,7 +140,7 @@ AC_ARG_WITH(windows-live-client-id,
             [AS_HELP_STRING([--with-windows-live-client-id],
                             [Windows Live client ID])],
                             [windows_live_client_id=$withval],
-                            [windows_live_client_id="0000000044067703"])
+                            [windows_live_client_id="00000000480CBF28"])
 AC_DEFINE_UNQUOTED(WINDOWS_LIVE_CLIENT_ID, ["$windows_live_client_id"], [Windows Live client ID])
 
 AC_CONFIG_FILES([
