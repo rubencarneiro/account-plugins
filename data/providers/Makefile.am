@@ -6,4 +6,5 @@ dist_providers_DATA = \
 	identica.provider \
 	sina.provider \
 	sohu.provider \
-	twitter.provider
+	twitter.provider \
+	windows-live.provider

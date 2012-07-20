@@ -37,4 +37,5 @@ namespace Config {
   public const string SINA_CONSUMER_SECRET;
   public const string SOHU_CONSUMER_KEY;
   public const string SOHU_CONSUMER_SECRET;
+  public const string WINDOWS_LIVE_CLIENT_ID;
 }

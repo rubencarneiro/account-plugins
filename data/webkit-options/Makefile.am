@@ -6,5 +6,6 @@ dist_webkitoptions_DATA = \
 	api.twitter.com.conf \
 	foursquare.com.conf \
 	identi.ca.conf \
+	login.live.com.conf \
 	login.yahoo.com.conf \
 	www.facebook.com.conf
