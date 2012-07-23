@@ -165,11 +165,9 @@ class AccountConsole:
                 print >> sys.stderr, 'Service "%s" not found' % args.service
                 sys.exit(1)
 
-        # get the signon identity
-        identity = account.get_int(args.signon_id_field)
-
         account_service = Accounts.AccountService.new(account, service)
         auth_data = account_service.get_auth_data()
+        identity = auth_data.get_credentials_id()
         method = auth_data.get_method()
         mechanism = auth_data.get_mechanism()
         session_data = auth_data.get_parameters()
