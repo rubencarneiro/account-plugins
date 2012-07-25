@@ -38,7 +38,6 @@ public class FacebookPlugin : Ap.OAuthPlugin {
             "publish_stream",
             "read_stream",
             "status_update",
-            "offline_access",
             "user_photos",
             "friends_photos",
             "xmpp_login"
