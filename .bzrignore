@@ -33,3 +33,4 @@ stamp-h1
 /src/sina.c
 /src/sohu.c
 /src/twitter.c
+/src/windows-live.c
