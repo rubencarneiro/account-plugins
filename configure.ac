@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT([account-plugins],
-        [0.4],
+        [0.5],
         [https://bugs.launchpad.net/opensesame-account-plugins/+filebug],
         [account-plugins],
         [https://launchpad.net/opensesame-account-plugins])
