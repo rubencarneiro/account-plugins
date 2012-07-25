@@ -8,6 +8,7 @@
   <!-- default settings (account settings have precedence over these) -->
   <template>
     <group name="telepathy">
+      <setting name="mc-readonly-params" type="b">true</setting>
       <setting name="manager">gabble</setting>
       <setting name="protocol">jabber</setting>
 
