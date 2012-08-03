@@ -14,6 +14,7 @@
 
       <setting name="param-account">messenger.live.com</setting>
       <setting name="param-fallback-servers">xmpp.messenger.live.com</setting>
+      <setting name="param-extra-certificate-identities">*.gateway.messenger.live.com</setting>
     </group>
   </template>
 
