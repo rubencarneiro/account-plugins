@@ -29,11 +29,11 @@ public class FlickrPlugin : Ap.OAuthPlugin {
     {
         var oauth_params = new HashTable<string, GLib.Value?> (str_hash, null);
         oauth_params.insert ("RequestEndpoint",
-                             "http://www.flickr.com/services/oauth/request_token");
+                             "https://secure.flickr.com/services/oauth/request_token");
         oauth_params.insert ("TokenEndpoint",
-                             "http://www.flickr.com/services/oauth/access_token");
+                             "https://secure.flickr.com/services/oauth/access_token");
         oauth_params.insert ("AuthorizationEndpoint",
-                             "http://www.flickr.com/services/oauth/authorize");
+                             "https://secure.flickr.com/services/oauth/authorize");
         oauth_params.insert ("ConsumerKey", Config.FLICKR_CONSUMER_KEY);
         oauth_params.insert ("ConsumerSecret", Config.FLICKR_CONSUMER_SECRET);
         /* According to Flickr documentation, the callback is ignored */
