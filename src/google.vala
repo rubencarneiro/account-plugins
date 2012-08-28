@@ -78,6 +78,8 @@ public class GooglePlugin : Ap.OAuthPlugin {
         string[] scopes = {
             "https://docs.google.com/feeds/",
             "https://www.googleapis.com/auth/googletalk",
+            "https://www.googleapis.com/auth/userinfo.email",
+            "https://www.googleapis.com/auth/userinfo.profile",
             "https://picasaweb.google.com/data/"
         };
         oauth_params.insert ("Scope", scopes);
