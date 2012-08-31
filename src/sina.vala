@@ -37,6 +37,11 @@ public class SinaPlugin : Ap.OAuthPlugin {
         oauth_params.insert ("ConsumerKey", Config.SINA_CONSUMER_KEY);
         oauth_params.insert ("ConsumerSecret", Config.SINA_CONSUMER_SECRET);
         oauth_params.insert ("Callback", "http://www.ubuntu.com/");
+        string[] schemes = {
+            "https",
+            "http"
+        };
+        oauth_params.insert ("AllowedSchemes", schemes);
         set_oauth_parameters (oauth_params);
 
         set_mechanism (Ap.OAuthMechanism.HMAC_SHA1);
