@@ -37,6 +37,11 @@ public class SohuPlugin : Ap.OAuthPlugin {
         oauth_params.insert ("ConsumerKey", Config.SOHU_CONSUMER_KEY);
         oauth_params.insert ("ConsumerSecret", Config.SOHU_CONSUMER_SECRET);
         oauth_params.insert ("Callback", "http://www.ubuntu.com/");
+        string[] schemes = {
+            "https",
+            "http"
+        };
+        oauth_params.insert ("AllowedSchemes", schemes);
         set_oauth_parameters (oauth_params);
 
         set_mechanism (Ap.OAuthMechanism.HMAC_SHA1);

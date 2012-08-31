@@ -51,7 +51,7 @@ public class GooglePlugin : Ap.OAuthPlugin {
         oauth_params.insert ("AuthPath", "o/oauth2/auth");
         oauth_params.insert ("TokenPath", "o/oauth2/token");
         oauth_params.insert ("RedirectUri",
-                             "http://www.mardy.it/oauth2callback");
+                             "https://wiki.ubuntu.com/");
         oauth_params.insert ("ClientId", Config.GOOGLE_CLIENT_ID);
         oauth_params.insert ("ClientSecret", Config.GOOGLE_CLIENT_SECRET);
 

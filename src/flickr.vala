@@ -37,7 +37,12 @@ public class FlickrPlugin : Ap.OAuthPlugin {
         oauth_params.insert ("ConsumerKey", Config.FLICKR_CONSUMER_KEY);
         oauth_params.insert ("ConsumerSecret", Config.FLICKR_CONSUMER_SECRET);
         /* According to Flickr documentation, the callback is ignored */
-        oauth_params.insert ("Callback", "http://www.ubuntu.com/");
+        oauth_params.insert ("Callback", "https://wiki.ubuntu.com/");
+        string[] schemes = {
+            "https",
+            "http"
+        };
+        oauth_params.insert ("AllowedSchemes", schemes);
         set_oauth_parameters (oauth_params);
 
         set_mechanism(Ap.OAuthMechanism.HMAC_SHA1);
