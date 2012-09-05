@@ -17,6 +17,7 @@ dist_icons_DATA = \
 	myspace.png \
 	people-nearby.png \
 	sametime.png \
+	sip.png \
 	twitter.png \
 	yahoo.png \
 	zephyr.png
