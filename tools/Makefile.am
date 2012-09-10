@@ -1,7 +1,5 @@
 bin_SCRIPTS = \
-	account-console \
-	facebook.sh \
-	google.sh
+	account-console
 
 EXTRA_DIST = \
 	$(bin_SCRIPTS)
