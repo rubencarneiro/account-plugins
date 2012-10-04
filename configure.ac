@@ -21,6 +21,8 @@ OVERRIDE_PROG_VALAC([0.15.1], [valac-0.16 valac-0.14 valac])
 LT_PREREQ([2.2])
 LT_INIT([disable-static])
 
+IT_PROG_INTLTOOL([0.50.0])
+
 PKG_CHECK_MODULES(ACCOUNT_PLUGINS,
 	account-plugin)
 AC_SUBST(ACCOUNT_PLUGINS_CFLAGS)
@@ -150,6 +152,7 @@ AC_CONFIG_FILES([
 	data/providers/Makefile
 	data/services/Makefile
 	data/webkit-options/Makefile
+	po/Makefile.in
 	tools/Makefile
 ])
 AC_OUTPUT

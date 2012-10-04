@@ -21,6 +21,9 @@ libtool
 ltmain.sh
 m4
 missing
+/po/Makefile.in.in
+/po/POTFILES
+/po/stamp-it
 stamp-h1
 .deps
 .dirstamp

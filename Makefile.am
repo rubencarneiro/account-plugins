@@ -99,3 +99,9 @@ dist_noinst_DATA = \
 	src/accounts.vapi \
 	src/signon.vapi \
 	src/AccountPlugin.vapi
+
+DISTCLEANFILES = \
+	intltool-extract \
+	intltool-merge \
+	intltool-update \
+	po/.intltool-merge-cache
