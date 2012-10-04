@@ -4,6 +4,7 @@
   <name>GoogleTalk</name>
   <icon>im-google-talk</icon>
   <provider>google</provider>
+  <translations>account-plugins</translations>
  
   <!-- default settings (account settings have precedence over these) -->
   <template>

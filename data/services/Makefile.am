@@ -1,15 +1,28 @@
-dist_services_DATA = \
-	facebook-im.service \
-	facebook-microblog.service \
-	facebook-sharing.service \
-	flickr-microblog.service \
-	flickr-sharing.service \
-	foursquare-microblog.service \
-	google-docs.service \
-	google-im.service \
-	identica-microblog.service \
-	picasa.service \
-	sina-microblog.service \
-	sohu-microblog.service \
-	twitter-microblog.service \
-	wlm.service
+# Extract translatable strings from .service files
+%.service: %.service.in $(INTLTOOL_MERGE)
+	$(INTLTOOL_V_MERGE) LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_MERGE_V_OPTIONS) --no-translations -x -u $< $@
+
+services_in_files = \
+	facebook-im.service.in \
+	facebook-microblog.service.in \
+	facebook-sharing.service.in \
+	flickr-microblog.service.in \
+	flickr-sharing.service.in \
+	foursquare-microblog.service.in \
+	google-docs.service.in \
+	google-im.service.in \
+	identica-microblog.service.in \
+	picasa.service.in \
+	sina-microblog.service.in \
+	sohu-microblog.service.in \
+	twitter-microblog.service.in \
+	wlm.service.in
+
+services_DATA = \
+	$(services_in_files:.service.in=.service)
+
+dist_noinst_DATA = \
+	$(services_in_files)
+
+CLEANFILES = \
+	$(services_DATA)

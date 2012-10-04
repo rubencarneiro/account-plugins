@@ -2,5 +2,6 @@
 <provider id="twitter">
   <name>Twitter</name>
   <icon>twitter</icon>
+  <translations>account-plugins</translations>
   <domains>.*twitter\.com</domains>
 </provider>

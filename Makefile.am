@@ -1,5 +1,6 @@
 SUBDIRS = \
 	data \
+	po \
 	tools
 
 # Plugins.

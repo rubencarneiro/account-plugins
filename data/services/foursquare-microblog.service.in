@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<service id="flickr-microblog">
+<service id="foursquare-microblog">
   <type>microblogging</type>
-  <name>Flickr</name>
-  <icon>flickr</icon>
-  <provider>flickr</provider>
+  <name>Foursquare</name>
+  <icon>foursquare</icon>
+  <provider>foursquare</provider>
+  <translations>account-plugins</translations>
 
   <!-- default settings (account settings have precedence over these) -->
   <template>
     <group name="gwibber">
-      <setting name="color">#A63FF4</setting>
+      <setting name="color">#990099</setting>
     </group>
   </template>
-
 </service>

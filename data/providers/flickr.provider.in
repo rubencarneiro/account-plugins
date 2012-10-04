@@ -2,5 +2,6 @@
 <provider id="flickr">
   <name>Flickr</name>
   <icon>flickr</icon>
+  <translations>account-plugins</translations>
   <domains>.*flickr\.com</domains>
 </provider>

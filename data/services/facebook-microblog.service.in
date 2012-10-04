@@ -4,6 +4,7 @@
   <name>Facebook</name>
   <icon>facebook</icon>
   <provider>facebook</provider>
+  <translations>account-plugins</translations>
 
   <!-- default settings (account settings have precedence over these) -->
   <template>

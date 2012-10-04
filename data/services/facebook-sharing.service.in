@@ -2,8 +2,9 @@
 <service id="service">
   <type>sharing</type>
   <name>Facebook</name>
-  <icon>icon_facebook</icon>
+  <icon>facebook</icon>
   <provider>facebook</provider>
+  <translations>account-plugins</translations>
 
   <!-- default settings (account settings have precedence over these) -->
   <template>

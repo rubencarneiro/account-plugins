@@ -2,5 +2,6 @@
 <provider id="foursquare">
   <name>Foursquare</name>
   <icon>foursquare</icon>
+  <translations>account-plugins</translations>
   <domains>.*foursquare\.com</domains>
 </provider>
