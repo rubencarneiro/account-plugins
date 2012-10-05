@@ -2,5 +2,6 @@
 <provider id="identica">
   <name>identi.ca</name>
   <icon>identica</icon>
+  <translations>account-plugins</translations>
   <domains>.*identi\.ca</domains>
 </provider>

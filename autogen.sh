@@ -1,2 +1,1 @@
-autoreconf -i && ./configure "$@"
-
+intltoolize --copy --force --automake && autoreconf -i && ./configure "$@"

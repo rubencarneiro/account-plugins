@@ -2,5 +2,6 @@
 <provider id="facebook">
   <name>Facebook</name>
   <icon>facebook</icon>
+  <translations>account-plugins</translations>
   <domains>.*facebook\.com</domains>
 </provider>

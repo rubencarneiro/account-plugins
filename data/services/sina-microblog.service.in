@@ -4,4 +4,5 @@
   <name>Sina</name>
   <icon>sina</icon>
   <provider>sina</provider>
+  <translations>account-plugins</translations>
 </service>

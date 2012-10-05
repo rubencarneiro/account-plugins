@@ -4,6 +4,7 @@
   <name>Twitter</name>
   <icon>twitter</icon>
   <provider>twitter</provider>
+  <translations>account-plugins</translations>
 
   <!-- default settings (account settings have precedence over these) -->
   <template>

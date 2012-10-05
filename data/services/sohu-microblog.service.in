@@ -4,4 +4,5 @@
   <name>Sohu</name>
   <icon>sohu</icon>
   <provider>sohu</provider>
+  <translations>account-plugins</translations>
 </service>

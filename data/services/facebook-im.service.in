@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<service id="wlm">
+<service id="facebook-im">
   <type>IM</type>
-  <name>Windows Live Messenger</name>
-  <icon>msn</icon>
-  <provider>windows-live</provider>
+  <name>Facebook</name>
+  <icon>facebook</icon>
+  <provider>facebook</provider>
+  <translations>account-plugins</translations>
 
   <!-- default settings (account settings have precedence over these) -->
   <template>
@@ -12,9 +13,9 @@
       <setting name="manager">gabble</setting>
       <setting name="protocol">jabber</setting>
 
-      <setting name="param-account">messenger.live.com</setting>
-      <setting name="param-fallback-servers">xmpp.messenger.live.com</setting>
-      <setting name="param-extra-certificate-identities">*.gateway.messenger.live.com</setting>
+      <setting name="param-account">chat.facebook.com</setting>
+      <setting name="param-server">chat.facebook.com</setting>
+      <setting name="param-fallback-servers">chat.facebook.com:443</setting>
     </group>
   </template>
 

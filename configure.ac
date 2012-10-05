@@ -2,9 +2,9 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT([account-plugins],
         [0.8],
-        [https://bugs.launchpad.net/opensesame-account-plugins/+filebug],
+        [https://bugs.launchpad.net/online-accounts-account-plugins/+filebug],
         [account-plugins],
-        [https://launchpad.net/opensesame-account-plugins])
+        [https://launchpad.net/online-accounts-account-plugins])
 
 AM_INIT_AUTOMAKE([1.10 -Wall -Wno-portability subdir-objects])
 AM_CONFIG_HEADER(config.h)
@@ -20,6 +20,9 @@ OVERRIDE_PROG_VALAC([0.15.1], [valac-0.16 valac-0.14 valac])
 
 LT_PREREQ([2.2])
 LT_INIT([disable-static])
+
+IT_PROG_INTLTOOL([0.50.0])
+AC_SUBST([GETTEXT_PACKAGE], [$PACKAGE_TARNAME])
 
 PKG_CHECK_MODULES(ACCOUNT_PLUGINS,
 	account-plugin)
@@ -150,6 +153,7 @@ AC_CONFIG_FILES([
 	data/providers/Makefile
 	data/services/Makefile
 	data/webkit-options/Makefile
+	po/Makefile.in
 	tools/Makefile
 ])
 AC_OUTPUT

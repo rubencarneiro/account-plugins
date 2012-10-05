@@ -2,5 +2,6 @@
 <provider id="sohu">
   <name>Sohu</name>
   <icon>sohu</icon>
+  <translations>account-plugins</translations>
   <domains>.*t\.sohu\.com</domains>
 </provider>
