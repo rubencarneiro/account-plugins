@@ -3,7 +3,6 @@
 *.provider
 *.service
 *.stamp
-COPYING
 INSTALL
 Makefile
 Makefile.in
