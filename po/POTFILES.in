@@ -1,4 +1,1 @@
 [type: gettext/xml]data/providers/google.provider.in
-[type: gettext/xml]data/services/facebook-microblog.service.in
-[type: gettext/xml]data/services/identica-microblog.service.in
-[type: gettext/xml]data/services/twitter-microblog.service.in
