@@ -94,6 +94,15 @@ libwindows_live_la_LDFLAGS = $(plugin_ldflags)
 libwindows_live_la_SOURCES = \
 	src/windows-live.vala
 
+dist-hook: bzr-changelog-hook
+
+bzr-changelog-hook: Makefile
+	$(AM_V_at)cd $(top_srcdir) && \
+	if $(top_srcdir)/missing --run bzr log \
+		--gnu-changelog > .ChangeLog.tmp; \
+	then mv -f .ChangeLog.tmp "$(top_distdir)/ChangeLog"; \
+	else rm -f .ChangeLog.tmp; exit 1; fi
+
 dist_noinst_DATA = \
 	src/config.vapi \
 	src/accounts.deps \
@@ -106,3 +115,5 @@ DISTCLEANFILES = \
 	intltool-merge \
 	intltool-update \
 	po/.intltool-merge-cache
+
+.PHONY: bzr-changelog-hook

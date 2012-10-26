@@ -1,0 +1,24 @@
+Account plugins for Ubuntu Online Accounts
+------------------------------------------
+
+This project contains the account configuration plugins for the credentials
+configuration panel:
+
+https://launchpad.net/online-accounts-gnome-control-center/
+
+These plugins are responsible for creating and configuring online accounts.
+
+Dependencies
+------------
+
+The plugins depend on libaccount-plugin from online-accounts-gnome-control-center.
+
+Licence
+-------
+
+The plugins are licensed under the GNU GPL version 2 or later.
+
+Resources
+---------
+
+https://launchpad.net/online-accounts-account-plugins/
