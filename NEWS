@@ -1,0 +1,72 @@
+UOA account plugins NEWS
+
+Version 0.9
+-----------
+
+* Do not reveal Google secret API key:
+  https://launchpad.net/bugs/1064293
+* Add COPYING, using GNU GPL version 2:
+  https://launchpad.net/bugs/1062194
+* Use intltool for internationalization support:
+  https://launchpad.net/bugs/1061433
+* Request mobile version of identi.ca:
+  https://launchpad.net/bugs/1051596
+
+Version 0.8
+-----------
+
+* Add icon for SIP providers:
+  https://launchpad.net/bugs/1026631
+  https://launchpad.net/bugs/1040091
+* Remove Facebook and Google account creations scripts
+  https://launchpad.net/bugs/1048638
+
+Version 0.7
+-----------
+
+* Update for latest signon-ui changes
+  https://launchpad.net/bugs/1041744
+
+Version 0.6
+-----------
+
+* Use the secure endpoint for Flickr:
+  https://launchpad.net/bugs/1031169
+* Port to Python 3
+* Google: Request access to user profile
+* Whitelist the Windows Live certificate
+* Do not capture password during Windows Live login
+
+Version 0.5
+-----------
+
+* Fix custom prefix installation:
+  https://launchpad.net/bugs/1024274
+* Use new API to get credentials ID
+* Facebook: Remove deprecated "offline_access" scope, add "xmpp_access" scope, add IM
+  service
+* Set read-only mission control parameters
+* Windows Live: Add plugin for support, use refresh token
+* Google: Add IM service, use refresh tokens
+* Add Gwibber-specific settings for Foursquare and identi.ca
+
+Version 0.4
+-----------
+
+* Capture Flickr and Twitter usernames
+* Add updated provider icons
+* Allow client keys and secrets to be overridden during configure
+* Add Foursquare, identica, Sina, Sohu and Twitter plugins
+* Add Gwibber-specific settings for Flickr and Twitter
+* Add description to Google provider file
+
+Version 0.3
+-----------
+
+* Add Flickr plugin
+* Add icons for Facebook and Google
+
+Version 0.2
+-----------
+
+* Initial release, with Facebook and Google plugins
