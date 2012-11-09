@@ -44,6 +44,13 @@ public class GooglePlugin : Ap.OAuthPlugin {
             "https://picasaweb.google.com/data/"
         };
         oauth_params.insert ("Scope", scopes);
+
+        string[] schemes = {
+            "https",
+            "http"
+        };
+        oauth_params.insert ("AllowedSchemes", schemes);
+
         set_oauth_parameters (oauth_params);
 
         set_ignore_cookies (true);
