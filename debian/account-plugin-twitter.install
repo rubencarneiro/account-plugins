@@ -1,0 +1,5 @@
+etc/signon-ui/webkit-options.d/api.twitter.com.conf
+usr/lib/libaccount-plugin-1.0/providers/libtwitter.so
+usr/share/accounts/services/twitter-microblog.service
+usr/share/accounts/providers/twitter.provider
+usr/share/icons/hicolor/32x32/apps/twitter.png

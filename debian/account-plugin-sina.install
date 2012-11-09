@@ -1,0 +1,4 @@
+etc/signon-ui/webkit-options.d/api.t.sina.com.cn.conf
+usr/lib/libaccount-plugin-1.0/providers/libsina.so
+usr/share/accounts/services/sina-microblog.service
+usr/share/accounts/providers/sina.provider

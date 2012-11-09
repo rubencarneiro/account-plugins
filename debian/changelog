@@ -1,0 +1,201 @@
+account-plugins (0.9-0ubuntu1) raring; urgency=low
+
+  * New upstream release.
+    - Add COPYING, using GNU GPL version 2 (LP: #1062194)
+    - Use intltool for internationalization support (LP: #1061433)
+    - Request mobile version of identi.ca (LP: #1051596)
+  * -debian/patches/lp_1064293.patch, upstream
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 09 Nov 2012 11:14:46 -0500
+
+account-plugins (0.8-0ubuntu2) quantal; urgency=low
+
+  * debian/patches/lp_1064293.patch
+    - Do not reveal Google secret API key. (LP: #1064293)
+  * debian/rules
+    - Update API keys for twitter, windows live, foursquare, google,
+      and flickr (LP: #1064293)
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 11 Oct 2012 16:40:21 -0400
+
+account-plugins (0.8-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+    - include the sip icon (LP: #1040091)
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 19 Sep 2012 15:43:55 -0400
+
+account-plugins (0.7-0ubuntu3) quantal; urgency=low
+
+  * debian/account-plugin-icons.install
+    - removed missing icon
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 14 Sep 2012 16:59:24 -0400
+
+account-plugins (0.7-0ubuntu2) quantal; urgency=low
+
+  * debian/control
+    - removed unneeded depends for python-gobject
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 14 Sep 2012 11:45:25 -0400
+
+account-plugins (0.7-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+    - Updates to work with signon-ui >= 0.7 which requires https (LP: #1039084)
+  * -debian/patches/py3.patch
+    - merged upstream
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 07 Sep 2012 09:34:51 -0400
+
+account-plugins (0.5-0ubuntu3) quantal; urgency=low
+
+  * debian/patches/lp_1037169.patch
+    - Use the secure end point for flickr (LP: #1037169)
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 15 Aug 2012 14:49:05 -0400
+
+account-plugins (0.5-0ubuntu2) quantal; urgency=low
+
+  * debian/watch
+    - added
+  * debian/patches/py3.patch
+    - ported account-console to python3
+  * debian/control, debian/rules
+    - python3
+  * debian/compat
+    - debhelper 9
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Mon, 06 Aug 2012 16:48:13 -0400
+
+account-plugins (0.5-0ubuntu1) quantal; urgency=low
+
+  * New upstream release
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 02 Aug 2012 14:49:44 -0400
+
+account-plugins (0.4+r53-0quantal2) quantal; urgency=low
+
+  * debian/account-plugin-icons.install, debian/control
+    - install extra icons in a separate package
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 24 Jul 2012 23:05:33 -0400
+
+account-plugins (0.4+r53-0quantal1) quantal; urgency=low
+
+  * Merged from trunk rev 53
+    - Adds windows live support
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 24 Jul 2012 22:45:27 -0400
+
+account-plugins (0.4+r51-0quantal2) quantal; urgency=low
+
+  * debian/control
+    - build depend on libsignon-glib-dev >= 1.2+bzr127-0quantal2
+
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 20 Jul 2012 14:22:25 -0400
+
+account-plugins (0.4+r51-0quantal1) quantal; urgency=low
+
+  * New snapshot tagged 0.4-bzr51
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 20 Jul 2012 13:19:35 -0400
+
+account-plugins (0.4+r45-0quantal1) quantal; urgency=low
+
+  * rebuild for quantal
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Mon, 16 Jul 2012 10:28:28 -0400
+
+account-plugins (0.4+r45-0precise1) precise; urgency=low
+
+  * New snapshot tagged 0.4-bzr45
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 05 Jul 2012 10:33:10 -0400
+
+account-plugins (0.3+r43-0precise1) precise; urgency=low
+
+  * Added account-plugin-identica and account-plugin-foursquare
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 26 Jun 2012 13:25:23 -0400
+
+account-plugins (0.3+r40-0precise1) precise; urgency=low
+
+  * New snapshot from trunk revision 40
+  * debian/rules
+    - Added configure args for twitter consumer key/secret
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 26 Jun 2012 11:51:30 -0400
+
+account-plugins (0.3+r35-0precise1) precise; urgency=low
+
+  * New snapshot tagged 0.3-bzr35
+
+ -- David King <david.king@canonical.com>  Wed, 20 Jun 2012 12:12:10 +0100
+
+account-plugins (0.3+r34-0precise3) precise; urgency=low
+
+  * data/services/*-microblog.service
+    - Added gwibber settings
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 19 Jun 2012 22:36:16 -0400
+
+account-plugins (0.3+r34-0precise2) precise; urgency=low
+
+  * no change rebuild
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 15 Jun 2012 16:43:48 -0400
+
+account-plugins (0.3+r34-0precise1) precise; urgency=low
+
+  * New snapshot tagged 0.3-bzr34
+  * debian/control
+    - bumped the depends for signon-plugin-oauth2 to >= 0.10+bzr39
+    - bumped build depends for libaccount-plugin-1.0-dev to >= 0.0.6+r73
+    - added new packages account-plugin-twitter and account-plugin-flickr
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 14 Jun 2012 15:38:46 -0400
+
+account-plugins (0.2+r29-0precise1) precise; urgency=low
+
+  * New snapshot tagged 0.2-bzr29
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 01 Jun 2012 14:44:31 -0400
+
+account-plugins (0.1+r27-0precise1) precise; urgency=low
+
+  [ David King ]
+  * Merged trunk r27
+
+  [ Ken VanDine ]
+  * debian/rules
+    - Fix removal of the .la files, path changed
+  * debian/control
+    - Build depend on libaccount-plugin-1.0-dev (>= 0.0.2+r56)
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 17 May 2012 14:09:09 -0400
+
+account-plugins (0.1+r22-0precise1) precise; urgency=low
+
+  * Merged trunk r22
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 23 Mar 2012 09:47:27 -0400
+
+account-plugins (0.1+r21-0precise1) precise; urgency=low
+
+  * New snapshot tagged 0.1-bzr21
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 22 Mar 2012 12:24:09 -0400
+
+account-plugins (0.0.1+r20-0precise1) precise; urgency=low
+
+  * New snapshot
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 16 Mar 2012 14:22:37 -0400
+
+account-plugins (0.0.1+r10-0precise1) precise; urgency=low
+
+  * Initial package
+
+ -- Alberto Mardegan <alberto.mardegan@canonical.com>  Tue, 10 Jan 2012 12:19:29 +0100
