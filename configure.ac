@@ -24,19 +24,20 @@ LT_INIT([disable-static])
 IT_PROG_INTLTOOL([0.50.0])
 AC_SUBST([GETTEXT_PACKAGE], [$PACKAGE_TARNAME])
 
-PKG_CHECK_MODULES(ACCOUNT_PLUGINS,
-	account-plugin)
-AC_SUBST(ACCOUNT_PLUGINS_CFLAGS)
-AC_SUBST(ACCOUNT_PLUGINS_LIBS)
+PKG_PROG_PKG_CONFIG([0.24])
 
-plugindir=`$PKG_CONFIG --variable provider_plugindir account-plugin`
-AC_SUBST(plugindir)
+PKG_CHECK_MODULES([ACCOUNT_PLUGINS], [account-plugin])
 
-providersdir=`$PKG_CONFIG --variable providerfilesdir libaccounts-glib`
-AC_SUBST(providersdir)
+PKG_CHECK_EXISTS([libaccounts-glib])
 
-servicesdir=`$PKG_CONFIG --variable servicefilesdir libaccounts-glib`
-AC_SUBST(servicesdir)
+AC_SUBST([plugindir],
+         [`$PKG_CONFIG --variable provider_plugindir account-plugin`])
+
+AC_SUBST([providersdir],
+         [`$PKG_CONFIG --variable providerfilesdir libaccounts-glib`])
+
+AC_SUBST([servicesdir],
+         [`$PKG_CONFIG --variable servicefilesdir libaccounts-glib`])
 
 # Set Twitter consumer key/secret
 AC_ARG_WITH(twitter-consumer-key,
