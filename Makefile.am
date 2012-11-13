@@ -3,6 +3,9 @@ SUBDIRS = \
 	po \
 	tools
 
+DISTCHECK_CONFIGURE_FLAGS = \
+	--enable-libaccount-plugin
+
 if ENABLE_LIBACCOUNT_PLUGIN
 # Binary account plugins.
 plugin_LTLIBRARIES = \
