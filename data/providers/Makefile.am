@@ -20,4 +20,4 @@ dist_noinst_DATA = \
 	$(providers_in_files)
 
 CLEANFILES = \
-	$(services_DATA)
+	$(providers_DATA)

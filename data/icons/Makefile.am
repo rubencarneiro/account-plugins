@@ -21,5 +21,3 @@ dist_icons_DATA = \
 	twitter.png \
 	yahoo.png \
 	zephyr.png
-
-
