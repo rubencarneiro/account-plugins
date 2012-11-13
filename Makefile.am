@@ -106,11 +106,7 @@ bzr-changelog-hook: Makefile
 	else rm -f .ChangeLog.tmp; exit 1; fi
 
 dist_noinst_DATA = \
-	src/config.vapi \
-	src/accounts.deps \
-	src/accounts.vapi \
-	src/signon.vapi \
-	src/AccountPlugin.vapi
+	src/config.vapi
 
 DISTCLEANFILES = \
 	intltool-extract \
