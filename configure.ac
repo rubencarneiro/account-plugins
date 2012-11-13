@@ -172,6 +172,5 @@ AC_CONFIG_FILES([
 	data/services/Makefile
 	data/webkit-options/Makefile
 	po/Makefile.in
-	tools/Makefile
 ])
 AC_OUTPUT

@@ -1,7 +1,6 @@
 SUBDIRS = \
 	data \
-	po \
-	tools
+	po
 
 DISTCHECK_CONFIGURE_FLAGS = \
 	--enable-libaccount-plugin
@@ -107,6 +106,9 @@ bzr-changelog-hook: Makefile
 		--gnu-changelog > .ChangeLog.tmp; \
 	then mv -f .ChangeLog.tmp "$(top_distdir)/ChangeLog"; \
 	else rm -f .ChangeLog.tmp; exit 1; fi
+
+dist_bin_SCRIPTS = \
+	tools/account-console
 
 dist_noinst_DATA = \
 	src/config.vapi
