@@ -122,6 +122,40 @@ dist_icons_DATA = \
 	data/icons/yahoo.png \
 	data/icons/zephyr.png
 
+# Extract transatable strings from .provider files
+%.provider: %.provider.in $(INTLTOOL_MERGE)
+	$(INTLTOOL_V_MERGE) LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_MERGE_V_OPTIONS) --no-translations -x -u $< $@
+
+providers_in_files = \
+	data/providers/facebook.provider.in \
+	data/providers/flickr.provider.in \
+	data/providers/foursquare.provider.in \
+	data/providers/google.provider.in \
+	data/providers/identica.provider.in \
+	data/providers/sina.provider.in \
+	data/providers/sohu.provider.in \
+	data/providers/twitter.provider.in \
+	data/providers/windows-live.provider.in
+
+providers_DATA = \
+	$(providers_in_files:.provider.in=.provider)
+
+dist_bin_SCRIPTS = \
+	tools/account-console
+
+dist_noinst_DATA = \
+	$(providers_in_files) \
+	src/config.vapi
+
+CLEANFILES = \
+	$(providers_DATA)
+
+DISTCLEANFILES = \
+	intltool-extract \
+	intltool-merge \
+	intltool-update \
+	po/.intltool-merge-cache
+
 dist-hook: bzr-changelog-hook
 
 bzr-changelog-hook: Makefile
@@ -130,17 +164,5 @@ bzr-changelog-hook: Makefile
 		--gnu-changelog > .ChangeLog.tmp; \
 	then mv -f .ChangeLog.tmp "$(top_distdir)/ChangeLog"; \
 	else rm -f .ChangeLog.tmp; exit 1; fi
-
-dist_bin_SCRIPTS = \
-	tools/account-console
-
-dist_noinst_DATA = \
-	src/config.vapi
-
-DISTCLEANFILES = \
-	intltool-extract \
-	intltool-merge \
-	intltool-update \
-	po/.intltool-merge-cache
 
 .PHONY: bzr-changelog-hook
