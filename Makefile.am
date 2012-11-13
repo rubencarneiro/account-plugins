@@ -1,5 +1,4 @@
 SUBDIRS = \
-	data \
 	po
 
 DISTCHECK_CONFIGURE_FLAGS = \
@@ -124,6 +123,7 @@ dist_icons_DATA = \
 
 # Extract transatable strings from .provider files
 %.provider: %.provider.in $(INTLTOOL_MERGE)
+	$(AM_V_at)$(MKDIR_P) $(builddir)/data/providers
 	$(INTLTOOL_V_MERGE) LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_MERGE_V_OPTIONS) --no-translations -x -u $< $@
 
 providers_in_files = \
@@ -142,6 +142,7 @@ providers_DATA = \
 
 # Extract translatable strings from .service files
 %.service: %.service.in $(INTLTOOL_MERGE)
+	$(AM_V_at)$(MKDIR_P) $(builddir)/data/services
 	$(INTLTOOL_V_MERGE) LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_MERGE_V_OPTIONS) --no-translations -x -u $< $@
 
 services_in_files = \
@@ -162,6 +163,18 @@ services_in_files = \
 
 services_DATA = \
 	$(services_in_files:.service.in=.service)
+
+webkitoptionsdir = $(sysconfdir)/signon-ui/webkit-options.d
+dist_webkitoptions_DATA = \
+	data/webkit-options/accounts.google.com.conf \
+	data/webkit-options/api.t.sina.com.cn.conf \
+	data/webkit-options/api.t.sohu.com.conf \
+	data/webkit-options/api.twitter.com.conf \
+	data/webkit-options/foursquare.com.conf \
+	data/webkit-options/identi.ca.conf \
+	data/webkit-options/login.live.com.conf \
+	data/webkit-options/login.yahoo.com.conf \
+	data/webkit-options/www.facebook.com.conf
 
 dist_bin_SCRIPTS = \
 	tools/account-console
