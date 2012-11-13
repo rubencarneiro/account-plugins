@@ -140,14 +140,39 @@ providers_in_files = \
 providers_DATA = \
 	$(providers_in_files:.provider.in=.provider)
 
+# Extract translatable strings from .service files
+%.service: %.service.in $(INTLTOOL_MERGE)
+	$(INTLTOOL_V_MERGE) LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_MERGE_V_OPTIONS) --no-translations -x -u $< $@
+
+services_in_files = \
+	data/services/facebook-im.service.in \
+	data/services/facebook-microblog.service.in \
+	data/services/facebook-sharing.service.in \
+	data/services/flickr-microblog.service.in \
+	data/services/flickr-sharing.service.in \
+	data/services/foursquare-microblog.service.in \
+	data/services/google-docs.service.in \
+	data/services/google-im.service.in \
+	data/services/identica-microblog.service.in \
+	data/services/picasa.service.in \
+	data/services/sina-microblog.service.in \
+	data/services/sohu-microblog.service.in \
+	data/services/twitter-microblog.service.in \
+	data/services/wlm.service.in
+
+services_DATA = \
+	$(services_in_files:.service.in=.service)
+
 dist_bin_SCRIPTS = \
 	tools/account-console
 
 dist_noinst_DATA = \
 	$(providers_in_files) \
+	$(services_in_files) \
 	src/config.vapi
 
 CLEANFILES = \
+	$(services_DATA) \
 	$(providers_DATA)
 
 DISTCLEANFILES = \
