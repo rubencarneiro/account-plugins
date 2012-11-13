@@ -1,9 +1,11 @@
 SUBDIRS = \
-	data \
-	po \
-	tools
+	po
 
-# Plugins.
+DISTCHECK_CONFIGURE_FLAGS = \
+	--enable-libaccount-plugin
+
+if ENABLE_LIBACCOUNT_PLUGIN
+# Binary account plugins.
 plugin_LTLIBRARIES = \
 	libfacebook.la \
 	libflickr.la \
@@ -93,6 +95,104 @@ libwindows_live_la_LIBADD = $(plugin_libadd)
 libwindows_live_la_LDFLAGS = $(plugin_ldflags)
 libwindows_live_la_SOURCES = \
 	src/windows-live.vala
+endif # ENABLE_LIBACCOUNT_PLUGIN
+
+iconsdir = $(datadir)/icons/hicolor/32x32/apps
+dist_icons_DATA = \
+	data/icons/aim.png \
+	data/icons/facebook.png \
+	data/icons/flickr.png \
+	data/icons/foursquare.png \
+	data/icons/gadugadu.png \
+	data/icons/google.png \
+	data/icons/groupwise.png \
+	data/icons/identica.png \
+	data/icons/icq.png \
+	data/icons/irc.png \
+	data/icons/jabber.png \
+	data/icons/live.png \
+	data/icons/msn.png \
+	data/icons/mxit.png \
+	data/icons/myspace.png \
+	data/icons/people-nearby.png \
+	data/icons/sametime.png \
+	data/icons/sip.png \
+	data/icons/twitter.png \
+	data/icons/yahoo.png \
+	data/icons/zephyr.png
+
+# Extract transatable strings from .provider files
+%.provider: %.provider.in $(INTLTOOL_MERGE)
+	$(AM_V_at)$(MKDIR_P) $(builddir)/data/providers
+	$(INTLTOOL_V_MERGE) LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_MERGE_V_OPTIONS) --no-translations -x -u $< $@
+
+providers_in_files = \
+	data/providers/facebook.provider.in \
+	data/providers/flickr.provider.in \
+	data/providers/foursquare.provider.in \
+	data/providers/google.provider.in \
+	data/providers/identica.provider.in \
+	data/providers/sina.provider.in \
+	data/providers/sohu.provider.in \
+	data/providers/twitter.provider.in \
+	data/providers/windows-live.provider.in
+
+providers_DATA = \
+	$(providers_in_files:.provider.in=.provider)
+
+# Extract translatable strings from .service files
+%.service: %.service.in $(INTLTOOL_MERGE)
+	$(AM_V_at)$(MKDIR_P) $(builddir)/data/services
+	$(INTLTOOL_V_MERGE) LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_MERGE_V_OPTIONS) --no-translations -x -u $< $@
+
+services_in_files = \
+	data/services/facebook-im.service.in \
+	data/services/facebook-microblog.service.in \
+	data/services/facebook-sharing.service.in \
+	data/services/flickr-microblog.service.in \
+	data/services/flickr-sharing.service.in \
+	data/services/foursquare-microblog.service.in \
+	data/services/google-docs.service.in \
+	data/services/google-im.service.in \
+	data/services/identica-microblog.service.in \
+	data/services/picasa.service.in \
+	data/services/sina-microblog.service.in \
+	data/services/sohu-microblog.service.in \
+	data/services/twitter-microblog.service.in \
+	data/services/wlm.service.in
+
+services_DATA = \
+	$(services_in_files:.service.in=.service)
+
+webkitoptionsdir = $(sysconfdir)/signon-ui/webkit-options.d
+dist_webkitoptions_DATA = \
+	data/webkit-options/accounts.google.com.conf \
+	data/webkit-options/api.t.sina.com.cn.conf \
+	data/webkit-options/api.t.sohu.com.conf \
+	data/webkit-options/api.twitter.com.conf \
+	data/webkit-options/foursquare.com.conf \
+	data/webkit-options/identi.ca.conf \
+	data/webkit-options/login.live.com.conf \
+	data/webkit-options/login.yahoo.com.conf \
+	data/webkit-options/www.facebook.com.conf
+
+dist_bin_SCRIPTS = \
+	tools/account-console
+
+dist_noinst_DATA = \
+	$(providers_in_files) \
+	$(services_in_files) \
+	src/config.vapi
+
+CLEANFILES = \
+	$(services_DATA) \
+	$(providers_DATA)
+
+DISTCLEANFILES = \
+	intltool-extract \
+	intltool-merge \
+	intltool-update \
+	po/.intltool-merge-cache
 
 dist-hook: bzr-changelog-hook
 
@@ -102,18 +202,5 @@ bzr-changelog-hook: Makefile
 		--gnu-changelog > .ChangeLog.tmp; \
 	then mv -f .ChangeLog.tmp "$(top_distdir)/ChangeLog"; \
 	else rm -f .ChangeLog.tmp; exit 1; fi
-
-dist_noinst_DATA = \
-	src/config.vapi \
-	src/accounts.deps \
-	src/accounts.vapi \
-	src/signon.vapi \
-	src/AccountPlugin.vapi
-
-DISTCLEANFILES = \
-	intltool-extract \
-	intltool-merge \
-	intltool-update \
-	po/.intltool-merge-cache
 
 .PHONY: bzr-changelog-hook

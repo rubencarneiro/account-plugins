@@ -24,19 +24,37 @@ LT_INIT([disable-static])
 IT_PROG_INTLTOOL([0.50.0])
 AC_SUBST([GETTEXT_PACKAGE], [$PACKAGE_TARNAME])
 
-PKG_CHECK_MODULES(ACCOUNT_PLUGINS,
-	account-plugin)
-AC_SUBST(ACCOUNT_PLUGINS_CFLAGS)
-AC_SUBST(ACCOUNT_PLUGINS_LIBS)
+PKG_PROG_PKG_CONFIG([0.24])
 
-plugindir=`$PKG_CONFIG --variable provider_plugindir account-plugin`
-AC_SUBST(plugindir)
+# Binary account plugins.
+AC_ARG_ENABLE([libaccount-plugin],
+              [AS_HELP_STRING([--disable-libaccount-plugin],
+                              [build without support for libaccount-plugin (binary account plugins)])])
 
-providersdir=`$PKG_CONFIG --variable providerfilesdir libaccounts-glib`
-AC_SUBST(providersdir)
+AS_IF([test "x$enable_libaccount_plugin" != "xno"],
+      [PKG_CHECK_EXISTS([account-plugin], [have_libaccount_plugin=yes],
+                        [have_libaccount_plugin=no])],
+      [have_libaccount_plugin=no])
 
-servicesdir=`$PKG_CONFIG --variable servicefilesdir libaccounts-glib`
-AC_SUBST(servicesdir)
+AS_IF([test "x$have_libaccount_plugin" = "xyes"],
+      [PKG_CHECK_MODULES([ACCOUNT_PLUGINS], [account-plugin])],
+      [AS_IF([test "x$enable_libaccount_plugin" = "xyes"],
+             [AC_MSG_ERROR([libaccount-plugin support enabled but required dependencies were not found])])])
+
+AM_CONDITIONAL([ENABLE_LIBACCOUNT_PLUGIN],
+               [test "x$have_libaccount_plugin" = "xyes"])
+
+# XML data files for libaccounts-glib.
+PKG_CHECK_EXISTS([libaccounts-glib])
+
+AC_SUBST([plugindir],
+         [`$PKG_CONFIG --variable provider_plugindir account-plugin`])
+
+AC_SUBST([providersdir],
+         [`$PKG_CONFIG --variable providerfilesdir libaccounts-glib`])
+
+AC_SUBST([servicesdir],
+         [`$PKG_CONFIG --variable servicefilesdir libaccounts-glib`])
 
 # Set Twitter consumer key/secret
 AC_ARG_WITH(twitter-consumer-key,
@@ -148,12 +166,6 @@ AC_DEFINE_UNQUOTED(WINDOWS_LIVE_CLIENT_ID, ["$windows_live_client_id"], [Windows
 
 AC_CONFIG_FILES([
 	Makefile
-	data/Makefile
-	data/icons/Makefile
-	data/providers/Makefile
-	data/services/Makefile
-	data/webkit-options/Makefile
 	po/Makefile.in
-	tools/Makefile
 ])
 AC_OUTPUT
