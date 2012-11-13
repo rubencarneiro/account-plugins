@@ -26,8 +26,25 @@ AC_SUBST([GETTEXT_PACKAGE], [$PACKAGE_TARNAME])
 
 PKG_PROG_PKG_CONFIG([0.24])
 
-PKG_CHECK_MODULES([ACCOUNT_PLUGINS], [account-plugin])
+# Binary account plugins.
+AC_ARG_ENABLE([libaccount-plugin],
+              [AS_HELP_STRING([--disable-libaccount-plugin],
+                              [build without support for libaccount-plugin (binary account plugins)])])
 
+AS_IF([test "x$enable_libaccount_plugin" != "xno"],
+      [PKG_CHECK_EXISTS([account-plugin], [have_libaccount_plugin=yes],
+                        [have_libaccount_plugin=no])],
+      [have_libaccount_plugin=no])
+
+AS_IF([test "x$have_libaccount_plugin" = "xyes"],
+      [PKG_CHECK_MODULES([ACCOUNT_PLUGINS], [account-plugin])],
+      [AS_IF([test "x$enable_libaccount_plugin" = "xyes"],
+             [AC_MSG_ERROR([libaccount-plugin support enabled but required dependencies were not found])])])
+
+AM_CONDITIONAL([ENABLE_LIBACCOUNT_PLUGIN],
+               [test "x$have_libaccount_plugin" = "xyes"])
+
+# XML data files for libaccounts-glib.
 PKG_CHECK_EXISTS([libaccounts-glib])
 
 AC_SUBST([plugindir],

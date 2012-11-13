@@ -3,7 +3,8 @@ SUBDIRS = \
 	po \
 	tools
 
-# Plugins.
+if ENABLE_LIBACCOUNT_PLUGIN
+# Binary account plugins.
 plugin_LTLIBRARIES = \
 	libfacebook.la \
 	libflickr.la \
@@ -93,6 +94,7 @@ libwindows_live_la_LIBADD = $(plugin_libadd)
 libwindows_live_la_LDFLAGS = $(plugin_ldflags)
 libwindows_live_la_SOURCES = \
 	src/windows-live.vala
+endif # ENABLE_LIBACCOUNT_PLUGIN
 
 dist-hook: bzr-changelog-hook
 
