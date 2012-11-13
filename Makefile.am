@@ -98,6 +98,30 @@ libwindows_live_la_SOURCES = \
 	src/windows-live.vala
 endif # ENABLE_LIBACCOUNT_PLUGIN
 
+iconsdir = $(datadir)/icons/hicolor/32x32/apps
+dist_icons_DATA = \
+	data/icons/aim.png \
+	data/icons/facebook.png \
+	data/icons/flickr.png \
+	data/icons/foursquare.png \
+	data/icons/gadugadu.png \
+	data/icons/google.png \
+	data/icons/groupwise.png \
+	data/icons/identica.png \
+	data/icons/icq.png \
+	data/icons/irc.png \
+	data/icons/jabber.png \
+	data/icons/live.png \
+	data/icons/msn.png \
+	data/icons/mxit.png \
+	data/icons/myspace.png \
+	data/icons/people-nearby.png \
+	data/icons/sametime.png \
+	data/icons/sip.png \
+	data/icons/twitter.png \
+	data/icons/yahoo.png \
+	data/icons/zephyr.png
+
 dist-hook: bzr-changelog-hook
 
 bzr-changelog-hook: Makefile

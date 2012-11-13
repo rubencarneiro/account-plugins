@@ -167,7 +167,6 @@ AC_DEFINE_UNQUOTED(WINDOWS_LIVE_CLIENT_ID, ["$windows_live_client_id"], [Windows
 AC_CONFIG_FILES([
 	Makefile
 	data/Makefile
-	data/icons/Makefile
 	data/providers/Makefile
 	data/services/Makefile
 	data/webkit-options/Makefile
