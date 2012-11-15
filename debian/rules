@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+override_dh_autoreconf:
+	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
+
+override_dh_auto_configure:
+	dh_auto_configure -- --with-twitter-consumer-key="NGOB5S7sICsj6epjh0PhAw" \
+		--with-twitter-consumer-secret="rbUEJCBEokMnGZd8bubd0QL2cSmoCjJeyiSJpnx3OM0" \
+		--with-windows-live-client-id="00000000400D5635" \
+		--with-foursquare-client-id="1I2UNJXPHNDZT3OPZOOA5LCPIUEUJFMKRXSF42UFCN1KXKTK" \
+		--with-google-client-id="759250720802-4sii0me9963n9fdqdmi7cepn6ub8luoh.apps.googleusercontent.com" \
+		--with-flickr-consumer-key="d87224f0b467093b2a87fd788d950e27" \
+		--with-flickr-consumer-secret="4c7e48102c226509"
+
+override_dh_install:
+	rm -f debian/*/usr/lib/*/*/*.la
+	mkdir -p debian/tmp/usr/share/account-plugins/tools
+	dh_install --fail-missing
+
+%:
+	dh $@ --with python3,autoreconf
