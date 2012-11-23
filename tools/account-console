@@ -92,7 +92,7 @@ class AccountConsole:
             value = GObject.Value()
             value.init(GObject.TYPE_UINT)
             signon_id = account.get_value(args.signon_id_field, value)
-            if signon_id != Accounts.SettingSource.NONE:
+            if signon_id != Accounts.SettingSource.NONE and value.get_uint() != 0:
                 self.identity = Signon.Identity.new_from_db(value.get_uint())
                 self.identity.query_info(self.on_info_ready, None)
             else:
@@ -124,10 +124,8 @@ class AccountConsole:
 
 
     def on_credentials_stored(self, identity, id, error, account):
-        print('On credentials stored', id)
         account.set_value(self.args.signon_id_field, int(id))
         account.store(self.on_account_stored, None)
-
 
 
     def delete_account(self, args):
@@ -356,9 +354,10 @@ subparser.add_argument('-p', action='append', default=[], metavar='PARAMETER',
 subparser.set_defaults(func=app.login_account)
 
 args = parser.parse_args()
-
-main_loop = GLib.MainLoop()
-GLib.idle_add(args.func, args)
-
-main_loop.run()
+if 'func' in args:
+    main_loop = GLib.MainLoop()
+    GLib.idle_add(args.func, args)
+    main_loop.run()
+else:
+    parser.print_help()
 
