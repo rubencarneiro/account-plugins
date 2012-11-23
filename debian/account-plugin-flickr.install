@@ -1,4 +1,5 @@
 etc/signon-ui/webkit-options.d/login.yahoo.com.conf
+etc/signon-ui/webkit-options.d/secure.flickr.com.conf
 usr/lib/libaccount-plugin-1.0/providers/libflickr.so
 usr/share/accounts/services/flickr-*.service
 usr/share/accounts/providers/flickr.provider
