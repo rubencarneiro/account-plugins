@@ -1,3 +1,11 @@
+account-plugins (0.10-0ubuntu1) UNRELEASED; urgency=low
+
+  * Automatic snapshot from revision 73 (bootstrap)
+  * debian/control
+    - make account-plugin-tools depend on python3-gi
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 29 Nov 2012 11:09:19 -0500
+
 account-plugins (0.9-0ubuntu1) raring; urgency=low
 
   * New upstream release.
