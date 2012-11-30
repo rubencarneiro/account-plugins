@@ -1,3 +1,17 @@
+account-plugins (0.10bzr12.11.29-0ubuntu1) raring; urgency=low
+
+  * New upstream snapshot
+    - Force mobile version of Yahoo Flickr login
+    - The webkit-options file for signon-ui was not installed (LP: #1041744)
+    - Allow building without binary account plugins
+    - refactor the build system to use non-recursive make and remove
+    - some old VAPI files.
+    - Google: allow plain http on some URLs.
+  * debian/control
+    - make account-plugin-tools depend on python3-gi
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Thu, 29 Nov 2012 12:28:51 -0500
+
 account-plugins (0.9-0ubuntu1) raring; urgency=low
 
   * New upstream release.
