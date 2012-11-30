@@ -97,6 +97,8 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
          ${python3:Depends},
          python3-gi,
          gir1.2-glib-2.0,
+         gir1.2-signon-1.0,
+         gir1.2-accounts-1.0,
          signon-keyring-extension,
          signon-plugin-oauth2
 Description: GNOME Control Center account plugins for single signon - tools

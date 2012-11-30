@@ -1,3 +1,11 @@
+account-plugins (0.10bzr12.11.30-0ubuntu2) UNRELEASED; urgency=low
+
+  * debian/control
+    - account-plugin-tools should depend on gir1.2-signon-1.0 and
+      gir1.2-accounts-1.0
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 30 Nov 2012 11:11:43 -0500
+
 account-plugins (0.10bzr12.11.30-0ubuntu1) raring; urgency=low
 
   * New upstream snapshot
