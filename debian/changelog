@@ -1,11 +1,11 @@
-account-plugins (0.10bzr12.11.30-0ubuntu1) UNRELEASED; urgency=low
+account-plugins (0.10bzr12.11.30-0ubuntu1) raring; urgency=low
 
   * New upstream snapshot
     - account-console: don't fail on missing Identity
     - account-console: don't let the program crash when no arguments are
       given, and remove unnecessary debug output.
 
- -- Ken VanDine <ken.vandine@canonical.com>  Fri, 30 Nov 2012 09:52:29 -0500
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 30 Nov 2012 09:59:45 -0500
 
 account-plugins (0.10bzr12.11.29-0ubuntu1) raring; urgency=low
 
