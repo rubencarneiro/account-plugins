@@ -185,6 +185,7 @@ dist_noinst_DATA = \
 	$(services_in_files) \
 	src/config.vapi
 
+if HAVE_XMLLINT
 TESTS = \
 	test-provider \
 	test-service
@@ -204,6 +205,7 @@ test-service: Makefile $(services_DATA)
 		echo "    $(XMLLINT) --noout $(top_builddir)/\$$service || exit 1" >> $@; \
 		echo "done" >> $@; \
 		chmod +x $@
+endif # HAVE_XMLLINT
 
 CLEANFILES = \
 	$(services_DATA) \
