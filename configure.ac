@@ -56,6 +56,17 @@ AC_SUBST([providersdir],
 AC_SUBST([servicesdir],
          [`$PKG_CONFIG --variable servicefilesdir libaccounts-glib`])
 
+AC_PATH_PROG([XMLLINT], [xmllint], [notfound])
+AS_IF([test "x$XMLLINT" = "xnotfound"],
+    [have_xmllint=no],
+    [have_xmllint=yes])
+
+AS_IF([test "x$have_xmllint" = "xyes"],
+    [AC_SUBST([XMLLINT])],
+    [AC_MSG_WARN([testing of XML files against DTDs disabled, as xmllint was not found])])
+
+AM_CONDITIONAL([HAVE_XMLLINT], [test "x$have_xmllint" = "xyes"])
+
 # Set Twitter consumer key/secret
 AC_ARG_WITH(twitter-consumer-key,
             [AS_HELP_STRING([--with-twitter-consumer-key],
