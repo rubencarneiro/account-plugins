@@ -6,7 +6,7 @@ AC_INIT([account-plugins],
         [account-plugins],
         [https://launchpad.net/online-accounts-account-plugins])
 
-AM_INIT_AUTOMAKE([1.10 -Wall -Wno-portability subdir-objects])
+AM_INIT_AUTOMAKE([1.10 -Wall -Wno-portability silent-rules subdir-objects])
 AM_CONFIG_HEADER(config.h)
 
 # Gobject Introspection
@@ -55,6 +55,22 @@ AC_SUBST([providersdir],
 
 AC_SUBST([servicesdir],
          [`$PKG_CONFIG --variable servicefilesdir libaccounts-glib`])
+
+AC_ARG_ENABLE([TESTS],
+    [AS_HELP_STRING([--disable-tests], [Disable tests])])
+
+AS_IF([test "x$enable_tests" != "xno"],
+    [AC_PATH_PROG([XMLLINT], [xmllint], [notfound])
+     AS_IF([test "x$XMLLINT" = "xnotfound"],
+         [have_xmllint=no],
+         [have_xmllint=yes])])
+
+AS_IF([test "x$have_xmllint" = "xyes"],
+    [AC_SUBST([XMLLINT])],
+    [AS_IF([test "x$enable_tests" = "xyes"],
+         [AC_MSG_ERROR([testing support enabled but required dependencies were not found])])])
+
+AM_CONDITIONAL([HAVE_XMLLINT], [test "x$have_xmllint" = "xyes"])
 
 # Set Twitter consumer key/secret
 AC_ARG_WITH(twitter-consumer-key,

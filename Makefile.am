@@ -2,7 +2,8 @@ SUBDIRS = \
 	po
 
 DISTCHECK_CONFIGURE_FLAGS = \
-	--enable-libaccount-plugin
+	--enable-libaccount-plugin \
+	--enable-tests
 
 if ENABLE_LIBACCOUNT_PLUGIN
 # Binary account plugins.
@@ -185,9 +186,32 @@ dist_noinst_DATA = \
 	$(services_in_files) \
 	src/config.vapi
 
+if HAVE_XMLLINT
+TESTS = \
+	test-provider \
+	test-service
+
+test-provider: Makefile $(providers_DATA)
+	$(AM_V_GEN)echo "#!/bin/sh -e" > $@; \
+		echo "for provider in $(providers_DATA)" >> $@; \
+		echo "do" >> $@; \
+		echo "    $(XMLLINT) --noout $(top_builddir)/\$$provider || exit 1" >> $@; \
+		echo "done" >> $@; \
+		chmod +x $@
+
+test-service: Makefile $(services_DATA)
+	$(AM_V_GEN)echo "#!/bin/sh -e" > $@; \
+		echo "for service in $(services_DATA)" >> $@; \
+		echo "do" >> $@; \
+		echo "    $(XMLLINT) --noout $(top_builddir)/\$$service || exit 1" >> $@; \
+		echo "done" >> $@; \
+		chmod +x $@
+endif # HAVE_XMLLINT
+
 CLEANFILES = \
 	$(services_DATA) \
-	$(providers_DATA)
+	$(providers_DATA) \
+	$(TESTS)
 
 DISTCLEANFILES = \
 	intltool-extract \
