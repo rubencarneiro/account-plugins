@@ -56,14 +56,19 @@ AC_SUBST([providersdir],
 AC_SUBST([servicesdir],
          [`$PKG_CONFIG --variable servicefilesdir libaccounts-glib`])
 
-AC_PATH_PROG([XMLLINT], [xmllint], [notfound])
-AS_IF([test "x$XMLLINT" = "xnotfound"],
-    [have_xmllint=no],
-    [have_xmllint=yes])
+AC_ARG_ENABLE([TESTS],
+    [AS_HELP_STRING([--disable-tests], [Disable tests])])
+
+AS_IF([test "x$enable_tests" != "xno"],
+    [AC_PATH_PROG([XMLLINT], [xmllint], [notfound])
+     AS_IF([test "x$XMLLINT" = "xnotfound"],
+         [have_xmllint=no],
+         [have_xmllint=yes])])
 
 AS_IF([test "x$have_xmllint" = "xyes"],
     [AC_SUBST([XMLLINT])],
-    [AC_MSG_WARN([testing of XML files against DTDs disabled, as xmllint was not found])])
+    [AS_IF([test "x$enable_tests" = "xyes"],
+         [AC_MSG_ERROR([testing support enabled but required dependencies were not found])])])
 
 AM_CONDITIONAL([HAVE_XMLLINT], [test "x$have_xmllint" = "xyes"])
 

@@ -2,7 +2,8 @@ SUBDIRS = \
 	po
 
 DISTCHECK_CONFIGURE_FLAGS = \
-	--enable-libaccount-plugin
+	--enable-libaccount-plugin \
+	--enable-tests
 
 if ENABLE_LIBACCOUNT_PLUGIN
 # Binary account plugins.
