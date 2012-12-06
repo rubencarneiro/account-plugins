@@ -6,7 +6,7 @@ AC_INIT([account-plugins],
         [account-plugins],
         [https://launchpad.net/online-accounts-account-plugins])
 
-AM_INIT_AUTOMAKE([1.10 -Wall -Wno-portability subdir-objects])
+AM_INIT_AUTOMAKE([1.10 -Wall -Wno-portability silent-rules subdir-objects])
 AM_CONFIG_HEADER(config.h)
 
 # Gobject Introspection
