@@ -13,6 +13,7 @@ override_dh_auto_configure:
 		--with-windows-live-client-id="00000000400D5635" \
 		--with-foursquare-client-id="1I2UNJXPHNDZT3OPZOOA5LCPIUEUJFMKRXSF42UFCN1KXKTK" \
 		--with-google-client-id="759250720802-4sii0me9963n9fdqdmi7cepn6ub8luoh.apps.googleusercontent.com" \
+		--with-google-client-secret="juFngKUcuhB7IRQqHtSLavqJ" \
 		--with-flickr-consumer-key="d87224f0b467093b2a87fd788d950e27" \
 		--with-flickr-consumer-secret="4c7e48102c226509"
 
