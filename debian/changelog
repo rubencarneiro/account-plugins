@@ -1,10 +1,16 @@
-account-plugins (0.10bzr12.11.30-0ubuntu2) UNRELEASED; urgency=low
+account-plugins (0.10bzr12.11.30-0ubuntu3) UNRELEASED; urgency=low
 
+  [ Ken VanDine ]
   * debian/control
     - account-plugin-tools should depend on gir1.2-signon-1.0 and
       gir1.2-accounts-1.0
 
- -- Ken VanDine <ken.vandine@canonical.com>  Fri, 30 Nov 2012 11:11:43 -0500
+  [ David King ]
+  * debian/control
+    - Build-depend on libxml2-utils for XML well-formedness tests
+    - Update homepage and VCS location
+
+ -- David King <david.king@canonical.com>  Mon, 10 Dec 2012 12:45:48 +0000
 
 account-plugins (0.10bzr12.11.30-0ubuntu1) raring; urgency=low
 
