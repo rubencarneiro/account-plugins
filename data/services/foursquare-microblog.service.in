@@ -8,6 +8,9 @@
 
   <!-- default settings (account settings have precedence over these) -->
   <template>
+    <group name="friends">
+      <setting name="color">#990099</setting>
+    </group>
     <group name="gwibber">
       <setting name="color">#990099</setting>
     </group>
