@@ -13,7 +13,7 @@ Build-Depends: debhelper (>= 9),
                valac-0.16,
                gnome-common,
                dh-autoreconf,
-               libxml2-utils
+               libxml2-utils,
 Standards-Version: 3.9.3
 Homepage: https://launchpad.net/account-plugins
 # If you aren't a member of ~online-accounts but need to upload packaging changes,
