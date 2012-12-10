@@ -32,13 +32,13 @@ public class GooglePlugin : Ap.OAuthPlugin {
 
     construct
     {
-        var oauth_params = get_parameters(ParametersUser.ACCOUNT_PLUGIN);
+        var oauth_params = get_parameters (ParametersUser.ACCOUNT_PLUGIN);
         set_oauth_parameters (oauth_params);
 
-        oauth_params = get_parameters(ParametersUser.CLIENT_APPLICATIONS);
+        oauth_params = get_parameters (ParametersUser.CLIENT_APPLICATIONS);
         set_account_oauth_parameters (oauth_params);
 
-        set_mechanism(Ap.OAuthMechanism.WEB_SERVER);
+        set_mechanism (Ap.OAuthMechanism.WEB_SERVER);
 
         set_ignore_cookies (true);
     }
