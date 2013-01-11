@@ -20,11 +20,30 @@
  */
 
 public class GooglePlugin : Ap.OAuthPlugin {
+    private enum ParametersUser
+    {
+        ACCOUNT_PLUGIN,
+        CLIENT_APPLICATIONS
+    }
+
     public GooglePlugin (Ag.Account account) {
         Object (account: account);
     }
 
     construct
+    {
+        var oauth_params = get_parameters (ParametersUser.ACCOUNT_PLUGIN);
+        set_oauth_parameters (oauth_params);
+
+        oauth_params = get_parameters (ParametersUser.CLIENT_APPLICATIONS);
+        set_account_oauth_parameters (oauth_params);
+
+        set_mechanism (Ap.OAuthMechanism.WEB_SERVER);
+
+        set_ignore_cookies (true);
+    }
+
+    private HashTable<string, GLib.Value?> get_parameters (ParametersUser user)
     {
         var oauth_params = new HashTable<string, GLib.Value?> (str_hash, null);
         oauth_params.insert ("Host", "accounts.google.com");
@@ -33,8 +52,28 @@ public class GooglePlugin : Ap.OAuthPlugin {
         oauth_params.insert ("RedirectUri",
                              "https://wiki.ubuntu.com/");
         oauth_params.insert ("ClientId", Config.GOOGLE_CLIENT_ID);
-        oauth_params.insert ("ResponseType", "token");
+        oauth_params.insert ("ClientSecret", Config.GOOGLE_CLIENT_SECRET);
 
+        /* Note the evil trick here: Google uses a couple of non-standard OAuth
+         * parameters: "access_type" and "approval_prompt"; the signon OAuth
+         * plugin doesn't (yet?) give us a way to provide extra parameters, so
+         * we fool it by appending them to the value of the "ResponseType".
+         *
+         * We need to specify "access_type=offline" if we want Google to return
+         * us a refresh token.
+         */
+        if (user == ParametersUser.ACCOUNT_PLUGIN)
+        {
+            /* The "approval_prompt=force" string forces Google to ask for
+             * authentication. */
+            oauth_params.insert ("ResponseType",
+                                 "code&access_type=offline&approval_prompt=force");
+        }
+        else
+        {
+            oauth_params.insert ("ResponseType",
+                                 "code&access_type=offline");
+        }
         string[] scopes = {
             "https://docs.google.com/feeds/",
             "https://www.googleapis.com/auth/googletalk",
@@ -50,9 +89,7 @@ public class GooglePlugin : Ap.OAuthPlugin {
         };
         oauth_params.insert ("AllowedSchemes", schemes);
 
-        set_oauth_parameters (oauth_params);
-
-        set_ignore_cookies (true);
+        return oauth_params;
     }
 }
 
