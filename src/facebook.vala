@@ -27,21 +27,7 @@ public class FacebookPlugin : Ap.OAuthPlugin {
     construct
     {
         var oauth_params = new HashTable<string, GLib.Value?> (str_hash, null);
-        oauth_params.insert ("Host", "www.facebook.com");
-        oauth_params.insert ("AuthPath", "/dialog/oauth");
-        oauth_params.insert ("RedirectUri",
-                             "https://www.facebook.com/connect/login_success.html");
         oauth_params.insert ("ClientId", Config.FACEBOOK_CLIENT_ID);
-        oauth_params.insert ("Display", "popup");
-        string[] scopes = {
-            "publish_stream",
-            "read_stream",
-            "status_update",
-            "user_photos",
-            "friends_photos",
-            "xmpp_login"
-        };
-        oauth_params.insert ("Scope", scopes);
         set_oauth_parameters (oauth_params);
     }
 }
