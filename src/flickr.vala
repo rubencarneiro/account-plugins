@@ -27,21 +27,8 @@ public class FlickrPlugin : Ap.OAuthPlugin {
     construct
     {
         var oauth_params = new HashTable<string, GLib.Value?> (str_hash, null);
-        oauth_params.insert ("RequestEndpoint",
-                             "https://secure.flickr.com/services/oauth/request_token");
-        oauth_params.insert ("TokenEndpoint",
-                             "https://secure.flickr.com/services/oauth/access_token");
-        oauth_params.insert ("AuthorizationEndpoint",
-                             "https://secure.flickr.com/services/oauth/authorize");
         oauth_params.insert ("ConsumerKey", Config.FLICKR_CONSUMER_KEY);
         oauth_params.insert ("ConsumerSecret", Config.FLICKR_CONSUMER_SECRET);
-        /* According to Flickr documentation, the callback is ignored */
-        oauth_params.insert ("Callback", "https://wiki.ubuntu.com/");
-        string[] schemes = {
-            "https",
-            "http"
-        };
-        oauth_params.insert ("AllowedSchemes", schemes);
         set_oauth_parameters (oauth_params);
 
         set_mechanism(Ap.OAuthMechanism.HMAC_SHA1);

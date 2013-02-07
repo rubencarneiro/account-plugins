@@ -4,4 +4,20 @@
   <icon>sina</icon>
   <translations>account-plugins</translations>
   <domains>.*t\.sina\.com\.cn</domains>
+
+  <template>
+    <group name="auth">
+      <setting name="method">oauth2</setting>
+      <setting name="mechanism">HMAC_SHA1</setting>
+      <group name="oauth2">
+        <group name="HMAC_SHA1">
+          <setting name="RequestEndpoint">http://api.t.sina.com.cn/oauth/request_token</setting>
+          <setting name="TokenEndpoint">http://api.t.sina.com.cn/oauth/access_token</setting>
+          <setting name="AuthorizationEndpoint">http://api.t.sina.com.cn/oauth/authorize</setting>
+          <setting name="Callback">http://wiki.ubuntu.com/</setting>
+          <setting name="AllowedSchemes" type="as">['https','http']</setting>
+        </group>
+      </group>
+    </group>
+  </template>
 </provider>

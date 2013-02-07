@@ -27,15 +27,8 @@ public class TwitterPlugin : Ap.OAuthPlugin {
     construct
     {
         var oauth_params = new HashTable<string, GLib.Value?> (str_hash, null);
-        oauth_params.insert ("RequestEndpoint",
-                             "https://api.twitter.com/oauth/request_token");
-        oauth_params.insert ("TokenEndpoint",
-                             "https://api.twitter.com/oauth/access_token");
-        oauth_params.insert ("AuthorizationEndpoint",
-                             "https://api.twitter.com/oauth/authorize");
         oauth_params.insert ("ConsumerKey", Config.TWITTER_CONSUMER_KEY);
         oauth_params.insert ("ConsumerSecret", Config.TWITTER_CONSUMER_SECRET);
-        oauth_params.insert ("Callback", "https://wiki.ubuntu.com/");
         set_oauth_parameters (oauth_params);
 
         set_mechanism(Ap.OAuthMechanism.HMAC_SHA1);

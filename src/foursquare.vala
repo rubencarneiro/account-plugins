@@ -27,13 +27,8 @@ public class FoursquarePlugin : Ap.OAuthPlugin {
     construct
     {
         var oauth_params = new HashTable<string, GLib.Value?> (str_hash, null);
-        oauth_params.insert ("Host", "foursquare.com");
-        oauth_params.insert ("AuthPath", "/oauth2/authenticate");
-        oauth_params.insert ("RedirectUri", "http://gwibber.com/0/auth.html");
         oauth_params.insert ("ClientId",
                              "BA0GOA0K3PTRS1KUJ5TTZ1P3GDRH3VJEEXY4N44ROPUJYKPW");
-        oauth_params.insert ("ResponseType", "token");
-        oauth_params.insert ("Display", "touch");
         set_oauth_parameters (oauth_params);
     }
 }

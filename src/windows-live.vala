@@ -27,18 +27,7 @@ public class WindowsLivePlugin : Ap.OAuthPlugin {
     construct
     {
         var oauth_params = new HashTable<string, GLib.Value?> (str_hash, null);
-        oauth_params.insert ("Host", "login.live.com");
-        oauth_params.insert ("AuthPath", "/oauth20_authorize.srf");
-        oauth_params.insert ("TokenPath", "/oauth20_token.srf");
-        oauth_params.insert ("RedirectUri", "https://login.live.com/oauth20_desktop.srf");
         oauth_params.insert ("ClientId", Config.WINDOWS_LIVE_CLIENT_ID);
-        oauth_params.insert ("ResponseType", "code");
-        string[] scopes = {
-            "wl.messenger",
-            "wl.offline_access",
-            "wl.emails"
-        };
-        oauth_params.insert ("Scope", scopes);
         set_oauth_parameters (oauth_params);
         set_mechanism(Ap.OAuthMechanism.WEB_SERVER);
     }

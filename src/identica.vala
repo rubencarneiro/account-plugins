@@ -27,18 +27,9 @@ public class IdenticaPlugin : Ap.OAuthPlugin {
     construct
     {
         var oauth_params = new HashTable<string, GLib.Value?> (str_hash, null);
-        oauth_params.insert ("RequestEndpoint",
-                             "https://identi.ca/api/oauth/request_token");
-        oauth_params.insert ("TokenEndpoint",
-                             "https://identi.ca/api/oauth/access_token");
-        oauth_params.insert ("AuthorizationEndpoint",
-                             "https://identi.ca/api/oauth/authorize");
         oauth_params.insert ("ConsumerKey", Config.IDENTICA_CONSUMER_KEY);
         oauth_params.insert ("ConsumerSecret",
                              Config.IDENTICA_CONSUMER_SECRET);
-        oauth_params.insert ("Source", "Ubuntu");
-        oauth_params.insert ("Callback", "http://www.ubuntu.com/");
-        oauth_params.insert ("Mode", "desktop");
         set_oauth_parameters (oauth_params);
 
         set_mechanism (Ap.OAuthMechanism.HMAC_SHA1);

@@ -4,4 +4,21 @@
   <icon>live</icon>
   <translations>account-plugins</translations>
   <domains>.*live\.com</domains>
+
+  <template>
+    <group name="auth">
+      <setting name="method">oauth2</setting>
+      <setting name="mechanism">web_server</setting>
+      <group name="oauth2">
+        <group name="web_server">
+          <setting name="Host">login.live.com</setting>
+          <setting name="AuthPath">/oauth20_authorize.srf</setting>
+          <setting name="TokenPath">/oauth20_token.srf</setting>
+          <setting name="RedirectUri">https://login.live.com/oauth20_desktop.srf</setting>
+          <setting name="ResponseType">code</setting>
+          <setting name="Scope" type="as">['wl.messenger','wl.offline_access','wl.emails']</setting>
+        </group>
+      </group>
+    </group>
+  </template>
 </provider>
