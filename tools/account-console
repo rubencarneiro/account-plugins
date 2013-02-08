@@ -124,7 +124,7 @@ class AccountConsole:
 
 
     def on_credentials_stored(self, identity, id, error, account):
-        account.set_value(self.args.signon_id_field, int(id))
+        account.set_variant(self.args.signon_id_field, GLib.Variant('u', id))
         account.store(self.on_account_stored, None)
 
 
