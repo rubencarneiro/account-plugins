@@ -37,7 +37,7 @@ AS_IF([test "x$enable_libaccount_plugin" != "xno"],
       [have_libaccount_plugin=no])
 
 AS_IF([test "x$have_libaccount_plugin" = "xyes"],
-      [PKG_CHECK_MODULES([ACCOUNT_PLUGINS], [account-plugin])],
+      [PKG_CHECK_MODULES([ACCOUNT_PLUGINS], [account-plugin >= 0.1.3])],
       [AS_IF([test "x$enable_libaccount_plugin" = "xyes"],
              [AC_MSG_ERROR([libaccount-plugin support enabled but required dependencies were not found])])])
 
