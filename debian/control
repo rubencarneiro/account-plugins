@@ -104,9 +104,3 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
          signon-plugin-oauth2
 Description: GNOME Control Center account plugins for single signon - tools
  GNOME Control Center account plugins for single signon
-
-Package: account-plugin-icons
-Architecture: all
-Depends: ${misc:Depends},
-Description: GNOME Control Center account plugin for single signon - icons
- GNOME Control Center account plugins for single signon

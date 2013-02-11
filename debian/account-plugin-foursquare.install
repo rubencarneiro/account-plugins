@@ -2,4 +2,3 @@ etc/signon-ui/webkit-options.d/foursquare.com.conf
 usr/lib/libaccount-plugin-1.0/providers/libfoursquare.so
 usr/share/accounts/services/foursquare-microblog.service
 usr/share/accounts/providers/foursquare.provider
-usr/share/icons/hicolor/32x32/apps/foursquare.png
