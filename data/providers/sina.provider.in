@@ -10,7 +10,7 @@
       <setting name="method">oauth2</setting>
       <setting name="mechanism">HMAC-SHA1</setting>
       <group name="oauth2">
-        <group name="HMAC_SHA1">
+        <group name="HMAC-SHA1">
           <setting name="RequestEndpoint">http://api.t.sina.com.cn/oauth/request_token</setting>
           <setting name="TokenEndpoint">http://api.t.sina.com.cn/oauth/access_token</setting>
           <setting name="AuthorizationEndpoint">http://api.t.sina.com.cn/oauth/authorize</setting>
