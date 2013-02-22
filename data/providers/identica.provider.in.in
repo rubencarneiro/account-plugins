@@ -14,6 +14,8 @@
           <setting name="RequestEndpoint">https://identi.ca/api/oauth/request_token</setting>
           <setting name="TokenEndpoint">https://identi.ca/api/oauth/access_token</setting>
           <setting name="AuthorizationEndpoint">https://identi.ca/api/oauth/authorize</setting>
+          <setting name="ConsumerKey">@IDENTICA_CONSUMER_KEY@</setting>
+          <setting name="ConsumerSecret">@IDENTICA_CONSUMER_SECRET@</setting>
           <setting name="Callback">https://wiki.ubuntu.com/</setting>
           <setting name="Source">Ubuntu</setting>
           <setting name="Mode">desktop</setting>

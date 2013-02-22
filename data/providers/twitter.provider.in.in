@@ -3,6 +3,7 @@
   <name>Twitter</name>
   <icon>twitter</icon>
   <translations>account-plugins</translations>
+  <plugin>generic-oauth</plugin>
   <domains>.*twitter\.com</domains>
 
   <template>
@@ -15,6 +16,8 @@
           <setting name="TokenEndpoint">https://api.twitter.com/oauth/access_token</setting>
           <setting name="AuthorizationEndpoint">https://api.twitter.com/oauth/authorize</setting>
           <setting name="Callback">https://wiki.ubuntu.com/</setting>
+          <setting name="ConsumerKey">@TWITTER_CONSUMER_KEY@</setting>
+          <setting name="ConsumerSecret">@TWITTER_CONSUMER_SECRET@</setting>
         </group>
       </group>
     </group>

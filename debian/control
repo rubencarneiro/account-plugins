@@ -9,7 +9,7 @@ Build-Depends: debhelper (>= 9),
                pkg-config,
                libaccounts-glib-dev,
                libsignon-glib-dev,
-               libaccount-plugin-1.0-dev (>= 0.1.3-0ubuntu1+bzr133),
+               libaccount-plugin-1.0-dev (>= 0.1.3),
                valac-0.16,
                gnome-common,
                dh-autoreconf,
@@ -19,6 +19,14 @@ Homepage: https://launchpad.net/account-plugins
 # If you aren't a member of ~online-accounts but need to upload packaging changes,
 # just go ahead.  ~online-accounts will notice and sync up the code again.
 Vcs-Bzr: https://code.launchpad.net/~online-accounts/account-plugins/trunk
+
+Package: account-plugin-generic-oauth
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+        signon-keyring-extension,
+        signon-plugin-oauth2
+Description: GNOME Control Center account plugin for single signon - generic OAuth
+ GNOME Control Center account plugins for single signon
 
 Package: account-plugin-google
 Architecture: any
@@ -30,65 +38,57 @@ Description: GNOME Control Center account plugin for single signon
 
 Package: account-plugin-facebook
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-        signon-keyring-extension,
-        signon-plugin-oauth2
+Depends: ${misc:Depends},
+        account-plugin-generic-oauth
 Description: GNOME Control Center account plugin for single signon - facebook
  GNOME Control Center account plugins for single signon
 
 Package: account-plugin-twitter
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-        signon-keyring-extension,
-        signon-plugin-oauth2
+Depends: ${misc:Depends},
+        account-plugin-generic-oauth
 Description: GNOME Control Center account plugin for single signon - twitter
  GNOME Control Center account plugins for single signon
 
 Package: account-plugin-flickr
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-        signon-keyring-extension,
-        signon-plugin-oauth2
+Depends: ${misc:Depends},
+        account-plugin-generic-oauth
 Description: GNOME Control Center account plugin for single signon - flickr
  GNOME Control Center account plugins for single signon
 
 Package: account-plugin-identica
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-        signon-keyring-extension,
-        signon-plugin-oauth2
+Depends: ${misc:Depends},
+        account-plugin-generic-oauth
 Description: GNOME Control Center account plugin for single signon - identica
  GNOME Control Center account plugins for single signon
 
 Package: account-plugin-foursquare
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-        signon-keyring-extension,
-        signon-plugin-oauth2
+Depends: ${misc:Depends},
+        account-plugin-generic-oauth
 Description: GNOME Control Center account plugin for single signon - foursquare
  GNOME Control Center account plugins for single signon
 
 Package: account-plugin-windows-live
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-        signon-keyring-extension,
-        signon-plugin-oauth2
+Depends: ${misc:Depends},
+        account-plugin-generic-oauth
 Description: GNOME Control Center account plugin for single signon - windows live
  GNOME Control Center account plugins for single signon
 
 Package: account-plugin-sohu
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-        signon-keyring-extension,
-        signon-plugin-oauth2
+Depends: ${misc:Depends},
+        account-plugin-generic-oauth
 Description: GNOME Control Center account plugin for single signon - sohu
  GNOME Control Center account plugins for single signon
 
 Package: account-plugin-sina
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-        signon-keyring-extension,
-        signon-plugin-oauth2
+Depends: ${misc:Depends},
+        account-plugin-generic-oauth
 Description: GNOME Control Center account plugin for single signon - sina
  GNOME Control Center account plugins for single signon
 

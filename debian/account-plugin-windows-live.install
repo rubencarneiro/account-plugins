@@ -1,5 +1,4 @@
 etc/signon-ui/webkit-options.d/login.live.com.conf
-usr/lib/libaccount-plugin-1.0/providers/libwindows-live.so
 usr/share/accounts/services/wlm.service
 usr/share/accounts/providers/windows-live.provider
 usr/share/icons/hicolor/32x32/apps/live.png
