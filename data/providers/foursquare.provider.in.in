@@ -4,6 +4,7 @@
   <icon>foursquare</icon>
   <translations>account-plugins</translations>
   <domains>.*foursquare\.com</domains>
+  <plugin>generic-oauth</plugin>
 
   <template>
     <group name="auth">

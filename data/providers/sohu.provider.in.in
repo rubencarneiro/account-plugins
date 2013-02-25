@@ -4,6 +4,7 @@
   <icon>sohu</icon>
   <translations>account-plugins</translations>
   <domains>.*t\.sohu\.com</domains>
+  <plugin>generic-oauth</plugin>
 
   <template>
     <group name="auth">

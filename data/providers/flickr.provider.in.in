@@ -4,6 +4,7 @@
   <icon>flickr</icon>
   <translations>account-plugins</translations>
   <domains>.*flickr\.com</domains>
+  <plugin>generic-oauth</plugin>
 
   <template>
     <group name="auth">

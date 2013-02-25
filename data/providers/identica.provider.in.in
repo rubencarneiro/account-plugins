@@ -4,6 +4,7 @@
   <icon>identica</icon>
   <translations>account-plugins</translations>
   <domains>.*identi\.ca</domains>
+  <plugin>generic-oauth</plugin>
 
   <template>
     <group name="auth">

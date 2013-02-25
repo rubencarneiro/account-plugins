@@ -4,6 +4,7 @@
   <icon>live</icon>
   <translations>account-plugins</translations>
   <domains>.*live\.com</domains>
+  <plugin>generic-oauth</plugin>
 
   <template>
     <group name="auth">

@@ -4,6 +4,7 @@
   <icon>sina</icon>
   <translations>account-plugins</translations>
   <domains>.*t\.sina\.com\.cn</domains>
+  <plugin>generic-oauth</plugin>
 
   <template>
     <group name="auth">
