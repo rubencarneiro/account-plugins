@@ -25,7 +25,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
         signon-keyring-extension,
         signon-plugin-oauth2,
-        unity-asset-pool (> 0.8.24daily12.12.05-0ubuntu1)
+        unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
 Description: GNOME Control Center account plugin for single signon
  GNOME Control Center account plugins for single signon
 
@@ -34,7 +34,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
         signon-keyring-extension,
         signon-plugin-oauth2,
-        unity-asset-pool (> 0.8.24daily12.12.05-0ubuntu1)
+        unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
 Description: GNOME Control Center account plugin for single signon - facebook
  GNOME Control Center account plugins for single signon
 
@@ -43,7 +43,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
         signon-keyring-extension,
         signon-plugin-oauth2,
-        unity-asset-pool (> 0.8.24daily12.12.05-0ubuntu1)
+        unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
 Description: GNOME Control Center account plugin for single signon - twitter
  GNOME Control Center account plugins for single signon
 
@@ -52,7 +52,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
         signon-keyring-extension,
         signon-plugin-oauth2,
-        unity-asset-pool (> 0.8.24daily12.12.05-0ubuntu1)
+        unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
 Description: GNOME Control Center account plugin for single signon - flickr
  GNOME Control Center account plugins for single signon
 
@@ -61,7 +61,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
         signon-keyring-extension,
         signon-plugin-oauth2,
-        unity-asset-pool (> 0.8.24daily12.12.05-0ubuntu1)
+        unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
 Description: GNOME Control Center account plugin for single signon - identica
  GNOME Control Center account plugins for single signon
 
@@ -70,7 +70,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
         signon-keyring-extension,
         signon-plugin-oauth2,
-        unity-asset-pool (> 0.8.24daily12.12.05-0ubuntu1)
+        unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
 Description: GNOME Control Center account plugin for single signon - foursquare
  GNOME Control Center account plugins for single signon
 
@@ -79,7 +79,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
         signon-keyring-extension,
         signon-plugin-oauth2,
-        unity-asset-pool (> 0.8.24daily12.12.05-0ubuntu1)
+        unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
 Description: GNOME Control Center account plugin for single signon - windows live
  GNOME Control Center account plugins for single signon
 
@@ -88,7 +88,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
         signon-keyring-extension,
         signon-plugin-oauth2,
-        unity-asset-pool (> 0.8.24daily12.12.05-0ubuntu1)
+        unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
 Description: GNOME Control Center account plugin for single signon - sohu
  GNOME Control Center account plugins for single signon
 
@@ -97,7 +97,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
         signon-keyring-extension,
         signon-plugin-oauth2,
-        unity-asset-pool (> 0.8.24daily12.12.05-0ubuntu1)
+        unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
 Description: GNOME Control Center account plugin for single signon - sina
  GNOME Control Center account plugins for single signon
 
@@ -111,6 +111,6 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
          gir1.2-accounts-1.0,
          signon-keyring-extension,
          signon-plugin-oauth2,
-        unity-asset-pool (> 0.8.24daily12.12.05-0ubuntu1)
+         unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
 Description: GNOME Control Center account plugins for single signon - tools
  GNOME Control Center account plugins for single signon
