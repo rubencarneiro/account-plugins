@@ -1,10 +1,15 @@
-account-plugins (0.10bzr13.02.08-0ubuntu1) UNRELEASED; urgency=low
+account-plugins (0.10bzr13.02.27-0ubuntu1) raring; urgency=low
 
   [ Ken VanDine ]
-  * account-console: fixed a bug where it was failing to store the 
-    credentialsId because it was using the wrong type.  
+  * New upstream snapshot
+    - account-console: fixed a bug where it was failing to store the 
+      credentialsId because it was using the wrong type.  
+    - Use the web-authentication as described in
+      https://developers.google.com/accounts/docs/OAuth2 (LP: #1029289)
+  * debian/rules
+    - Include Google Client Secret.
 
- -- Ken VanDine <ken.vandine@canonical.com>  Fri, 08 Feb 2013 11:06:35 -0500
+ -- Ken VanDine <ken.vandine@canonical.com>  Wed, 27 Feb 2013 10:57:27 -0500
 
 account-plugins (0.10bzr12.12.10-0ubuntu1) raring; urgency=low
 
