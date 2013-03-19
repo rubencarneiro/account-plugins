@@ -114,3 +114,10 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
 Description: GNOME Control Center account plugins for single signon - tools
  GNOME Control Center account plugins for single signon
+
+Package: account-plugin-icons
+ Depends: unity-asset-pool, ${misc:Depends}
+ Architecture: all
+ Section: oldlibs
+ Description: transitional dummy package
+  This is a transitional dummy package. It can safely be removed.
