@@ -117,7 +117,7 @@ Description: GNOME Control Center account plugins for single signon - tools
 
 Package: account-plugin-icons
 Depends: unity-asset-pool, ${misc:Depends}
-Architecture: any
+Architecture: all
 Section: oldlibs
 Description: transitional dummy package
  This is a transitional dummy package. It can safely be removed.
