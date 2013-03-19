@@ -16,29 +16,16 @@
  * USA.
  *
  * Authors:
- *      David King <david.king@canonical.com
+ *      Alberto Mardegan <alberto.mardegan@canonical.com>
  */
 
-public class FoursquarePlugin : Ap.OAuthPlugin {
-    public FoursquarePlugin (Ag.Account account) {
+public class GenericOAuthPlugin : Ap.OAuthPlugin {
+    public GenericOAuthPlugin (Ag.Account account) {
         Object (account: account);
-    }
-
-    construct
-    {
-        var oauth_params = new HashTable<string, GLib.Value?> (str_hash, null);
-        oauth_params.insert ("Host", "foursquare.com");
-        oauth_params.insert ("AuthPath", "/oauth2/authenticate");
-        oauth_params.insert ("RedirectUri", "http://gwibber.com/0/auth.html");
-        oauth_params.insert ("ClientId",
-                             "BA0GOA0K3PTRS1KUJ5TTZ1P3GDRH3VJEEXY4N44ROPUJYKPW");
-        oauth_params.insert ("ResponseType", "token");
-        oauth_params.insert ("Display", "touch");
-        set_oauth_parameters (oauth_params);
     }
 }
 
 public GLib.Type ap_module_get_object_type ()
 {
-    return typeof (FoursquarePlugin);
+    return typeof (GenericOAuthPlugin);
 }

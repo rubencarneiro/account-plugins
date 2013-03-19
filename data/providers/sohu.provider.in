@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<provider id="sohu">
-  <name>Sohu</name>
-  <icon>sohu</icon>
-  <translations>account-plugins</translations>
-  <domains>.*t\.sohu\.com</domains>
-</provider>

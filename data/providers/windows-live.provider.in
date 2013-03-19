@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<provider id="windows-live">
-  <name>Windows Live</name>
-  <icon>live</icon>
-  <translations>account-plugins</translations>
-  <domains>.*live\.com</domains>
-</provider>

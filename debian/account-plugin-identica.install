@@ -1,4 +1,3 @@
 etc/signon-ui/webkit-options.d/identi.ca.conf
-usr/lib/libaccount-plugin-1.0/providers/libidentica.so
 usr/share/accounts/services/identica-microblog.service
 usr/share/accounts/providers/identica.provider

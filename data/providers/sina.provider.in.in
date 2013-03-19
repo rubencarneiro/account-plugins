@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<provider id="sina">
+  <name>Sina</name>
+  <icon>sina</icon>
+  <translations>account-plugins</translations>
+  <domains>.*t\.sina\.com\.cn</domains>
+  <plugin>generic-oauth</plugin>
+
+  <template>
+    <group name="auth">
+      <setting name="method">oauth2</setting>
+      <setting name="mechanism">HMAC-SHA1</setting>
+      <group name="oauth2">
+        <group name="HMAC-SHA1">
+          <setting name="RequestEndpoint">http://api.t.sina.com.cn/oauth/request_token</setting>
+          <setting name="TokenEndpoint">http://api.t.sina.com.cn/oauth/access_token</setting>
+          <setting name="AuthorizationEndpoint">http://api.t.sina.com.cn/oauth/authorize</setting>
+          <setting name="Callback">http://wiki.ubuntu.com/</setting>
+          <setting name="ConsumerKey">@SINA_CONSUMER_KEY@</setting>
+          <setting name="ConsumerSecret">@SINA_CONSUMER_SECRET@</setting>
+          <setting name="AllowedSchemes" type="as">['https','http']</setting>
+        </group>
+      </group>
+    </group>
+  </template>
+</provider>

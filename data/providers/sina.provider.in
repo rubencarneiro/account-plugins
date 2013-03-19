@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<provider id="sina">
-  <name>Sina</name>
-  <icon>sina</icon>
-  <translations>account-plugins</translations>
-  <domains>.*t\.sina\.com\.cn</domains>
-</provider>
