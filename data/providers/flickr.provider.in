@@ -4,4 +4,20 @@
   <icon>flickr</icon>
   <translations>account-plugins</translations>
   <domains>.*flickr\.com</domains>
+
+  <template>
+    <group name="auth">
+      <setting name="method">oauth2</setting>
+      <setting name="mechanism">HMAC-SHA1</setting>
+      <group name="oauth2">
+        <group name="HMAC-SHA1">
+          <setting name="RequestEndpoint">https://secure.flickr.com/services/oauth/request_token</setting>
+          <setting name="TokenEndpoint">https://secure.flickr.com/services/oauth/access_token</setting>
+          <setting name="AuthorizationEndpoint">https://secure.flickr.com/services/oauth/authorize</setting>
+          <setting name="Callback">https://wiki.ubuntu.com/</setting>
+          <setting name="AllowedSchemes" type="as">['https','http']</setting>
+        </group>
+      </group>
+    </group>
+  </template>
 </provider>

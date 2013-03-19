@@ -46,11 +46,6 @@ public class GooglePlugin : Ap.OAuthPlugin {
     private HashTable<string, GLib.Value?> get_parameters (ParametersUser user)
     {
         var oauth_params = new HashTable<string, GLib.Value?> (str_hash, null);
-        oauth_params.insert ("Host", "accounts.google.com");
-        oauth_params.insert ("AuthPath", "o/oauth2/auth");
-        oauth_params.insert ("TokenPath", "o/oauth2/token");
-        oauth_params.insert ("RedirectUri",
-                             "https://wiki.ubuntu.com/");
         oauth_params.insert ("ClientId", Config.GOOGLE_CLIENT_ID);
         oauth_params.insert ("ClientSecret", Config.GOOGLE_CLIENT_SECRET);
 
@@ -69,25 +64,6 @@ public class GooglePlugin : Ap.OAuthPlugin {
             oauth_params.insert ("ResponseType",
                                  "code&access_type=offline&approval_prompt=force");
         }
-        else
-        {
-            oauth_params.insert ("ResponseType",
-                                 "code&access_type=offline");
-        }
-        string[] scopes = {
-            "https://docs.google.com/feeds/",
-            "https://www.googleapis.com/auth/googletalk",
-            "https://www.googleapis.com/auth/userinfo.email",
-            "https://www.googleapis.com/auth/userinfo.profile",
-            "https://picasaweb.google.com/data/"
-        };
-        oauth_params.insert ("Scope", scopes);
-
-        string[] schemes = {
-            "https",
-            "http"
-        };
-        oauth_params.insert ("AllowedSchemes", schemes);
 
         return oauth_params;
     }

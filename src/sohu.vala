@@ -27,20 +27,8 @@ public class SohuPlugin : Ap.OAuthPlugin {
     construct
     {
         var oauth_params = new HashTable<string, GLib.Value?> (str_hash, null);
-        oauth_params.insert ("RequestEndpoint",
-                             "http://api.t.sohu.com/oauth/request_token");
-        oauth_params.insert ("TokenEndpoint",
-                             "http://api.t.sohu.com/oauth/access_token");
-        oauth_params.insert ("AuthorizationEndpoint",
-                             "http://api.t.sohu.com/oauth/authorize");
         oauth_params.insert ("ConsumerKey", Config.SOHU_CONSUMER_KEY);
         oauth_params.insert ("ConsumerSecret", Config.SOHU_CONSUMER_SECRET);
-        oauth_params.insert ("Callback", "http://www.ubuntu.com/");
-        string[] schemes = {
-            "https",
-            "http"
-        };
-        oauth_params.insert ("AllowedSchemes", schemes);
         set_oauth_parameters (oauth_params);
 
         set_mechanism (Ap.OAuthMechanism.HMAC_SHA1);
