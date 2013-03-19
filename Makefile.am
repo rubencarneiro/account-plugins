@@ -133,7 +133,6 @@ dist_bin_SCRIPTS = \
 	tools/account-console
 
 dist_noinst_DATA = \
-	$(providers_in_in_files) \
 	$(services_in_files) \
 	src/config.vapi
 
