@@ -4,6 +4,7 @@
   <icon>live</icon>
   <translations>account-plugins</translations>
   <domains>.*live\.com</domains>
+  <plugin>generic-oauth</plugin>
 
   <template>
     <group name="auth">
@@ -17,6 +18,7 @@
           <setting name="RedirectUri">https://login.live.com/oauth20_desktop.srf</setting>
           <setting name="ResponseType">code</setting>
           <setting name="Scope" type="as">['wl.messenger','wl.offline_access','wl.emails']</setting>
+          <setting name="ClientId">@WINDOWS_LIVE_CLIENT_ID@</setting>
         </group>
       </group>
     </group>

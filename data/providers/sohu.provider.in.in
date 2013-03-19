@@ -4,6 +4,7 @@
   <icon>sohu</icon>
   <translations>account-plugins</translations>
   <domains>.*t\.sohu\.com</domains>
+  <plugin>generic-oauth</plugin>
 
   <template>
     <group name="auth">
@@ -15,6 +16,8 @@
           <setting name="TokenEndpoint">http://api.t.sohu.com/oauth/access_token</setting>
           <setting name="AuthorizationEndpoint">http://api.t.sohu.com/oauth/authorize</setting>
           <setting name="Callback">https://wiki.ubuntu.com/</setting>
+          <setting name="ConsumerKey">@SOHU_CONSUMER_KEY@</setting>
+          <setting name="ConsumerSecret">@SOHU_CONSUMER_SECRET@</setting>
           <setting name="AllowedSchemes" type="as">['https','http']</setting>
         </group>
       </group>

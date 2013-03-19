@@ -1,4 +1,3 @@
 etc/signon-ui/webkit-options.d/api.t.sohu.com.conf
-usr/lib/libaccount-plugin-1.0/providers/libsohu.so
 usr/share/accounts/services/sohu-microblog.service
 usr/share/accounts/providers/sohu.provider

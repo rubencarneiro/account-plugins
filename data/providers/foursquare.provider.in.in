@@ -4,6 +4,7 @@
   <icon>foursquare</icon>
   <translations>account-plugins</translations>
   <domains>.*foursquare\.com</domains>
+  <plugin>generic-oauth</plugin>
 
   <template>
     <group name="auth">
@@ -16,6 +17,7 @@
           <setting name="RedirectUri">http://gwibber.com/0/auth.html</setting>
           <setting name="Display">touch</setting>
           <setting name="ResponseType">token</setting>
+          <setting name="ClientId">@FOURSQUARE_CLIENT_ID@</setting>
         </group>
       </group>
     </group>

@@ -8,15 +8,8 @@ DISTCHECK_CONFIGURE_FLAGS = \
 if ENABLE_LIBACCOUNT_PLUGIN
 # Binary account plugins.
 plugin_LTLIBRARIES = \
-	libfacebook.la \
-	libflickr.la \
-	libfoursquare.la \
-	libgoogle.la \
-	libidentica.la \
-	libsina.la \
-	libsohu.la \
-	libtwitter.la \
-	libwindows-live.la
+	libgeneric-oauth.la \
+	libgoogle.la
 
 VALAFLAGS = \
 	--vapidir $(top_srcdir)/src \
@@ -43,59 +36,17 @@ plugin_ldflags = \
 	-no-undefined \
 	-export-symbols-regex '^ap_module_get_object_type'
 
-libfacebook_la_CPPFLAGS = $(plugin_cppflags)
-libfacebook_la_LIBADD = $(plugin_libadd)
-libfacebook_la_LDFLAGS = $(plugin_ldflags)
-libfacebook_la_SOURCES = \
-	src/facebook.vala
-
-libflickr_la_CPPFLAGS = $(plugin_cppflags)
-libflickr_la_LIBADD = $(plugin_libadd)
-libflickr_la_LDFLAGS = $(plugin_ldflags)
-libflickr_la_SOURCES = \
-	src/flickr.vala
-
-libfoursquare_la_CPPFLAGS = $(plugin_cppflags)
-libfoursquare_la_LIBADD = $(plugin_libadd)
-libfoursquare_la_LDFLAGS = $(plugin_ldflags)
-libfoursquare_la_SOURCES = \
-	src/foursquare.vala
-
 libgoogle_la_CPPFLAGS = $(plugin_cppflags)
 libgoogle_la_LIBADD = $(plugin_libadd)
 libgoogle_la_LDFLAGS = $(plugin_ldflags)
 libgoogle_la_SOURCES = \
 	src/google.vala
 
-libidentica_la_CPPFLAGS = $(plugin_cppflags)
-libidentica_la_LIBADD = $(plugin_libadd)
-libidentica_la_LDFLAGS = $(plugin_ldflags)
-libidentica_la_SOURCES = \
-	src/identica.vala
-
-libsina_la_CPPFLAGS = $(plugin_cppflags)
-libsina_la_LIBADD = $(plugin_libadd)
-libsina_la_LDFLAGS = $(plugin_ldflags)
-libsina_la_SOURCES = \
-	src/sina.vala
-
-libsohu_la_CPPFLAGS = $(plugin_cppflags)
-libsohu_la_LIBADD = $(plugin_libadd)
-libsohu_la_LDFLAGS = $(plugin_ldflags)
-libsohu_la_SOURCES = \
-	src/sohu.vala
-
-libtwitter_la_CPPFLAGS = $(plugin_cppflags)
-libtwitter_la_LIBADD = $(plugin_libadd)
-libtwitter_la_LDFLAGS = $(plugin_ldflags)
-libtwitter_la_SOURCES = \
-	src/twitter.vala
-
-libwindows_live_la_CPPFLAGS = $(plugin_cppflags)
-libwindows_live_la_LIBADD = $(plugin_libadd)
-libwindows_live_la_LDFLAGS = $(plugin_ldflags)
-libwindows_live_la_SOURCES = \
-	src/windows-live.vala
+libgeneric_oauth_la_CPPFLAGS = $(plugin_cppflags)
+libgeneric_oauth_la_LIBADD = $(plugin_libadd)
+libgeneric_oauth_la_LDFLAGS = $(plugin_ldflags)
+libgeneric_oauth_la_SOURCES = \
+	src/generic-oauth.vala
 endif # ENABLE_LIBACCOUNT_PLUGIN
 
 iconsdir = $(datadir)/icons/hicolor/32x32/apps
@@ -127,19 +78,19 @@ dist_icons_DATA = \
 	$(AM_V_at)$(MKDIR_P) $(builddir)/data/providers
 	$(INTLTOOL_V_MERGE) LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_MERGE_V_OPTIONS) --no-translations -x -u $< $@
 
-providers_in_files = \
-	data/providers/facebook.provider.in \
-	data/providers/flickr.provider.in \
-	data/providers/foursquare.provider.in \
-	data/providers/google.provider.in \
-	data/providers/identica.provider.in \
-	data/providers/sina.provider.in \
-	data/providers/sohu.provider.in \
-	data/providers/twitter.provider.in \
-	data/providers/windows-live.provider.in
+providers_in_in_files = \
+	data/providers/facebook.provider.in.in \
+	data/providers/flickr.provider.in.in \
+	data/providers/foursquare.provider.in.in \
+	data/providers/google.provider.in.in \
+	data/providers/identica.provider.in.in \
+	data/providers/sina.provider.in.in \
+	data/providers/sohu.provider.in.in \
+	data/providers/twitter.provider.in.in \
+	data/providers/windows-live.provider.in.in
 
 providers_DATA = \
-	$(providers_in_files:.provider.in=.provider)
+	$(providers_in_in_files:.provider.in.in=.provider)
 
 # Extract translatable strings from .service files
 %.service: %.service.in $(INTLTOOL_MERGE)
@@ -182,7 +133,6 @@ dist_bin_SCRIPTS = \
 	tools/account-console
 
 dist_noinst_DATA = \
-	$(providers_in_files) \
 	$(services_in_files) \
 	src/config.vapi
 

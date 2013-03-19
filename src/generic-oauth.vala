@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 Collabora Ltd.
+ * Copyright (C) 2012 Canonical, Inc
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 as
@@ -16,24 +16,16 @@
  * USA.
  *
  * Authors:
- *      Xavier Claessens <xavier.claessens@collabora.co.uk>
+ *      Alberto Mardegan <alberto.mardegan@canonical.com>
  */
 
-public class WindowsLivePlugin : Ap.OAuthPlugin {
-    public WindowsLivePlugin (Ag.Account account) {
+public class GenericOAuthPlugin : Ap.OAuthPlugin {
+    public GenericOAuthPlugin (Ag.Account account) {
         Object (account: account);
-    }
-
-    construct
-    {
-        var oauth_params = new HashTable<string, GLib.Value?> (str_hash, null);
-        oauth_params.insert ("ClientId", Config.WINDOWS_LIVE_CLIENT_ID);
-        set_oauth_parameters (oauth_params);
-        set_mechanism(Ap.OAuthMechanism.WEB_SERVER);
     }
 }
 
 public GLib.Type ap_module_get_object_type ()
 {
-    return typeof (WindowsLivePlugin);
+    return typeof (GenericOAuthPlugin);
 }
