@@ -1,4 +1,3 @@
 etc/signon-ui/webkit-options.d/login.live.com.conf
 usr/share/accounts/services/wlm.service
 usr/share/accounts/providers/windows-live.provider
-usr/share/icons/hicolor/32x32/apps/live.png

@@ -3,4 +3,3 @@ usr/share/accounts/services/facebook-sharing.service
 usr/share/accounts/services/facebook-microblog.service
 usr/share/accounts/services/facebook-im.service
 usr/share/accounts/providers/facebook.provider
-usr/share/icons/hicolor/32x32/apps/facebook.png

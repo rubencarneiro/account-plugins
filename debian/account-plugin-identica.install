@@ -1,4 +1,3 @@
 etc/signon-ui/webkit-options.d/identi.ca.conf
 usr/share/accounts/services/identica-microblog.service
 usr/share/accounts/providers/identica.provider
-usr/share/icons/hicolor/32x32/apps/identica.png
