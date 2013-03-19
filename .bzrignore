@@ -19,9 +19,11 @@ config.status
 config.sub
 configure
 compile
+/data/providers/*.provider.in
 /debian/account-plugin-facebook/
 /debian/account-plugin-flickr/
 /debian/account-plugin-foursquare/
+/debian/account-plugin-generic-oauth/
 /debian/account-plugin-google/
 /debian/account-plugin-icons/
 /debian/account-plugin-identica/
@@ -48,14 +50,7 @@ stamp-h1
 .deps
 .dirstamp
 .libs
-/src/facebook.c
-/src/flickr.c
-/src/foursquare.c
+/src/generic-oauth.c
 /src/google.c
-/src/identica.c
-/src/sina.c
-/src/sohu.c
-/src/twitter.c
-/src/windows-live.c
 /test-provider
 /test-service
