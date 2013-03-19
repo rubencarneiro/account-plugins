@@ -1,9 +1,15 @@
+account-plugins (0.10bzr13.03.19-0ubuntu1) raring; urgency=low
+
+  * Add transitional dummy package for unity-asset-pool
+
+ -- Robert Bruce Park <robert.park@canonical.com>  Tue, 19 Mar 2013 10:12:14 -0700
+
 account-plugins (0.10bzr13.02.27-0ubuntu1) raring; urgency=low
 
   [ Ken VanDine ]
   * New upstream snapshot
-    - account-console: fixed a bug where it was failing to store the 
-      credentialsId because it was using the wrong type.  
+    - account-console: fixed a bug where it was failing to store the
+      credentialsId because it was using the wrong type.
     - Use the web-authentication as described in
       https://developers.google.com/accounts/docs/OAuth2 (LP: #1029289)
   * debian/rules
@@ -15,11 +21,11 @@ account-plugins (0.10bzr12.12.10-0ubuntu1) raring; urgency=low
 
   [ Ken VanDine ]
   * New upstream snapshot
-    - Fix from Caio Cezar Zapater de Souza which fixes a typo in the 
-      google-im.service file that prevented gtalk fallback servers 
+    - Fix from Caio Cezar Zapater de Souza which fixes a typo in the
+      google-im.service file that prevented gtalk fallback servers
       from working. (LP: #1081839)
-    - Added group settings to microblog service files for friends.  These are 
-      duplicated from the existing gwibber groups, we can drop those once 
+    - Added group settings to microblog service files for friends.  These are
+      duplicated from the existing gwibber groups, we can drop those once
       friends replaces gwibber in raring.
   * debian/control
     - account-plugin-tools should depend on gir1.2-signon-1.0 and
