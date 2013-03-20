@@ -86,6 +86,20 @@ AC_ARG_WITH(twitter-consumer-secret,
 AC_SUBST(TWITTER_CONSUMER_KEY, ["$twitter_consumer_key"])
 AC_SUBST(TWITTER_CONSUMER_SECRET, ["$twitter_consumer_secret"])
 
+# Set LinkedIn consumer key/secret.
+AC_ARG_WITH(linkedin-consumer-key,
+            [AS_HELP_STRING([--with-linkedin-consumer-key],
+                            [LinkedIn consumer key])],
+                            [linkedin_consumer_key=$withval],
+                            [linkedin_consumer_key="34gnzrg96iq5"])
+AC_ARG_WITH(linkedin-consumer-secret,
+            [AS_HELP_STRING([--with-linkedin-consumer-secret],
+                            [LinkedIn consumer secret])],
+                            [linkedin_consumer_secret=$withval],
+                            [linkedin_consumer_secret="BazRki2LE8eZtcqh"])
+AC_SUBST(LINKEDIN_CONSUMER_KEY, ["$linkedin_consumer_key"])
+AC_SUBST(LINKEDIN_CONSUMER_SECRET, ["$linkedin_consumer_secret"])
+
 # Set Facebook consumer key/secret
 AC_ARG_WITH(facebook-consumer-key,
             [AS_HELP_STRING([--with-facebook-consumer-key],
