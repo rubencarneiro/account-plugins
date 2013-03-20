@@ -3,19 +3,21 @@
   <name> LinkedIn® </name>
   <icon>linkedin</icon>
   <domains>*linkedin\.com</domains>
+  <translations>account-plugins</translations>
   <plugin>generic-oauth</plugin>
 
   <template>
     <group name="auth">
       <setting name="method">oauth2</setting>
-      <setting name="mechanism">user_agent</setting>
+      <setting name="mechanism">HMAC-SHA1</setting>
       <group name="oauth2">
-        <group name="user_agent">
-          <setting name="Host">www.linkedin.com</setting>
-          <setting name="AuthPath">/uas/oauth/authenticate</setting>
-          <setting name="RedirectUri">http://www.linkedin.com/</setting>
-          <setting name="ResponseType">token</setting>
-          <setting name="ClientId">@LINKEDIN_CLIENT_ID@</setting>
+        <group name="HMAC-SHA1">
+          <setting name="RequestEndpoint">https://api.linkedin.com/uas/oauth/requestToken</setting>
+          <setting name="TokenEndpoint">https://api.linkedin.com/uas/oauth/accessToken</setting>
+          <setting name="AuthorizationEndpoint">https://www.linkedin.com/uas/oauth/authorize</setting>
+          <setting name="ConsumerKey">@LINKEDIN_CONSUMER_KEY@</setting>
+          <setting name="ConsumerSecret">@LINKEDIN_CONSUMER_SECRET@</setting>
+          <setting name="Callback">https://www.linkedin.com/</setting>
         </group>
       </group>
     </group>
