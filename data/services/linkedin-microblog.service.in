@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <service id="facebook-microblog">
   <type>microblogging</type>
-  <name>Facebook</name>
-  <icon>facebook</icon>
-  <provider>facebook</provider>
+  <name>LinkedIn®</name>
+  <icon>linkedin</icon>
+  <provider>linkedin</provider>
   <translations>account-plugins</translations>
 
   <!-- default settings (account settings have precedence over these) -->
