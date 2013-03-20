@@ -100,20 +100,6 @@ AC_ARG_WITH(linkedin-consumer-secret,
 AC_SUBST(LINKEDIN_CONSUMER_KEY, ["$linkedin_consumer_key"])
 AC_SUBST(LINKEDIN_CONSUMER_SECRET, ["$linkedin_consumer_secret"])
 
-# Set Facebook consumer key/secret
-AC_ARG_WITH(facebook-consumer-key,
-            [AS_HELP_STRING([--with-facebook-consumer-key],
-                            [Facebook consumer key])],
-                            [facebook_consumer_key=$withval],
-                            [facebook_consumer_key="34gnzrg96iq5"])
-AC_ARG_WITH(facebook-consumer-secret,
-            [AS_HELP_STRING([--with-facebook-consumer-secret],
-                            [Facebook consumer secret])],
-                            [facebook_consumer_secret=$withval],
-                            [facebook_consumer_secret="BazRki2LE8eZtcqh"])
-AC_SUBST(FACEBOOK_CONSUMER_KEY, ["$facebook_consumer_key"])
-AC_SUBST(FACEBOOK_CONSUMER_SECRET, ["$facebook_consumer_secret"])
-
 # Set Facebook client id
 AC_ARG_WITH(facebook-client-id,
             [AS_HELP_STRING([--with-facebook-client-id],
