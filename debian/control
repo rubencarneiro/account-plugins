@@ -101,6 +101,15 @@ Depends: ${misc:Depends},
 Description: GNOME Control Center account plugin for single signon - sina
  GNOME Control Center account plugins for single signon
 
+Package: account-plugin-linkedin
+Architecture: any
+Depends: ${misc:Depends},
+        account-plugin-generic-oauth,
+        unity-asset-pool
+Description: GNOME Control Center account plugin for single signon - LinkedIn
+ GNOME Control Center account plugins for single signon
+
+
 Package: account-plugin-tools
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
