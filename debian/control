@@ -105,7 +105,7 @@ Package: account-plugin-linkedin
 Architecture: any
 Depends: ${misc:Depends},
         account-plugin-generic-oauth,
-        unity-asset-pool
+        unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
 Description: GNOME Control Center account plugin for single signon - LinkedIn
  GNOME Control Center account plugins for single signon
 
