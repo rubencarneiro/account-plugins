@@ -9,15 +9,17 @@
   <template>
     <group name="auth">
       <setting name="method">oauth2</setting>
-      <setting name="mechanism">HMAC-SHA1</setting>
+      <setting name="mechanism">web_server</setting>
       <group name="oauth2">
-        <group name="HMAC-SHA1">
-          <setting name="RequestEndpoint">https://api.linkedin.com/uas/oauth/requestToken</setting>
-          <setting name="TokenEndpoint">https://api.linkedin.com/uas/oauth/accessToken</setting>
-          <setting name="AuthorizationEndpoint">https://www.linkedin.com/uas/oauth/authorize</setting>
-          <setting name="ConsumerKey">@LINKEDIN_CONSUMER_KEY@</setting>
-          <setting name="ConsumerSecret">@LINKEDIN_CONSUMER_SECRET@</setting>
-          <setting name="Callback">https://www.linkedin.com/</setting>
+        <group name="web_server">
+          <setting name="Host">www.linkedin.com</setting>
+          <setting name="AuthPath">uas/oauth2/authorization</setting>
+          <setting name="TokenPath">uas/oauth2/accessToken</setting>
+          <setting name="ClientId">@LINKEDIN_CONSUMER_KEY@</setting>
+          <setting name="ClientSecret">@LINKEDIN_CONSUMER_SECRET@</setting>
+          <setting name="RedirectUri">https://www.linkedin.com/</setting>
+          <setting name="ResponseType">code&amp;state=sajfhaskncask</setting>
+          <setting type="as" name="Scope">['r_fullprofile','r_emailaddress']</setting>
         </group>
       </group>
     </group>
