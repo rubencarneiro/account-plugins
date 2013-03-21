@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <provider id="linkedin">
-  <name> LinkedIn® </name>
+  <name>LinkedIn®</name>
   <icon>linkedin</icon>
   <domains>*linkedin\.com</domains>
   <translations>account-plugins</translations>
