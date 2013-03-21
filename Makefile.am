@@ -60,7 +60,7 @@ providers_in_in_files = \
 	data/providers/foursquare.provider.in.in \
 	data/providers/google.provider.in.in \
 	data/providers/identica.provider.in.in \
-	data/providers/linkedin.provider.in.in
+	data/providers/linkedin.provider.in.in \
 	data/providers/sina.provider.in.in \
 	data/providers/sohu.provider.in.in \
 	data/providers/twitter.provider.in.in \
