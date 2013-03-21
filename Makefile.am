@@ -60,11 +60,11 @@ providers_in_in_files = \
 	data/providers/foursquare.provider.in.in \
 	data/providers/google.provider.in.in \
 	data/providers/identica.provider.in.in \
+	data/providers/linkedin.provider.in.in
 	data/providers/sina.provider.in.in \
 	data/providers/sohu.provider.in.in \
 	data/providers/twitter.provider.in.in \
-	data/providers/windows-live.provider.in.in \
-	data/providers/linkedin.provider.in.in
+	data/providers/windows-live.provider.in.in
 
 providers_DATA = \
 	$(providers_in_in_files:.provider.in.in=.provider)
