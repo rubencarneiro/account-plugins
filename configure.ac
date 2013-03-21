@@ -200,11 +200,11 @@ AC_CONFIG_FILES([
 	data/providers/foursquare.provider.in
 	data/providers/google.provider.in
 	data/providers/identica.provider.in
+	data/providers/linkedin.provider.in
 	data/providers/sina.provider.in
 	data/providers/sohu.provider.in
 	data/providers/twitter.provider.in
 	data/providers/windows-live.provider.in
-	data/providers/linkedin.provider.in
 	Makefile
 	po/Makefile.in
 ])
