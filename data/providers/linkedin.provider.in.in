@@ -19,7 +19,8 @@
           <setting name="ClientSecret">@LINKEDIN_CONSUMER_SECRET@</setting>
           <setting name="RedirectUri">https://www.linkedin.com/</setting>
           <setting name="ResponseType">code&amp;state=sajfhaskncask</setting>
-          <setting type="as" name="Scope">['r_fullprofile','r_emailaddress']</setting>
+          <setting type="as" name="Scope">['r_fullprofile',
+            'r_emailaddress', 'r_network', 'w_messages', 'rw_nus']</setting>
         </group>
       </group>
     </group>
