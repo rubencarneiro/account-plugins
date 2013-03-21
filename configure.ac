@@ -86,6 +86,20 @@ AC_ARG_WITH(twitter-consumer-secret,
 AC_SUBST(TWITTER_CONSUMER_KEY, ["$twitter_consumer_key"])
 AC_SUBST(TWITTER_CONSUMER_SECRET, ["$twitter_consumer_secret"])
 
+# Set LinkedIn consumer key/secret.
+AC_ARG_WITH(linkedin-consumer-key,
+            [AS_HELP_STRING([--with-linkedin-consumer-key],
+                            [LinkedIn consumer key])],
+                            [linkedin_consumer_key=$withval],
+                            [linkedin_consumer_key="34gnzrg96iq5"])
+AC_ARG_WITH(linkedin-consumer-secret,
+            [AS_HELP_STRING([--with-linkedin-consumer-secret],
+                            [LinkedIn consumer secret])],
+                            [linkedin_consumer_secret=$withval],
+                            [linkedin_consumer_secret="BazRki2LE8eZtcqh"])
+AC_SUBST(LINKEDIN_CONSUMER_KEY, ["$linkedin_consumer_key"])
+AC_SUBST(LINKEDIN_CONSUMER_SECRET, ["$linkedin_consumer_secret"])
+
 # Set Facebook client id
 AC_ARG_WITH(facebook-client-id,
             [AS_HELP_STRING([--with-facebook-client-id],
@@ -186,6 +200,7 @@ AC_CONFIG_FILES([
 	data/providers/foursquare.provider.in
 	data/providers/google.provider.in
 	data/providers/identica.provider.in
+	data/providers/linkedin.provider.in
 	data/providers/sina.provider.in
 	data/providers/sohu.provider.in
 	data/providers/twitter.provider.in

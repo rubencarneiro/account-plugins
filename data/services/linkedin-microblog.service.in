@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service id="linkedin-microblog">
+  <type>microblogging</type>
+  <name>LinkedIn®</name>
+  <icon>linkedin</icon>
+  <provider>linkedin</provider>
+  <translations>account-plugins</translations>
+
+  <!-- default settings (account settings have precedence over these) -->
+  <template>
+    <group name="friends">
+      <setting name="send_enabled" type="bool">true</setting>
+      <setting name="color">#1169E1</setting>
+    </group>
+    <group name="gwibber">
+      <setting name="send_enabled" type="bool">true</setting>
+      <setting name="color">#1169E1</setting>
+    </group>
+  </template>
+
+</service>
