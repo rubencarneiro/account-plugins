@@ -1,3 +1,10 @@
+account-plugins (0.10bzr13.03.26-0ubuntu1) raring; urgency=low
+
+  * New upstream snapshot
+    - Fix Foursquare authentication (LP: #1159795)
+
+ -- Alberto Mardegan <alberto.mardegan@canonical.com>  Tue, 26 Mar 2013 15:32:44 +0200
+
 account-plugins (0.10bzr13.03.19-0ubuntu1) raring; urgency=low
 
   * Add transitional dummy package for unity-asset-pool
