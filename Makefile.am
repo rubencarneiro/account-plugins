@@ -97,7 +97,7 @@ services_DATA = \
 webkitoptionsdir = $(sysconfdir)/signon-ui/webkit-options.d
 dist_webkitoptions_DATA = \
 	data/webkit-options/accounts.google.com.conf \
-	data/webkit-options/api.t.sina.com.cn.conf \
+	data/webkit-options/api.weibo.com.conf \
 	data/webkit-options/api.t.sohu.com.conf \
 	data/webkit-options/api.twitter.com.conf \
 	data/webkit-options/foursquare.com.conf \

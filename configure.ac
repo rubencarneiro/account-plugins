@@ -158,19 +158,19 @@ AC_ARG_WITH(identica-consumer-secret,
 AC_SUBST(IDENTICA_CONSUMER_KEY, ["$identica_consumer_key"])
 AC_SUBST(IDENTICA_CONSUMER_SECRET, ["$identica_consumer_secret"])
 
-# Set Sina consumer key/secret
-AC_ARG_WITH(sina-consumer-key,
-            [AS_HELP_STRING([--with-sina-consumer-key],
-                            [Sina consumer key])],
-                            [sina_consumer_key=$withval],
-                            [sina_consumer_key="1472971394"])
-AC_ARG_WITH(sina-consumer-secret,
-            [AS_HELP_STRING([--with-sina-consumer-secret],
-                            [Sina consumer secret])],
-                            [sina_consumer_secret=$withval],
-                            [sina_consumer_secret="49443ea72f7545486143f3f074b0b66e"])
-AC_SUBST(SINA_CONSUMER_KEY, ["$sina_consumer_key"])
-AC_SUBST(SINA_CONSUMER_SECRET, ["$sina_consumer_secret"])
+# Set Sina client id/secret
+AC_ARG_WITH(sina-client-id,
+            [AS_HELP_STRING([--with-sina-client-id],
+                            [Sina client id])],
+                            [sina_client_id=$withval],
+                            [sina_client_id="3011480316"])
+AC_ARG_WITH(sina-client-secret,
+            [AS_HELP_STRING([--with-sina-client-secret],
+                            [Sina client secret])],
+                            [sina_client_secret=$withval],
+                            [sina_client_secret="bb66bd5dacdaa84ee2917e1162359b48"])
+AC_SUBST(SINA_CLIENT_ID, ["$sina_client_id"])
+AC_SUBST(SINA_CLIENT_SECRET, ["$sina_client_secret"])
 
 # Set Sohu consumer key/secret
 AC_ARG_WITH(sohu-consumer-key,
