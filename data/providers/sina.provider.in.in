@@ -15,10 +15,10 @@
           <setting name="Host">api.weibo.com</setting>
           <setting name="AuthPath">oauth2/authorize</setting>
           <setting name="TokenPath">oauth2/access_token</setting>
-          <setting name="RedirectUri">https://api.weibo.com/oauth2/default.html</setting>
+          <setting name="RedirectUri">https://wiki.ubuntu.com/</setting>
           <setting name="ResponseType">token</setting>
-          <setting name="ClientId">3011480316</setting>
-          <setting name="ClientSecret">bb66bd5dacdaa84ee2917e1162359b48</setting>
+          <setting name="ClientId">@SINA_CLIENT_ID@</setting>
+          <setting name="ClientSecret">@SINA_CLIENT_SECRET@</setting>
         </group>
       </group>
     </group>
