@@ -100,6 +100,20 @@ AC_ARG_WITH(linkedin-consumer-secret,
 AC_SUBST(LINKEDIN_CONSUMER_KEY, ["$linkedin_consumer_key"])
 AC_SUBST(LINKEDIN_CONSUMER_SECRET, ["$linkedin_consumer_secret"])
 
+# FIXME: Set Instagram consumer key/secret.
+AC_ARG_WITH(instagram-consumer-key,
+            [AS_HELP_STRING([--with-instagram-consumer-key],
+                            [instagram consumer key])],
+                            [instagram_consumer_key=$withval],
+                            [instagram_consumer_key="XXXXXXXXXXXXX"])
+AC_ARG_WITH(instagram-consumer-secret,
+            [AS_HELP_STRING([--with-linkedin-consumer-secret],
+                            [instagram consumer secret])],
+                            [instagram_consumer_secret=$withval],
+                            [instagram_consumer_secret="XXXXXXXXXXXXX"])
+AC_SUBST(LINKEDIN_CONSUMER_KEY, ["$instagram_consumer_key"])
+AC_SUBST(LINKEDIN_CONSUMER_SECRET, ["$instagram_consumer_secret"])
+
 # Set Facebook client id
 AC_ARG_WITH(facebook-client-id,
             [AS_HELP_STRING([--with-facebook-client-id],
@@ -201,6 +215,7 @@ AC_CONFIG_FILES([
 	data/providers/google.provider.in
 	data/providers/identica.provider.in
 	data/providers/linkedin.provider.in
+	data/providers/instagram.provider.in
 	data/providers/sina.provider.in
 	data/providers/sohu.provider.in
 	data/providers/twitter.provider.in

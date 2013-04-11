@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service id="linkedin-microblog">
+  <type>microblogging</type>
+  <name>Instagram</name>
+  <icon>instagram</icon>
+  <provider>instagram</provider>
+  <translations>account-plugins</translations>
+
+  <!-- default settings (account settings have precedence over these) -->
+  <template>
+    <group name="friends">
+      <setting name="send_enabled" type="bool">false</setting>
+      <setting name="color">#416F96</setting>
+    </group>
+    <group name="gwibber">
+      <setting name="send_enabled" type="bool">false</setting>
+      <setting name="color">#416F96</setting>
+    </group>
+  </template>
+
+</service>
