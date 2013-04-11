@@ -15,8 +15,8 @@
           <setting name="Host">api.instagram.com</setting>
           <setting name="AuthPath">oauth/authorize</setting>
           <setting name="TokenPath">oauth/access_token</setting>
-          <setting name="ClientId">@INSTAGRAM_CONSUMER_KEY@</setting>
-          <setting name="ClientSecret">@INSTAGRAM_CONSUMER_SECRET@</setting>
+          <setting name="ClientId">@INSTAGRAM_CLIENT_ID@</setting>
+          <setting name="ClientSecret">@INSTAGRAM_CLIENT_SECRET@</setting>
           <setting name="RedirectUri">https://wiki.ubuntu.com/</setting>
           <setting name="ResponseType">code</setting>
           <setting type="as" name="Scope">['likes+comments']</setting>

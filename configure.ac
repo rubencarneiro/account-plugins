@@ -100,19 +100,19 @@ AC_ARG_WITH(linkedin-consumer-secret,
 AC_SUBST(LINKEDIN_CONSUMER_KEY, ["$linkedin_consumer_key"])
 AC_SUBST(LINKEDIN_CONSUMER_SECRET, ["$linkedin_consumer_secret"])
 
-# FIXME: Set Instagram consumer key/secret.
-AC_ARG_WITH(instagram-consumer-key,
-            [AS_HELP_STRING([--with-instagram-consumer-key],
-                            [instagram consumer key])],
-                            [instagram_consumer_key=$withval],
-                            [instagram_consumer_key="XXXXXXXXXXXXX"])
-AC_ARG_WITH(instagram-consumer-secret,
-            [AS_HELP_STRING([--with-linkedin-consumer-secret],
-                            [instagram consumer secret])],
-                            [instagram_consumer_secret=$withval],
-                            [instagram_consumer_secret="XXXXXXXXXXXXX"])
-AC_SUBST(LINKEDIN_CONSUMER_KEY, ["$instagram_consumer_key"])
-AC_SUBST(LINKEDIN_CONSUMER_SECRET, ["$instagram_consumer_secret"])
+# Set Instagram client id/secret.
+AC_ARG_WITH(instagram-client-id,
+            [AS_HELP_STRING([--with-instagram-client-id],
+                            [instagram client id])],
+                            [instagram_client_id=$withval],
+                            [instagram_client_id="01c3df41a2274a14882adea8e8ebbd46"])
+AC_ARG_WITH(instagram-client-secret,
+            [AS_HELP_STRING([--with-instagram-client-secret],
+                            [instagram client secret])],
+                            [instagram_client_secret=$withval],
+                            [instagram_client_secret="4751ccdc39c648719ea83cfb1c866c26"])
+AC_SUBST(INSTAGRAM_CLIENT_ID, ["$instagram_client_id"])
+AC_SUBST(INSTAGRAM_CLIENT_SECRET, ["$instagram_client_secret"])
 
 # Set Facebook client id
 AC_ARG_WITH(facebook-client-id,

@@ -18,8 +18,8 @@ override_dh_auto_configure:
 		--with-flickr-consumer-secret="4c7e48102c226509" \
 		--with-linkedin-consumer-key="34gnzrg96iq5" \
 		--with-linkedin-consumer-secret="BazRki2LE8eZtcqh" \
-		--with-instagram-consumer-key="XXXXXXXXXXX" \
-		--with-instagram-consumer-secret="XXXXXXXXXXXXXX" 
+		--with-instagram-client-id="01c3df41a2274a14882adea8e8ebbd46" \
+		--with-instagram-client-secret="4751ccdc39c648719ea83cfb1c866c26" 
 
 override_dh_install:
 	rm -f debian/*/usr/lib/*/*/*.la
