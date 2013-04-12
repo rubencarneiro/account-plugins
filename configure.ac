@@ -172,19 +172,19 @@ AC_ARG_WITH(sina-client-secret,
 AC_SUBST(SINA_CLIENT_ID, ["$sina_client_id"])
 AC_SUBST(SINA_CLIENT_SECRET, ["$sina_client_secret"])
 
-# Set Sohu consumer key/secret
-AC_ARG_WITH(sohu-consumer-key,
-            [AS_HELP_STRING([--with-sohu-consumer-key],
-                            [Sohu consumer key])],
-                            [sohu_consumer_key=$withval],
-                            [sohu_consumer_key="YcRgcVD31M241lWRJuU0"])
-AC_ARG_WITH(sohu-consumer-secret,
-            [AS_HELP_STRING([--with-sohu-consumer-secret],
-                            [Sohu consumer secret])],
-                            [sohu_consumer_secret=$withval],
-                            [sohu_consumer_secret="!2(z%LRmy7xTN(x3cm$)2m*domKNT(s00=qN4Vxh"])
-AC_SUBST(SOHU_CONSUMER_KEY, ["$sohu_consumer_key"])
-AC_SUBST(SOHU_CONSUMER_SECRET, ["$sohu_consumer_secret"])
+# Set Sohu client id/secret
+AC_ARG_WITH(sohu-client-id,
+            [AS_HELP_STRING([--with-sohu-client-id],
+                            [Sohu client id])],
+                            [sohu_client_id=$withval],
+                            [sohu_client_id="dXucVvzJseF3wFfeDBqE"])
+AC_ARG_WITH(sohu-client-secret,
+            [AS_HELP_STRING([--with-sohu-client-secret],
+                            [Sohu client secret])],
+                            [sohu_client_secret=$withval],
+                            [sohu_client_secret="XuOg9=djoUMA%BRRPO)X=(8FExQz8T$9DahIj=9u"])
+AC_SUBST(SOHU_CLIENT_ID, ["$sohu_client_id"])
+AC_SUBST(SOHU_CLIENT_SECRET, ["$sohu_client_secret"])
 
 # Set Windows Live client id
 AC_ARG_WITH(windows-live-client-id,
