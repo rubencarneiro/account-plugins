@@ -60,6 +60,7 @@ providers_in_in_files = \
 	data/providers/foursquare.provider.in.in \
 	data/providers/google.provider.in.in \
 	data/providers/identica.provider.in.in \
+	data/providers/linkedin.provider.in.in \
 	data/providers/sina.provider.in.in \
 	data/providers/sohu.provider.in.in \
 	data/providers/twitter.provider.in.in \
@@ -83,6 +84,7 @@ services_in_files = \
 	data/services/google-docs.service.in \
 	data/services/google-im.service.in \
 	data/services/identica-microblog.service.in \
+	data/services/linkedin-microblog.service.in \
 	data/services/picasa.service.in \
 	data/services/sina-microblog.service.in \
 	data/services/sohu-microblog.service.in \
@@ -95,7 +97,7 @@ services_DATA = \
 webkitoptionsdir = $(sysconfdir)/signon-ui/webkit-options.d
 dist_webkitoptions_DATA = \
 	data/webkit-options/accounts.google.com.conf \
-	data/webkit-options/api.t.sina.com.cn.conf \
+	data/webkit-options/api.weibo.com.conf \
 	data/webkit-options/api.t.sohu.com.conf \
 	data/webkit-options/api.twitter.com.conf \
 	data/webkit-options/foursquare.com.conf \
@@ -103,7 +105,8 @@ dist_webkitoptions_DATA = \
 	data/webkit-options/login.live.com.conf \
 	data/webkit-options/login.yahoo.com.conf \
 	data/webkit-options/secure.flickr.com.conf \
-	data/webkit-options/www.facebook.com.conf
+	data/webkit-options/www.facebook.com.conf \
+	data/webkit-options/www.linkedin.com.conf
 
 dist_bin_SCRIPTS = \
 	tools/account-console

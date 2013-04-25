@@ -9,16 +9,17 @@
   <template>
     <group name="auth">
       <setting name="method">oauth2</setting>
-      <setting name="mechanism">HMAC-SHA1</setting>
+      <setting name="mechanism">user_agent</setting>
       <group name="oauth2">
-        <group name="HMAC-SHA1">
-          <setting name="RequestEndpoint">http://api.t.sohu.com/oauth/request_token</setting>
-          <setting name="TokenEndpoint">http://api.t.sohu.com/oauth/access_token</setting>
-          <setting name="AuthorizationEndpoint">http://api.t.sohu.com/oauth/authorize</setting>
-          <setting name="Callback">https://wiki.ubuntu.com/</setting>
-          <setting name="ConsumerKey">@SOHU_CONSUMER_KEY@</setting>
-          <setting name="ConsumerSecret">@SOHU_CONSUMER_SECRET@</setting>
-          <setting name="AllowedSchemes" type="as">['https','http']</setting>
+        <group name="user_agent">
+          <setting name="Host">api.t.sohu.com</setting>
+          <setting name="AuthPath">/oauth2/authorize</setting>
+          <setting name="TokenPath">/oauth2/access_token</setting>
+          <setting name="RedirectUri">http://www.ubuntukylin.com/</setting>
+          <setting name="ResponseType">token</setting>
+          <setting type="as" name="Scope">['basic']</setting>
+          <setting name="ClientId">@SOHU_CLIENT_ID@</setting>
+          <setting name="ClientSecret">@SOHU_CLIENT_SECRET@</setting>
         </group>
       </group>
     </group>

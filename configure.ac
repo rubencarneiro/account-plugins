@@ -86,6 +86,20 @@ AC_ARG_WITH(twitter-consumer-secret,
 AC_SUBST(TWITTER_CONSUMER_KEY, ["$twitter_consumer_key"])
 AC_SUBST(TWITTER_CONSUMER_SECRET, ["$twitter_consumer_secret"])
 
+# Set LinkedIn consumer key/secret.
+AC_ARG_WITH(linkedin-consumer-key,
+            [AS_HELP_STRING([--with-linkedin-consumer-key],
+                            [LinkedIn consumer key])],
+                            [linkedin_consumer_key=$withval],
+                            [linkedin_consumer_key="34gnzrg96iq5"])
+AC_ARG_WITH(linkedin-consumer-secret,
+            [AS_HELP_STRING([--with-linkedin-consumer-secret],
+                            [LinkedIn consumer secret])],
+                            [linkedin_consumer_secret=$withval],
+                            [linkedin_consumer_secret="BazRki2LE8eZtcqh"])
+AC_SUBST(LINKEDIN_CONSUMER_KEY, ["$linkedin_consumer_key"])
+AC_SUBST(LINKEDIN_CONSUMER_SECRET, ["$linkedin_consumer_secret"])
+
 # Set Facebook client id
 AC_ARG_WITH(facebook-client-id,
             [AS_HELP_STRING([--with-facebook-client-id],
@@ -144,33 +158,33 @@ AC_ARG_WITH(identica-consumer-secret,
 AC_SUBST(IDENTICA_CONSUMER_KEY, ["$identica_consumer_key"])
 AC_SUBST(IDENTICA_CONSUMER_SECRET, ["$identica_consumer_secret"])
 
-# Set Sina consumer key/secret
-AC_ARG_WITH(sina-consumer-key,
-            [AS_HELP_STRING([--with-sina-consumer-key],
-                            [Sina consumer key])],
-                            [sina_consumer_key=$withval],
-                            [sina_consumer_key="1472971394"])
-AC_ARG_WITH(sina-consumer-secret,
-            [AS_HELP_STRING([--with-sina-consumer-secret],
-                            [Sina consumer secret])],
-                            [sina_consumer_secret=$withval],
-                            [sina_consumer_secret="49443ea72f7545486143f3f074b0b66e"])
-AC_SUBST(SINA_CONSUMER_KEY, ["$sina_consumer_key"])
-AC_SUBST(SINA_CONSUMER_SECRET, ["$sina_consumer_secret"])
+# Set Sina client id/secret
+AC_ARG_WITH(sina-client-id,
+            [AS_HELP_STRING([--with-sina-client-id],
+                            [Sina client id])],
+                            [sina_client_id=$withval],
+                            [sina_client_id="3011480316"])
+AC_ARG_WITH(sina-client-secret,
+            [AS_HELP_STRING([--with-sina-client-secret],
+                            [Sina client secret])],
+                            [sina_client_secret=$withval],
+                            [sina_client_secret="bb66bd5dacdaa84ee2917e1162359b48"])
+AC_SUBST(SINA_CLIENT_ID, ["$sina_client_id"])
+AC_SUBST(SINA_CLIENT_SECRET, ["$sina_client_secret"])
 
-# Set Sohu consumer key/secret
-AC_ARG_WITH(sohu-consumer-key,
-            [AS_HELP_STRING([--with-sohu-consumer-key],
-                            [Sohu consumer key])],
-                            [sohu_consumer_key=$withval],
-                            [sohu_consumer_key="YcRgcVD31M241lWRJuU0"])
-AC_ARG_WITH(sohu-consumer-secret,
-            [AS_HELP_STRING([--with-sohu-consumer-secret],
-                            [Sohu consumer secret])],
-                            [sohu_consumer_secret=$withval],
-                            [sohu_consumer_secret="!2(z%LRmy7xTN(x3cm$)2m*domKNT(s00=qN4Vxh"])
-AC_SUBST(SOHU_CONSUMER_KEY, ["$sohu_consumer_key"])
-AC_SUBST(SOHU_CONSUMER_SECRET, ["$sohu_consumer_secret"])
+# Set Sohu client id/secret
+AC_ARG_WITH(sohu-client-id,
+            [AS_HELP_STRING([--with-sohu-client-id],
+                            [Sohu client id])],
+                            [sohu_client_id=$withval],
+                            [sohu_client_id="dXucVvzJseF3wFfeDBqE"])
+AC_ARG_WITH(sohu-client-secret,
+            [AS_HELP_STRING([--with-sohu-client-secret],
+                            [Sohu client secret])],
+                            [sohu_client_secret=$withval],
+                            [sohu_client_secret="XuOg9=djoUMA%BRRPO)X=(8FExQz8T$9DahIj=9u"])
+AC_SUBST(SOHU_CLIENT_ID, ["$sohu_client_id"])
+AC_SUBST(SOHU_CLIENT_SECRET, ["$sohu_client_secret"])
 
 # Set Windows Live client id
 AC_ARG_WITH(windows-live-client-id,
@@ -186,6 +200,7 @@ AC_CONFIG_FILES([
 	data/providers/foursquare.provider.in
 	data/providers/google.provider.in
 	data/providers/identica.provider.in
+	data/providers/linkedin.provider.in
 	data/providers/sina.provider.in
 	data/providers/sohu.provider.in
 	data/providers/twitter.provider.in

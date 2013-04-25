@@ -5,6 +5,16 @@ account-plugins (0.10bzr13.03.26-0ubuntu1) raring; urgency=low
 
  -- Alberto Mardegan <alberto.mardegan@canonical.com>  Tue, 26 Mar 2013 15:32:44 +0200
 
+account-plugins (0.10bzr13.03.19-0ubuntu2) raring; urgency=low
+
+  [ Jonathan Davies ]
+  * Added account-plugin-linkedin.
+
+  [ Kobe Lee ]
+  * authentication of Sohu using oAuth2.0 (LP: #1166089).
+
+ -- Kobe Lee (kylinkobe) <kobe24_lixiang@126.com>  Tue, 09 Apr 2013 16:18:53 +0800
+
 account-plugins (0.10bzr13.03.19-0ubuntu1) raring; urgency=low
 
   * Add transitional dummy package for unity-asset-pool
