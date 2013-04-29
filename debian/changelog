@@ -1,12 +1,18 @@
-account-plugins (0.10bzr13.03.19-0ubuntu2) UNRELEASED; urgency=low
+account-plugins (0.10bzr13.04.26-0ubuntu1) UNRELEASED; urgency=low
 
   [ Jonathan Davies ]
   * Added account-plugin-linkedin.
 
-  [ Andrew Starr-Bochicchio ]
-  * Added account-plugin-instagram (LP: #1167449).
+  [ Kobe Lee ]
+  * authentication of Sohu using oAuth2.0 (LP: #1166089).
 
- -- Jonathan Davies <jpds@ubuntu.com>  Wed, 20 Mar 2013 10:17:55 +0000
+  [ Ken VanDine ]
+  * Automatic snapshot from revision 98 (bootstrap)
+
+  [ Andrew Starr-Bochicchio ]
+  * Added account-plugin-instagram (LP: #1167449). 
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 26 Apr 2013 14:17:51 -0400
 
 account-plugins (0.10bzr13.03.19-0ubuntu1) raring; urgency=low
 
