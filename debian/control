@@ -109,6 +109,14 @@ Depends: ${misc:Depends},
 Description: GNOME Control Center account plugin for single signon - LinkedIn
  GNOME Control Center account plugins for single signon
 
+Package: account-plugin-instagram
+Architecture: any
+Depends: ${misc:Depends},
+        account-plugin-generic-oauth,
+        unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1)
+Description: GNOME Control Center account plugin for single signon - Instagram
+ GNOME Control Center account plugins for single signon
+
 Package: account-plugin-tools
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
