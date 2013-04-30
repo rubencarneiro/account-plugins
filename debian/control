@@ -48,7 +48,6 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
          signon-keyring-extension,
          signon-plugin-oauth2,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Recommends: libaccount-plugin-google,
 Description: GNOME Control Center account plugin for single signon
  GNOME Control Center account plugins for single signon
 
@@ -56,7 +55,6 @@ Package: account-plugin-facebook
 Architecture: all
 Depends: ${misc:Depends},
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Recommends: libaccount-plugin-generic-oauth,
 Description: GNOME Control Center account plugin for single signon - facebook
  GNOME Control Center account plugins for single signon
 
@@ -64,7 +62,6 @@ Package: account-plugin-twitter
 Architecture: all
 Depends: ${misc:Depends},
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Recommends: libaccount-plugin-generic-oauth,
 Description: GNOME Control Center account plugin for single signon - twitter
  GNOME Control Center account plugins for single signon
 
@@ -72,7 +69,6 @@ Package: account-plugin-flickr
 Architecture: all
 Depends: ${misc:Depends},
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Recommends: libaccount-plugin-generic-oauth,
 Description: GNOME Control Center account plugin for single signon - flickr
  GNOME Control Center account plugins for single signon
 
@@ -80,7 +76,6 @@ Package: account-plugin-identica
 Architecture: all
 Depends: ${misc:Depends},
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Recommends: libaccount-plugin-generic-oauth,
 Description: GNOME Control Center account plugin for single signon - identica
  GNOME Control Center account plugins for single signon
 
@@ -88,7 +83,6 @@ Package: account-plugin-foursquare
 Architecture: all
 Depends: ${misc:Depends},
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Recommends: libaccount-plugin-generic-oauth,
 Description: GNOME Control Center account plugin for single signon - foursquare
  GNOME Control Center account plugins for single signon
 
@@ -96,7 +90,6 @@ Package: account-plugin-windows-live
 Architecture: all
 Depends: ${misc:Depends},
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Recommends: libaccount-plugin-generic-oauth,
 Description: GNOME Control Center account plugin for single signon - windows live
  GNOME Control Center account plugins for single signon
 
@@ -104,7 +97,6 @@ Package: account-plugin-sohu
 Architecture: all
 Depends: ${misc:Depends},
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Recommends: libaccount-plugin-generic-oauth,
 Description: GNOME Control Center account plugin for single signon - sohu
  GNOME Control Center account plugins for single signon
 
@@ -112,7 +104,6 @@ Package: account-plugin-sina
 Architecture: all
 Depends: ${misc:Depends},
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Recommends: libaccount-plugin-generic-oauth,
 Description: GNOME Control Center account plugin for single signon - sina
  GNOME Control Center account plugins for single signon
 
@@ -120,7 +111,6 @@ Package: account-plugin-linkedin
 Architecture: all
 Depends: ${misc:Depends},
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Recommends: libaccount-plugin-generic-oauth,
 Description: GNOME Control Center account plugin for single signon - LinkedIn
  GNOME Control Center account plugins for single signon
 
@@ -128,7 +118,6 @@ Package: account-plugin-instagram
 Architecture: all
 Depends: ${misc:Depends},
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Recommends: libaccount-plugin-generic-oauth,
 Description: GNOME Control Center account plugin for single signon - Instagram
  GNOME Control Center account plugins for single signon
 
