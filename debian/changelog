@@ -1,4 +1,13 @@
-account-plugins (0.10bzr13.04.26-0ubuntu1) UNRELEASED; urgency=low
+account-plugins (0.10bzr13.04.30-0ubuntu1) UNRELEASED; urgency=low
+
+  * Put libaccount-plugin modules in separate packages, 
+    libaccount-plugin-generic-oauth and libaccount-plugin-google and 
+    add Replaces/Conflicts/Breaks.
+  * Change depends for the libaccount-plugins to Recommends
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 30 Apr 2013 14:28:11 -0700
+
+account-plugins (0.10bzr13.04.26-0ubuntu1) raring; urgency=low
 
   [ Jonathan Davies ]
   * Added account-plugin-linkedin.
