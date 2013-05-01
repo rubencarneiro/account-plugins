@@ -1,5 +1,4 @@
 etc/signon-ui/webkit-options.d/accounts.google.com.conf
-usr/lib/libaccount-plugin-1.0/providers/libgoogle.so
 usr/share/accounts/services/google-docs.service
 usr/share/accounts/services/google-im.service
 usr/share/accounts/services/picasa.service
