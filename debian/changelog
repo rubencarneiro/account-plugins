@@ -1,11 +1,21 @@
-account-plugins (0.10bzr13.03.26-0ubuntu1) raring; urgency=low
+account-plugins (0.10bzr13.04.30daily13.05.01ubuntu.unity.next-0ubuntu1) raring; urgency=low
 
-  * New upstream snapshot
-    - Fix Foursquare authentication (LP: #1159795)
+  [ Ken VanDine ]
+  * Put libaccount-plugin modules in separate packages, 
+    libaccount-plugin-generic-oauth and libaccount-plugin-google and 
+    add Replaces/Conflicts/Breaks.
+  * Dropped depends for the libaccount-plugins
+  * Updated Architecture for account-plugin-* to "all".
 
- -- Alberto Mardegan <alberto.mardegan@canonical.com>  Tue, 26 Mar 2013 15:32:44 +0200
+  [ Andrew Starr-Bochicchio ]
+  * Add support for instagram (LP: #1167449)
 
-account-plugins (0.10bzr13.03.19-0ubuntu2) raring; urgency=low
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 102 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 01 May 2013 07:55:49 +0000
+
+account-plugins (0.10bzr13.04.26-0ubuntu1) raring; urgency=low
 
   [ Jonathan Davies ]
   * Added account-plugin-linkedin.
@@ -13,7 +23,20 @@ account-plugins (0.10bzr13.03.19-0ubuntu2) raring; urgency=low
   [ Kobe Lee ]
   * authentication of Sohu using oAuth2.0 (LP: #1166089).
 
- -- Kobe Lee (kylinkobe) <kobe24_lixiang@126.com>  Tue, 09 Apr 2013 16:18:53 +0800
+  [ Ken VanDine ]
+  * Automatic snapshot from revision 98 (bootstrap)
+
+  [ Andrew Starr-Bochicchio ]
+  * Added account-plugin-instagram (LP: #1167449). 
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Fri, 26 Apr 2013 14:17:51 -0400
+
+account-plugins (0.10bzr13.03.26-0ubuntu1) raring; urgency=low
+
+  * New upstream snapshot
+    - Fix Foursquare authentication (LP: #1159795)
+
+ -- Alberto Mardegan <alberto.mardegan@canonical.com>  Tue, 26 Mar 2013 15:32:44 +0200
 
 account-plugins (0.10bzr13.03.19-0ubuntu1) raring; urgency=low
 

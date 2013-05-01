@@ -61,6 +61,7 @@ providers_in_in_files = \
 	data/providers/google.provider.in.in \
 	data/providers/identica.provider.in.in \
 	data/providers/linkedin.provider.in.in \
+	data/providers/instagram.provider.in.in \
 	data/providers/sina.provider.in.in \
 	data/providers/sohu.provider.in.in \
 	data/providers/twitter.provider.in.in \
@@ -85,6 +86,7 @@ services_in_files = \
 	data/services/google-im.service.in \
 	data/services/identica-microblog.service.in \
 	data/services/linkedin-microblog.service.in \
+	data/services/instagram-microblog.service.in \
 	data/services/picasa.service.in \
 	data/services/sina-microblog.service.in \
 	data/services/sohu-microblog.service.in \
@@ -97,6 +99,7 @@ services_DATA = \
 webkitoptionsdir = $(sysconfdir)/signon-ui/webkit-options.d
 dist_webkitoptions_DATA = \
 	data/webkit-options/accounts.google.com.conf \
+	data/webkit-options/api.instagram.com.conf \
 	data/webkit-options/api.weibo.com.conf \
 	data/webkit-options/api.t.sohu.com.conf \
 	data/webkit-options/api.twitter.com.conf \
