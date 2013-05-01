@@ -14,7 +14,7 @@
         <group name="user_agent">
           <setting name="Host">foursquare.com</setting>
           <setting name="AuthPath">/oauth2/authenticate</setting>
-          <setting name="RedirectUri">http://gwibber.com/0/auth.html</setting>
+          <setting name="RedirectUri">https://wiki.ubuntu.com/</setting>
           <setting name="Display">touch</setting>
           <setting name="ResponseType">token</setting>
           <setting name="ClientId">@FOURSQUARE_CLIENT_ID@</setting>
