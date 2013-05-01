@@ -1,12 +1,19 @@
-account-plugins (0.10bzr13.04.30-0ubuntu1) UNRELEASED; urgency=low
+account-plugins (0.10bzr13.04.30daily13.05.01ubuntu.unity.next-0ubuntu1) raring; urgency=low
 
+  [ Ken VanDine ]
   * Put libaccount-plugin modules in separate packages, 
     libaccount-plugin-generic-oauth and libaccount-plugin-google and 
     add Replaces/Conflicts/Breaks.
   * Dropped depends for the libaccount-plugins
   * Updated Architecture for account-plugin-* to "all".
 
- -- Ken VanDine <ken.vandine@canonical.com>  Tue, 30 Apr 2013 14:28:11 -0700
+  [ Andrew Starr-Bochicchio ]
+  * Add support for instagram (LP: #1167449)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 102 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 01 May 2013 07:55:49 +0000
 
 account-plugins (0.10bzr13.04.26-0ubuntu1) raring; urgency=low
 
