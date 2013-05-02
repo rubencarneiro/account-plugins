@@ -1,7 +1,4 @@
 #!/bin/bash
-# Script used to add accounts to Ubuntu Online Accounts
-# 
-# Only supports twitter and facebook at this time
 
 usage ()
 {
@@ -17,55 +14,12 @@ fi
 service=$1
 username=$2
 
-if [ $service == "twitter" ]; then
-    CREATION_PARAMS=('--print-id' \
-        -s 'auth/method=oauth2' \
-        -s 'auth/mechanism=HMAC-SHA1' \
-        -s 'u:auth/oauth2/HMAC-SHA1/WindowId=2341' \
-        -s 'auth/oauth2/HMAC-SHA1/RequestEndpoint=https://api.twitter.com/oauth/request_token' \
-        -s 'auth/oauth2/HMAC-SHA1/TokenEndpoint=https://api.twitter.com/oauth/access_token' \
-        -s 'auth/oauth2/HMAC-SHA1/AuthorizationEndpoint=https://api.twitter.com/oauth/authorize' \
-        -s 'auth/oauth2/HMAC-SHA1/ConsumerKey=NGOB5S7sICsj6epjh0PhAw' \
-        -s 'auth/oauth2/HMAC-SHA1/ConsumerSecret=rbUEJCBEokMnGZd8bubd0QL2cSmoCjJeyiSJpnx3OM0' \
-        -s 'auth/oauth2/HMAC-SHA1/Callback=https://wiki.ubuntu.com/' \
-    )
-elif [ $service == "facebook" ]; then
-    CREATION_PARAMS=('--print-id' \
-        -s 'auth/method=oauth2' \
-        -s 'auth/mechanism=user_agent' \
-        -s 'u:auth/oauth2/user_agent/WindowId=2341' \
-        -s 'auth/oauth2/user_agent/Host=www.facebook.com' \
-        -s 'auth/oauth2/user_agent/AuthPath=/dialog/oauth' \
-        -s 'auth/oauth2/user_agent/ClientId=302061903208115' \
-        -s 'auth/oauth2/user_agent/RedirectUri=https://www.facebook.com/connect/login_success.html' \
-        -s 'auth/oauth2/user_agent/ResponseType/item0=token' \
-        -s "as:auth/oauth2/user_agent/Scope=["\
-"'publish_stream',"\
-"'read_stream',"\
-"'status_update',"\
-"'user_photos',"\
-"'friends_photos',"\
-"'xmpp_login']" \
-        -s 'auth/oauth2/user_agent/Display=popup' \
-)
-else
-    echo "uoa-create only supports facebook and twitter at this time"
-    exit
-fi
+ID="$(account-console create $service --print-id)"
+account-console edit "$ID" --username $username
 
-account-console list | grep $service
-
-if [ ${?} -ne "0" ]; then
-    ID="$(account-console create $service ${CREATION_PARAMS[@]})"
-    account-console edit "$ID" --username $username
-else
-    tw_array=( $(account-console list | grep $service) )
-    ID=${tw_array[2]%?}
-    echo "Accounts already present"
-fi
  
 echo "Logging in to" $service
 account-console login "${ID}" --service $service-microblog
 
-echo "Enabling accounts"
+echo "Enabling account"
 account-console edit "${ID}" --enable --service $service-microblog
