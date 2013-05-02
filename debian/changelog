@@ -1,3 +1,14 @@
+account-plugins (0.10bzr13.04.30daily13.05.02ubuntu.unity.next-0ubuntu1) raring; urgency=low
+
+  [ Alberto Mardegan ]
+  * account-plugin-sohu cannot work (LP: #1166089)
+  * foursquare plugin fails with redirect_uri_mismatch (LP: #1159795)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 104 (ubuntu-unity/next)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 02 May 2013 07:36:47 +0000
+
 account-plugins (0.10bzr13.04.30daily13.05.01ubuntu.unity.next-0ubuntu1) raring; urgency=low
 
   [ Ken VanDine ]
