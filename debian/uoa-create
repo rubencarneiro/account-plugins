@@ -1,0 +1,25 @@
+#!/bin/bash
+
+usage ()
+{
+  echo "usage: $0 [service] [username]"
+  exit 1
+}
+
+if [ $# -ne 2 ];
+then
+  usage
+fi
+
+service=$1
+username=$2
+
+ID="$(account-console create $service --print-id)"
+account-console edit "$ID" --username $username
+
+ 
+echo "Logging in to" $service
+account-console login "${ID}" --service $service-microblog
+
+echo "Enabling account"
+account-console edit "${ID}" --enable --service $service-microblog
