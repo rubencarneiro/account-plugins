@@ -18,6 +18,7 @@
           <setting name="Display">popup</setting>
           <setting name="Scope" type="as">['publish_stream','read_stream','status_update','user_photos','friends_photos','xmpp_login']</setting>
           <setting name="ClientId">@FACEBOOK_CLIENT_ID@</setting>
+          <setting name="AllowedSchemes" type="as">['https','http']</setting>
         </group>
       </group>
     </group>
