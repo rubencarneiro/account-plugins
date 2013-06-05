@@ -15,7 +15,7 @@ VALAFLAGS = \
 	--vapidir $(top_srcdir)/src \
 	--pkg config \
 	--pkg AccountPlugin \
-	--pkg accounts \
+	--pkg libaccounts-glib \
 	--pkg posix \
 	--pkg signon \
 	--pkg gtk+-3.0 \
