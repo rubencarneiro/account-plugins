@@ -1,3 +1,18 @@
+account-plugins (0.11daily13.06.05.1-0ubuntu1) saucy; urgency=low
+
+  [ Ken VanDine ]
+  * Updated for libaccounts-glib >= 1.10 .
+
+  [ Alberto Mardegan ]
+  * Allow Facebook to connect via plain HTTP Workaround for
+    https://developers.facebook.com/bugs/449221825171392 . (LP:
+    #1180297)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 110
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 05 Jun 2013 20:55:47 +0000
+
 account-plugins (0.11-0ubuntu1) saucy; urgency=low
 
   * New upstream release
