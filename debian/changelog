@@ -1,3 +1,11 @@
+account-plugins (0.11-0ubuntu1) saucy; urgency=low
+
+  * New upstream release
+    - Allow Facebook to connect via plain HTTP to work around a bug in
+      in facebook's auth process where it redirects to http (LP: #1180297)
+
+ -- Ken VanDine <ken.vandine@canonical.com>  Tue, 04 Jun 2013 09:56:17 -0400
+
 account-plugins (0.10bzr13.04.30daily13.05.03ubuntu.unity.next-0ubuntu1) raring; urgency=low
 
   [ Ken VanDine ]
