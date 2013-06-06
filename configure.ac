@@ -26,6 +26,10 @@ AC_SUBST([GETTEXT_PACKAGE], [$PACKAGE_TARNAME])
 
 PKG_PROG_PKG_CONFIG([0.24])
 
+AS_IF([test "x$prefix" = "xNONE"],
+      [real_prefix=$ac_default_prefix],
+      [real_prefix=$prefix])
+
 # Binary account plugins.
 AC_ARG_ENABLE([libaccount-plugin],
               [AS_HELP_STRING([--disable-libaccount-plugin],
@@ -48,13 +52,36 @@ AM_CONDITIONAL([ENABLE_LIBACCOUNT_PLUGIN],
 PKG_CHECK_EXISTS([libaccounts-glib])
 
 AC_SUBST([plugindir],
-         [`$PKG_CONFIG --variable provider_plugindir account-plugin`])
+         [`$PKG_CONFIG --variable provider_plugindir --define-variable=prefix=$real_prefix account-plugin`])
 
+# QML account plugins.
+AC_ARG_ENABLE([qml-plugins],
+              [AS_HELP_STRING([--disable-qml-plugins],
+                              [build without support for QML plugins for Ubuntu Touch])])
+
+AS_IF([test "x$enable_qml_plugins" != "xno"],
+      [PKG_CHECK_EXISTS([OnlineAccountsSetup], [have_uoa_setup=yes],
+                        [have_uoa_setup=no])],
+      [have_uoa_setup=no])
+
+AS_IF([test "x$have_uoa_setup" = "xyes"],
+      [PKG_CHECK_MODULES([UOA_SETUP], [OnlineAccountsSetup >= 0.1])],
+      [AS_IF([test "x$enable_qml_plugins" = "xyes"],
+             [AC_MSG_ERROR([QML plugins enabled but required dependencies were not found])])])
+
+AM_CONDITIONAL([ENABLE_QML_PLUGINS],
+               [test "x$have_uoa_setup" = "xyes"])
+
+# QML plugins installation path
+AC_SUBST([qmlpluginsdir],
+	 [`$PKG_CONFIG --variable plugin_qml_dir --define-variable=prefix=$real_prefix OnlineAccountsSetup`])
+
+# libaccounts providers and service files
 AC_SUBST([providersdir],
-         [`$PKG_CONFIG --variable providerfilesdir libaccounts-glib`])
+         [`$PKG_CONFIG --variable providerfilesdir --define-variable=prefix=$real_prefix libaccounts-glib`])
 
 AC_SUBST([servicesdir],
-         [`$PKG_CONFIG --variable servicefilesdir libaccounts-glib`])
+         [`$PKG_CONFIG --variable servicefilesdir --define-variable=prefix=$real_prefix libaccounts-glib`])
 
 AC_ARG_ENABLE([TESTS],
     [AS_HELP_STRING([--disable-tests], [Disable tests])])
@@ -222,5 +249,6 @@ AC_CONFIG_FILES([
 	data/providers/windows-live.provider.in
 	Makefile
 	po/Makefile.in
+	qml/Makefile
 ])
 AC_OUTPUT

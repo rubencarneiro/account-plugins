@@ -49,6 +49,10 @@ libgeneric_oauth_la_SOURCES = \
 	src/generic-oauth.vala
 endif # ENABLE_LIBACCOUNT_PLUGIN
 
+if ENABLE_QML_PLUGINS
+SUBDIRS += qml
+endif # ENABLE_QML_PLUGINS
+
 # Extract transatable strings from .provider files
 %.provider: %.provider.in $(INTLTOOL_MERGE)
 	$(AM_V_at)$(MKDIR_P) $(builddir)/data/providers
