@@ -45,6 +45,7 @@ Description: GNOME Control Center account plugin for single signon - Google Auth
 Package: account-plugin-google
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends},
+         libaccount-plugin-google,
          signon-keyring-extension,
          signon-plugin-oauth2,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
@@ -54,6 +55,7 @@ Description: GNOME Control Center account plugin for single signon
 Package: account-plugin-facebook
 Architecture: all
 Depends: ${misc:Depends},
+         libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - facebook
  GNOME Control Center account plugins for single signon
@@ -61,6 +63,7 @@ Description: GNOME Control Center account plugin for single signon - facebook
 Package: account-plugin-twitter
 Architecture: all
 Depends: ${misc:Depends},
+         libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - twitter
  GNOME Control Center account plugins for single signon
@@ -68,6 +71,7 @@ Description: GNOME Control Center account plugin for single signon - twitter
 Package: account-plugin-flickr
 Architecture: all
 Depends: ${misc:Depends},
+         libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - flickr
  GNOME Control Center account plugins for single signon
@@ -75,6 +79,7 @@ Description: GNOME Control Center account plugin for single signon - flickr
 Package: account-plugin-identica
 Architecture: all
 Depends: ${misc:Depends},
+         libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - identica
  GNOME Control Center account plugins for single signon
@@ -82,6 +87,7 @@ Description: GNOME Control Center account plugin for single signon - identica
 Package: account-plugin-foursquare
 Architecture: all
 Depends: ${misc:Depends},
+         libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - foursquare
  GNOME Control Center account plugins for single signon
@@ -89,6 +95,7 @@ Description: GNOME Control Center account plugin for single signon - foursquare
 Package: account-plugin-windows-live
 Architecture: all
 Depends: ${misc:Depends},
+         libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - windows live
  GNOME Control Center account plugins for single signon
@@ -96,6 +103,7 @@ Description: GNOME Control Center account plugin for single signon - windows liv
 Package: account-plugin-sohu
 Architecture: all
 Depends: ${misc:Depends},
+         libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - sohu
  GNOME Control Center account plugins for single signon
@@ -103,6 +111,7 @@ Description: GNOME Control Center account plugin for single signon - sohu
 Package: account-plugin-sina
 Architecture: all
 Depends: ${misc:Depends},
+         libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - sina
  GNOME Control Center account plugins for single signon
@@ -110,6 +119,7 @@ Description: GNOME Control Center account plugin for single signon - sina
 Package: account-plugin-linkedin
 Architecture: all
 Depends: ${misc:Depends},
+         libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - LinkedIn
  GNOME Control Center account plugins for single signon
@@ -117,6 +127,7 @@ Description: GNOME Control Center account plugin for single signon - LinkedIn
 Package: account-plugin-instagram
 Architecture: all
 Depends: ${misc:Depends},
+         libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - Instagram
  GNOME Control Center account plugins for single signon

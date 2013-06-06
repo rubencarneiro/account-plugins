@@ -1,3 +1,10 @@
+account-plugins (0.11daily13.06.05.1-0ubuntu2) UNRELEASED; urgency=low
+
+  * Have plugins depend on libaccount-plugin-generic-oauth or
+    libaccount-plugin-google as needed. Thanks Tim Lunn for catching this.
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 05 Jun 2013 19:32:57 -0400
+
 account-plugins (0.11daily13.06.05.1-0ubuntu1) saucy; urgency=low
 
   [ Ken VanDine ]
