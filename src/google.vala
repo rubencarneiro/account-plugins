@@ -31,15 +31,15 @@ public class GooglePlugin : Ap.OAuthPlugin {
         /* Note the evil trick here: Google uses a couple of non-standard OAuth
          * parameters: "access_type" and "approval_prompt"; the signon OAuth
          * plugin doesn't (yet?) give us a way to provide extra parameters, so
-         * we fool it by appending them to the value of the "ResponseType".
+         * we fool it by appending them to the value of the "AuthPath".
          *
          * We need to specify "access_type=offline" if we want Google to return
          * us a refresh token.
          * The "approval_prompt=force" string forces Google to ask for
          * authentication.
          */
-        oauth_params.insert ("ResponseType",
-                             "code&access_type=offline&approval_prompt=force");
+        oauth_params.insert ("AuthPath",
+                             "o/oauth2/auth?access_type=offline&approval_prompt=force");
         set_oauth_parameters (oauth_params);
 
         set_ignore_cookies (true);
