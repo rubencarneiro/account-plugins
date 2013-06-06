@@ -1,3 +1,10 @@
+account-plugins (0.11daily13.06.06-0ubuntu2) UNRELEASED; urgency=low
+
+  * Fix Google authentication, which was broken with the lasted QUrl query
+    handling in Qt5.
+
+ -- Alberto Mardegan <alberto.mardegan@canonical.com>  Thu, 06 Jun 2013 16:15:17 +0300
+
 account-plugins (0.11daily13.06.06-0ubuntu1) saucy; urgency=low
 
   [ Jeremy Bicha ]
