@@ -12,6 +12,7 @@ Build-Depends: debhelper (>= 9),
                libaccount-plugin-1.0-dev (>= 0.1.3),
                valac-0.16,
                gnome-common,
+               ubuntu-system-settings-online-accounts,
                dh-autoreconf,
                libxml2-utils,
 Standards-Version: 3.9.4
@@ -45,9 +46,7 @@ Description: GNOME Control Center account plugin for single signon - Google Auth
 Package: account-plugin-google
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         libaccount-plugin-google,
-         signon-keyring-extension,
-         signon-plugin-oauth2,
+         libaccount-plugin-google | ubuntu-system-settings-online-accounts,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon
  GNOME Control Center account plugins for single signon
@@ -55,7 +54,7 @@ Description: GNOME Control Center account plugin for single signon
 Package: account-plugin-facebook
 Architecture: all
 Depends: ${misc:Depends},
-         libaccount-plugin-generic-oauth,
+         libaccount-plugin-generic-oauth | ubuntu-system-settings-online-accounts,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - facebook
  GNOME Control Center account plugins for single signon
@@ -63,7 +62,7 @@ Description: GNOME Control Center account plugin for single signon - facebook
 Package: account-plugin-twitter
 Architecture: all
 Depends: ${misc:Depends},
-         libaccount-plugin-generic-oauth,
+         libaccount-plugin-generic-oauth | ubuntu-system-settings-online-accounts,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - twitter
  GNOME Control Center account plugins for single signon
@@ -71,7 +70,7 @@ Description: GNOME Control Center account plugin for single signon - twitter
 Package: account-plugin-flickr
 Architecture: all
 Depends: ${misc:Depends},
-         libaccount-plugin-generic-oauth,
+         libaccount-plugin-generic-oauth | ubuntu-system-settings-online-accounts,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugin for single signon - flickr
  GNOME Control Center account plugins for single signon
