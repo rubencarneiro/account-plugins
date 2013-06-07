@@ -1,3 +1,3 @@
-import Ubuntu.OnlineAccounts.Setup 1.0
+import Ubuntu.OnlineAccounts.Plugin 1.0
 
 OAuthMain {}

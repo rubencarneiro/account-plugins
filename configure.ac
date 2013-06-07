@@ -60,21 +60,21 @@ AC_ARG_ENABLE([qml-plugins],
                               [build without support for QML plugins for Ubuntu Touch])])
 
 AS_IF([test "x$enable_qml_plugins" != "xno"],
-      [PKG_CHECK_EXISTS([OnlineAccountsSetup], [have_uoa_setup=yes],
-                        [have_uoa_setup=no])],
-      [have_uoa_setup=no])
+      [PKG_CHECK_EXISTS([OnlineAccountsPlugin], [have_uoa_plugin=yes],
+                        [have_uoa_plugin=no])],
+      [have_uoa_plugin=no])
 
-AS_IF([test "x$have_uoa_setup" = "xyes"],
-      [PKG_CHECK_MODULES([UOA_SETUP], [OnlineAccountsSetup >= 0.1])],
+AS_IF([test "x$have_uoa_plugin" = "xyes"],
+      [PKG_CHECK_MODULES([OnlineAccountsPlugin], [OnlineAccountsPlugin >= 0.1])],
       [AS_IF([test "x$enable_qml_plugins" = "xyes"],
              [AC_MSG_ERROR([QML plugins enabled but required dependencies were not found])])])
 
 AM_CONDITIONAL([ENABLE_QML_PLUGINS],
-               [test "x$have_uoa_setup" = "xyes"])
+               [test "x$have_uoa_plugin" = "xyes"])
 
 # QML plugins installation path
 AC_SUBST([qmlpluginsdir],
-	 [`$PKG_CONFIG --variable plugin_qml_dir --define-variable=prefix=$real_prefix OnlineAccountsSetup`])
+	 [`$PKG_CONFIG --variable plugin_qml_dir --define-variable=prefix=$real_prefix OnlineAccountsPlugin`])
 
 # libaccounts providers and service files
 AC_SUBST([providersdir],
