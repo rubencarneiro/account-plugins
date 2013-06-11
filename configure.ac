@@ -75,6 +75,11 @@ AM_CONDITIONAL([ENABLE_QML_PLUGINS],
 # QML plugins installation path
 AC_SUBST([qmlpluginsdir],
 	 [`$PKG_CONFIG --variable plugin_qml_dir --define-variable=prefix=$real_prefix OnlineAccountsPlugin`])
+AC_MSG_CHECKING(for qmlplugins directory)
+if test "x$qmlpluginsdir" = "x" ; then
+        # fallback if the previous failed
+        qmlpluginsdir="$real_prefix/share/accounts/qml-plugins"
+fi
 
 # libaccounts providers and service files
 AC_SUBST([providersdir],
