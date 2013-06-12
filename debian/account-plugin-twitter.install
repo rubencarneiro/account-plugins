@@ -1,3 +1,4 @@
 etc/signon-ui/webkit-options.d/api.twitter.com.conf
 usr/share/accounts/services/twitter-microblog.service
 usr/share/accounts/providers/twitter.provider
+usr/share/accounts/qml-plugins/twitter/Main.qml
