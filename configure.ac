@@ -60,14 +60,7 @@ AC_ARG_ENABLE([qml-plugins],
                               [build without support for QML plugins for Ubuntu Touch])])
 
 AS_IF([test "x$enable_qml_plugins" != "xno"],
-      [PKG_CHECK_EXISTS([OnlineAccountsPlugin], [have_uoa_plugin=yes],
-                        [have_uoa_plugin=no])],
-      [have_uoa_plugin=no])
-
-AS_IF([test "x$have_uoa_plugin" = "xyes"],
-      [PKG_CHECK_MODULES([OnlineAccountsPlugin], [OnlineAccountsPlugin >= 0.1])],
-      [AS_IF([test "x$enable_qml_plugins" = "xyes"],
-             [AC_MSG_ERROR([QML plugins enabled but required dependencies were not found])])])
+      [have_uoa_plugin=yes])
 
 AM_CONDITIONAL([ENABLE_QML_PLUGINS],
                [test "x$have_uoa_plugin" = "xyes"])
