@@ -1,3 +1,18 @@
+account-plugins (0.11daily13.06.13-0ubuntu1) saucy; urgency=low
+
+  [ Ken VanDine ]
+  * Add a few QML plugins Add facebook, flickr, google and twitter QML
+    plugins for Ubuntu Touch.
+
+  [ Alberto Mardegan ]
+  * Add a few QML plugins Add facebook, flickr, google and twitter QML
+    plugins for Ubuntu Touch.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 117
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 13 Jun 2013 04:31:59 +0000
+
 account-plugins (0.11daily13.06.12-0ubuntu1) saucy; urgency=low
 
   [ Alberto Mardegan ]
