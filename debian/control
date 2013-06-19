@@ -21,7 +21,7 @@ Homepage: https://launchpad.net/account-plugins
 Vcs-Bzr: https://code.launchpad.net/~online-accounts/account-plugins/trunk
 
 Package: libaccount-plugin-generic-oauth
-Architecture: any
+Architecture: i386 amd64 powerpc
 Depends: ${shlibs:Depends}, ${misc:Depends},
          signon-keyring-extension,
          signon-plugin-oauth2,
@@ -32,7 +32,7 @@ Description: GNOME Control Center account plugin for single signon - generic OAu
  GNOME Control Center account plugins for single signon
 
 Package: libaccount-plugin-google
-Architecture: any
+Architecture: i386 amd64 powerpc
 Depends: ${shlibs:Depends}, ${misc:Depends},
          signon-keyring-extension,
          signon-plugin-oauth2,
