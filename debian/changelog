@@ -1,3 +1,14 @@
+account-plugins (0.11daily13.06.25-0ubuntu1) saucy; urgency=low
+
+  [ Didier Roche ]
+  * don't build on powerpc as the new Qt5-based version don't have
+    powerpc qtscripts.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 119
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 25 Jun 2013 04:31:06 +0000
+
 account-plugins (0.11daily13.06.13-0ubuntu1) saucy; urgency=low
 
   [ Ken VanDine ]
