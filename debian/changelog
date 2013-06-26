@@ -1,3 +1,9 @@
+account-plugins (0.11daily13.06.25-0ubuntu2) UNRELEASED; urgency=low
+
+  * QML: ask Google for a refresh token.
+
+ -- Alberto Mardegan <alberto.mardegan@canonical.com>  Wed, 26 Jun 2013 14:53:35 +0300
+
 account-plugins (0.11daily13.06.25-0ubuntu1) saucy; urgency=low
 
   [ Didier Roche ]
