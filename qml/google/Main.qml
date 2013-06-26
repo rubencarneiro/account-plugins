@@ -2,6 +2,10 @@ import Ubuntu.OnlineAccounts.Plugin 1.0
 
 OAuthMain {
     creationComponent: OAuth {
+        authenticationParameters: {
+            "AuthPath": "o/oauth2/auth?access_type=offline&approval_prompt=force"
+        }
+
         function completeCreation(reply) {
             console.log("Access token: " + reply.AccessToken)
             var http = new XMLHttpRequest()
