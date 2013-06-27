@@ -15,6 +15,7 @@ services_in_files = \
 	picasa.service.in \
 	sina-microblog.service.in \
 	sohu-microblog.service.in \
+	tencent-microblog.service.in \
 	twitter-microblog.service.in \
 	wlm.service.in
 

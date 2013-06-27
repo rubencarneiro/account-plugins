@@ -68,6 +68,7 @@ providers_in_in_files = \
 	data/providers/instagram.provider.in.in \
 	data/providers/sina.provider.in.in \
 	data/providers/sohu.provider.in.in \
+	data/providers/tencent.provider.in.in \
 	data/providers/twitter.provider.in.in \
 	data/providers/windows-live.provider.in.in
 
@@ -94,6 +95,7 @@ services_in_files = \
 	data/services/picasa.service.in \
 	data/services/sina-microblog.service.in \
 	data/services/sohu-microblog.service.in \
+	data/services/tencent-microblog.service.in \
 	data/services/twitter-microblog.service.in \
 	data/services/wlm.service.in
 
@@ -106,6 +108,7 @@ dist_webkitoptions_DATA = \
 	data/webkit-options/api.instagram.com.conf \
 	data/webkit-options/api.weibo.com.conf \
 	data/webkit-options/api.t.sohu.com.conf \
+	data/webkit-options/open.t.qq.com.conf \
 	data/webkit-options/api.twitter.com.conf \
 	data/webkit-options/foursquare.com.conf \
 	data/webkit-options/identi.ca.conf \

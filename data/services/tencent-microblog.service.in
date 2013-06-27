@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service id="tencent-microblog">
+  <type>microblogging</type>
+  <name>Tencent</name>
+  <icon>tencent</icon>
+  <provider>tencent</provider>
+  <translations>account-plugins</translations>
+</service>

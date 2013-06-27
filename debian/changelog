@@ -6,7 +6,10 @@ account-plugins (0.11+13.10.20130627-0ubuntu1) saucy; urgency=low
   [ Ubuntu daily release ]
   * Automatic snapshot from revision 121
 
- -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Thu, 27 Jun 2013 04:31:03 +0000
+  [ Kobe Lee ]
+  * Add authentication of Tencent using oAuth2.0 which is popular in China.
+
+ -- Kobe Lee (kylinkobe) <kobe24_lixiang@126.com>  Thu, 27 Jun 2013 20:14:11 +0800
 
 account-plugins (0.11daily13.06.25-0ubuntu1) saucy; urgency=low
 

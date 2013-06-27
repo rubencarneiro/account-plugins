@@ -36,5 +36,7 @@ namespace Config {
   public const string SINA_CONSUMER_SECRET;
   public const string SOHU_CLIENT_ID;
   public const string SOHU_CLIENT_SECRET;
+  public const string TENCENT_CONSUMER_KEY;
+  public const string TENCENT_CONSUMER_SECRET;
   public const string WINDOWS_LIVE_CLIENT_ID;
 }

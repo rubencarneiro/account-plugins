@@ -225,6 +225,20 @@ AC_ARG_WITH(sohu-client-secret,
 AC_SUBST(SOHU_CLIENT_ID, ["$sohu_client_id"])
 AC_SUBST(SOHU_CLIENT_SECRET, ["$sohu_client_secret"])
 
+# Set Tencent client id/secret
+AC_ARG_WITH(tencent-client-id,
+            [AS_HELP_STRING([--with-tencent-client-id],
+                            [Tencent client id])],
+                            [tencent_client_id=$withval],
+                            [tencent_client_id="801336640"])
+AC_ARG_WITH(tencent-client-secret,
+            [AS_HELP_STRING([--with-tencent-client-secret],
+                            [Tencent client secret])],
+                            [tencent_client_secret=$withval],
+                            [tencent_client_secret="f00f83cae40b5e65902f7776b052fd76"])
+AC_SUBST(TENCENT_CLIENT_ID, ["$tencent_client_id"])
+AC_SUBST(TENCENT_CLIENT_SECRET, ["$tencent_client_secret"])
+
 # Set Windows Live client id
 AC_ARG_WITH(windows-live-client-id,
             [AS_HELP_STRING([--with-windows-live-client-id],
@@ -243,6 +257,7 @@ AC_CONFIG_FILES([
 	data/providers/instagram.provider.in
 	data/providers/sina.provider.in
 	data/providers/sohu.provider.in
+	data/providers/tencent.provider.in
 	data/providers/twitter.provider.in
 	data/providers/windows-live.provider.in
 	Makefile
