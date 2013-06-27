@@ -3,6 +3,7 @@
 	$(INTLTOOL_V_MERGE) LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_MERGE_V_OPTIONS) --no-translations -x -u $< $@
 
 services_in_files = \
+	facebook-contacts.service.in \
 	facebook-im.service.in \
 	facebook-microblog.service.in \
 	facebook-sharing.service.in \

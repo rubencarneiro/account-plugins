@@ -80,6 +80,7 @@ providers_DATA = \
 	$(INTLTOOL_V_MERGE) LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_MERGE_V_OPTIONS) --no-translations -x -u $< $@
 
 services_in_files = \
+	data/services/facebook-contacts.service.in \
 	data/services/facebook-im.service.in \
 	data/services/facebook-microblog.service.in \
 	data/services/facebook-sharing.service.in \
