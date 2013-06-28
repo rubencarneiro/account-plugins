@@ -1,3 +1,13 @@
+account-plugins (0.11+13.10.20130628-0ubuntu1) saucy; urgency=low
+
+  [ Ken VanDine ]
+  * added new service for facebook-contacts.
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 123
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 28 Jun 2013 04:31:05 +0000
+
 account-plugins (0.11+13.10.20130627-0ubuntu1) saucy; urgency=low
 
   [ Alberto Mardegan ]
