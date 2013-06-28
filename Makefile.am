@@ -108,12 +108,12 @@ dist_webkitoptions_DATA = \
 	data/webkit-options/api.instagram.com.conf \
 	data/webkit-options/api.weibo.com.conf \
 	data/webkit-options/api.t.sohu.com.conf \
-	data/webkit-options/open.t.qq.com.conf \
 	data/webkit-options/api.twitter.com.conf \
 	data/webkit-options/foursquare.com.conf \
 	data/webkit-options/identi.ca.conf \
 	data/webkit-options/login.live.com.conf \
 	data/webkit-options/login.yahoo.com.conf \
+	data/webkit-options/open.t.qq.com.conf \
 	data/webkit-options/secure.flickr.com.conf \
 	data/webkit-options/www.facebook.com.conf \
 	data/webkit-options/www.linkedin.com.conf
