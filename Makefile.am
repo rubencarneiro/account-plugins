@@ -87,7 +87,7 @@ services_in_files = \
 	data/services/flickr-microblog.service.in \
 	data/services/flickr-sharing.service.in \
 	data/services/foursquare-microblog.service.in \
-	data/services/google-docs.service.in \
+	data/services/google-drive.service.in \
 	data/services/google-im.service.in \
 	data/services/identica-microblog.service.in \
 	data/services/linkedin-microblog.service.in \
