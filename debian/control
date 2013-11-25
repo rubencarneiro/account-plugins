@@ -23,7 +23,6 @@ Vcs-Bzr: https://code.launchpad.net/~online-accounts/account-plugins/trunk
 Package: libaccount-plugin-generic-oauth
 Architecture: i386 amd64 armhf arm64
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         signon-keyring-extension,
          signon-plugin-oauth2,
 Replaces: account-plugin-generic-oauth (<< 0.10bzr13.04.30)
 Breaks: account-plugin-generic-oauth (<< 0.10bzr13.04.30)
@@ -34,7 +33,6 @@ Description: GNOME Control Center account plugin for single signon - generic OAu
 Package: libaccount-plugin-google
 Architecture: i386 amd64 armhf arm64
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         signon-keyring-extension,
          signon-plugin-oauth2,
 Replaces: account-plugin-google (<< 0.10bzr13.04.30)
 Breaks: account-plugin-google (<< 0.10bzr13.04.30)
@@ -138,7 +136,6 @@ Depends: ${misc:Depends},
          gir1.2-glib-2.0,
          gir1.2-signon-1.0,
          gir1.2-accounts-1.0,
-         signon-keyring-extension,
          signon-plugin-oauth2,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: GNOME Control Center account plugins for single signon - tools
