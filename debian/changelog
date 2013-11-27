@@ -1,3 +1,18 @@
+account-plugins (0.11+14.04.20131126.2-0ubuntu1) trusty; urgency=low
+
+  [ Ken VanDine ]
+  * Dropped depends for signon-keyring-extension, it's only needed for
+    plugins when using gnome-control-center-signon.
+
+  [ Alberto Mardegan ]
+  * Live: add IMAP access to scopes list This will be used by EDS. .
+    (LP: #1245381)
+
+  [ Ubuntu daily release ]
+  * Automatic snapshot from revision 130
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Tue, 26 Nov 2013 19:08:55 +0000
+
 account-plugins (0.11+13.10.20130802-0ubuntu1) saucy; urgency=low
 
   [ Ken VanDine ]
