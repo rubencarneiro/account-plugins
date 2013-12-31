@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<provider id="jabber">
+  <name>Jabber</name>
+  <icon>jabber</icon>
+  <translations>account-plugins</translations>
+
+  <template>
+    <group name="auth">
+    </group>
+  </template>
+</provider>
