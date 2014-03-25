@@ -1,3 +1,9 @@
+account-plugins (0.11+14.04.20131126.2-0ubuntu2) trusty; urgency=medium
+
+  * Build for Architecture:any.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Sun, 16 Mar 2014 02:08:42 +0000
+
 account-plugins (0.11+14.04.20131126.2-0ubuntu1) trusty; urgency=low
 
   [ Ken VanDine ]
