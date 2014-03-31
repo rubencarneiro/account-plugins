@@ -1,5 +1,4 @@
 etc/signon-ui/webkit-options.d/login.yahoo.com.conf
-etc/signon-ui/webkit-options.d/secure.flickr.com.conf
 usr/share/accounts/services/flickr-*.service
 usr/share/accounts/providers/flickr.provider
 usr/share/accounts/qml-plugins/flickr/Main.qml
