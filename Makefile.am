@@ -112,7 +112,6 @@ dist_webkitoptions_DATA = \
 	data/webkit-options/identi.ca.conf \
 	data/webkit-options/login.live.com.conf \
 	data/webkit-options/login.yahoo.com.conf \
-	data/webkit-options/secure.flickr.com.conf \
 	data/webkit-options/www.facebook.com.conf \
 	data/webkit-options/www.linkedin.com.conf
 
