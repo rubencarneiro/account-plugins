@@ -1,4 +1,0 @@
-#!/bin/sh
-set -e
-
-dpkg-maintscript-helper rm_conffile /etc/signon-ui/webkit-options.d/secure.flickr.com.conf -- "$@"
