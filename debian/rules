@@ -12,6 +12,7 @@ override_dh_auto_configure:
 		--with-twitter-consumer-key="NGOB5S7sICsj6epjh0PhAw" \
 		--with-twitter-consumer-secret="rbUEJCBEokMnGZd8bubd0QL2cSmoCjJeyiSJpnx3OM0" \
 		--with-windows-live-client-id="00000000400D5635" \
+		--with-facebook-client-id="271112146382618" \
 		--with-foursquare-client-id="1I2UNJXPHNDZT3OPZOOA5LCPIUEUJFMKRXSF42UFCN1KXKTK" \
 		--with-google-client-id="759250720802-4sii0me9963n9fdqdmi7cepn6ub8luoh.apps.googleusercontent.com" \
 		--with-google-client-secret="juFngKUcuhB7IRQqHtSLavqJ" \
