@@ -1,3 +1,20 @@
+account-plugins (0.11+14.04.20140409.1-0ubuntu1) trusty; urgency=low
+
+  [ Ubuntu daily release ]
+  * New rebuild forced
+
+  [ Alberto Mardegan ]
+  * Use new Canonical-owned facebook application key (LP: #1304798)
+
+  [ David Barth ]
+  * This change is to fix the maintainer scripts for the flickr
+    settings. It mostly undoes the changes of
+    https://code.launchpad.net/~mardy/account-
+    plugins/lp1299659/+merge/213415 which are considered dangerous. (LP:
+    #1299659)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 09 Apr 2014 17:58:25 +0000
+
 account-plugins (0.11+14.04.20140401-0ubuntu1) trusty; urgency=low
 
   [ Ubuntu daily release ]
