@@ -41,8 +41,6 @@ public class GooglePlugin : Ap.OAuthPlugin {
         oauth_params.insert ("AuthPath",
                              "o/oauth2/auth?access_type=offline&approval_prompt=force");
         set_oauth_parameters (oauth_params);
-
-        set_ignore_cookies (true);
     }
 }
 
