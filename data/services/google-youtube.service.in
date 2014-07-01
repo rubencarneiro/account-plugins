@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="google-youtube">
+  <type>sharing</type>
+  <name>Youtube</name>
+  <icon>youtube</icon>
+  <provider>google</provider>
+  <translations>account-plugins</translations>
+</service>
+
