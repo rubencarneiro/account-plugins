@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT([account-plugins],
-        [0.11],
+        [0.12],
         [https://bugs.launchpad.net/online-accounts-account-plugins/+filebug],
         [account-plugins],
         [https://launchpad.net/online-accounts-account-plugins])
