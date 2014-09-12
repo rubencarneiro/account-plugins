@@ -23,6 +23,7 @@
           <setting name="ClientId">@GOOGLE_CLIENT_ID@</setting>
           <setting name="ClientSecret">@GOOGLE_CLIENT_SECRET@</setting>
           <setting name="AllowedSchemes" type="as">['https','http']</setting>
+          <setting name="ForceClientAuthViaRequestBody" type="b">true</setting>
         </group>
       </group>
     </group>
