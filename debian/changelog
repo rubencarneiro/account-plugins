@@ -1,9 +1,11 @@
-account-plugins (0.12-0ubuntu1) UNRELEASED; urgency=medium
+account-plugins (0.12+14.10.20140912-0ubuntu1) utopic; urgency=medium
 
+  [ Alberto Mardegan ]
   * Google: add ForceClientAuthViaRequestBody flag, required by the new
     signon-plugin-oauth2
+  * Remove unused facebook contacts service (LP: #1323820)
 
- -- Alberto Mardegan <alberto.mardegan@canonical.com>  Thu, 11 Sep 2014 13:04:44 +0300
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Fri, 12 Sep 2014 07:36:50 +0000
 
 account-plugins (0.11+14.04.20140409.1-0ubuntu1) trusty; urgency=low
 
