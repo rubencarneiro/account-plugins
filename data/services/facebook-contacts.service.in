@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<service id="facebook-contacts">
-  <type>contacts</type>
-  <name>Facebook</name>
-  <icon>facebook</icon>
-  <provider>facebook</provider>
-  <translations>account-plugins</translations>
-</service>
