@@ -5,6 +5,7 @@
   <translations>account-plugins</translations>
   <domains>.*facebook\.com</domains>
   <plugin>generic-oauth</plugin>
+  <single-account>true</single-account>
 
   <template>
     <group name="auth">
