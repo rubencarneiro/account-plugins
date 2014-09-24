@@ -1,3 +1,10 @@
+account-plugins (0.12+14.10.20140924-0ubuntu1) utopic; urgency=low
+
+  [ Alberto Mardegan ]
+  * Limit Facebook to one account only (LP: #1373288)
+
+ -- Ubuntu daily release <ps-jenkins@lists.canonical.com>  Wed, 24 Sep 2014 23:36:09 +0000
+
 account-plugins (0.12+14.10.20140912-0ubuntu1) utopic; urgency=medium
 
   [ Alberto Mardegan ]
