@@ -18,7 +18,7 @@
           <setting name="RedirectUri">https://www.facebook.com/connect/login_success.html</setting>
           <setting name="ResponseType">token</setting>
           <setting name="Display">popup</setting>
-          <setting name="Scope" type="as">['publish_stream','read_stream','status_update','user_photos','friends_photos','xmpp_login']</setting>
+          <setting name="Scope" type="as">['publish_actions','read_stream','user_photos']</setting>
           <setting name="ClientId">@FACEBOOK_CLIENT_ID@</setting>
           <setting name="AllowedSchemes" type="as">['https','http']</setting>
         </group>
