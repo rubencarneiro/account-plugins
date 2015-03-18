@@ -1,3 +1,11 @@
+account-plugins (0.12+15.04.20150318-0ubuntu1) vivid; urgency=medium
+
+  [ Alberto Mardegan ]
+  * Add required ResponseType parameter to Facebook plugin. (LP:
+    #1430694, #1429911)
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Wed, 18 Mar 2015 09:20:41 +0000
+
 account-plugins (0.12+14.10.20140924-0ubuntu1) utopic; urgency=low
 
   [ Alberto Mardegan ]
