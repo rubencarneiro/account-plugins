@@ -1,3 +1,13 @@
+account-plugins (0.12+15.04.20150415.1-0ubuntu1) vivid; urgency=medium
+
+  [ Alberto Mardegan ]
+  * The "username" field has been removed in the 2.0 API (LP: #1441476)
+
+  [ CI Train Bot ]
+  * New rebuild forced.
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Wed, 15 Apr 2015 13:36:57 +0000
+
 account-plugins (0.12+15.04.20150318-0ubuntu1) vivid; urgency=medium
 
   [ Alberto Mardegan ]
