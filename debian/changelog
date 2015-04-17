@@ -1,3 +1,13 @@
+account-plugins (0.12+15.04.20150417-0ubuntu1) vivid; urgency=medium
+
+  [ Alberto Mardegan ]
+  * Remove non-working services (LP: #1432613)
+
+  [ CI Train Bot ]
+  * New rebuild forced.
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Fri, 17 Apr 2015 14:56:36 +0000
+
 account-plugins (0.12+15.04.20150415.1-0ubuntu1) vivid; urgency=medium
 
   [ Alberto Mardegan ]
