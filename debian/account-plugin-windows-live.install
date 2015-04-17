@@ -1,3 +1,2 @@
 etc/signon-ui/webkit-options.d/login.live.com.conf
-usr/share/accounts/services/wlm.service
 usr/share/accounts/providers/windows-live.provider

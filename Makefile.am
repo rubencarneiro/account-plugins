@@ -80,7 +80,6 @@ providers_DATA = \
 	$(INTLTOOL_V_MERGE) LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_MERGE_V_OPTIONS) --no-translations -x -u $< $@
 
 services_in_files = \
-	data/services/facebook-im.service.in \
 	data/services/facebook-microblog.service.in \
 	data/services/facebook-sharing.service.in \
 	data/services/flickr-microblog.service.in \
@@ -94,8 +93,7 @@ services_in_files = \
 	data/services/picasa.service.in \
 	data/services/sina-microblog.service.in \
 	data/services/sohu-microblog.service.in \
-	data/services/twitter-microblog.service.in \
-	data/services/wlm.service.in
+	data/services/twitter-microblog.service.in
 
 services_DATA = \
 	$(services_in_files:.service.in=.service)
