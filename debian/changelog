@@ -1,3 +1,12 @@
+account-plugins (0.12+15.10.20150723-0ubuntu1) wily; urgency=medium
+
+  [ Sebastien Bacher ]
+  * remove the windows live plugin binary, the oauth package is already
+    having a conflict with it which makes it uninstallable and lead the
+    archive migration to discard the update as invalid
+
+ -- CI Train Bot <ci-train-bot@canonical.com>  Thu, 23 Jul 2015 14:50:25 +0000
+
 account-plugins (0.12+15.04.20150417-0ubuntu1) vivid; urgency=medium
 
   [ Alberto Mardegan ]
