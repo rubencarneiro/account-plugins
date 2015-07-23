@@ -89,14 +89,6 @@ Depends: ${misc:Depends},
 Description: GNOME Control Center account plugin for single signon - foursquare
  GNOME Control Center account plugins for single signon
 
-Package: account-plugin-windows-live
-Architecture: all
-Depends: ${misc:Depends},
-         libaccount-plugin-generic-oauth,
-         unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Description: GNOME Control Center account plugin for single signon - windows live
- GNOME Control Center account plugins for single signon
-
 Package: account-plugin-sohu
 Architecture: all
 Depends: ${misc:Depends},
