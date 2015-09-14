@@ -1,3 +1,13 @@
+account-plugins (0.12+15.10.20150914-0ubuntu1) wily; urgency=medium
+
+  [ Alberto Mardegan ]
+  * Facebook: remove deprecated "read_stream" permission (LP: #1493733)
+
+  [ CI Train Bot ]
+  * New rebuild forced.
+
+ -- David Barth <david.barth@canonical.com>  Mon, 14 Sep 2015 08:22:40 +0000
+
 account-plugins (0.12+15.10.20150723-0ubuntu1) wily; urgency=medium
 
   [ Sebastien Bacher ]
