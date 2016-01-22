@@ -2,7 +2,9 @@ import Ubuntu.OnlineAccounts.Plugin 1.0
 
 OAuthMain {
     creationComponent: OAuth {
-        function completeCreation(reply) {
+        property var __meData
+
+        function getUserName(reply, callback) {
             console.log("Access token: " + reply.AccessToken)
             var http = new XMLHttpRequest()
             var url = "https://graph.facebook.com/me?access_token=" + reply.AccessToken;
@@ -12,22 +14,24 @@ OAuthMain {
                     if (http.status == 200) {
                         console.log("ok")
                         console.log("response text: " + http.responseText)
-                        var response = JSON.parse(http.responseText)
-                        account.updateDisplayName(response.name)
-                        globalAccountService.updateSettings({
-                            'id': response.id
-                        })
-                        account.synced.connect(finished)
-                        account.sync()
-
+                        __meData = JSON.parse(http.responseText)
+                        callback(__meData.name)
+                        return true
                     } else {
                         console.log("error: " + http.status)
-                        cancel()
+                        return false
                     }
                 }
             };
 
             http.send(null);
+        }
+
+        function beforeSaving(reply) {
+            globalAccountService.updateSettings({
+                'id': __meData.id
+            })
+            saveAccount()
         }
     }
 }
