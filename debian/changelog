@@ -1,3 +1,10 @@
+account-plugins (0.12+16.04.20160126-0ubuntu1) xenial; urgency=medium
+
+  [ Alberto Mardegan ]
+  * Use the new methods to retrieve the username.
+
+ -- David Barth <david.barth@canonical.com>  Tue, 26 Jan 2016 10:52:41 +0000
+
 account-plugins (0.12+15.10.20150914-0ubuntu1) wily; urgency=medium
 
   [ Alberto Mardegan ]
