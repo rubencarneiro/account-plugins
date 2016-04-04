@@ -8,6 +8,7 @@ DISTCHECK_CONFIGURE_FLAGS = \
 if ENABLE_LIBACCOUNT_PLUGIN
 # Binary account plugins.
 plugin_LTLIBRARIES = \
+	libflickr.la
 	libgeneric-oauth.la \
 	libgoogle.la
 
@@ -41,6 +42,12 @@ libgoogle_la_LIBADD = $(plugin_libadd)
 libgoogle_la_LDFLAGS = $(plugin_ldflags)
 libgoogle_la_SOURCES = \
 	src/google.vala
+
+libflickr_la_CPPFLAGS = $(plugin_cppflags)
+libflickr_la_LIBADD = $(plugin_libadd)
+libflickr_la_LDFLAGS = $(plugin_ldflags)
+libflickr_la_SOURCES = \
+	src/flickr.vala
 
 libgeneric_oauth_la_CPPFLAGS = $(plugin_cppflags)
 libgeneric_oauth_la_LIBADD = $(plugin_libadd)
@@ -108,7 +115,6 @@ dist_webkitoptions_DATA = \
 	data/webkit-options/foursquare.com.conf \
 	data/webkit-options/identi.ca.conf \
 	data/webkit-options/login.live.com.conf \
-	data/webkit-options/login.yahoo.com.conf \
 	data/webkit-options/www.facebook.com.conf \
 	data/webkit-options/www.linkedin.com.conf
 
