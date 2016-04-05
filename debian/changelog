@@ -1,3 +1,18 @@
+account-plugins (0.13-0ubuntu1) UNRELEASED; urgency=medium
+
+  * After the authentication, retrieve the username in Google, Facebook,
+    Flickr and Twitter plugins (LP: #1565772)
+  * debian/control, debian/libaccount-plugin-facebook.install,
+    debian/libaccount-plugin-flickr.install,
+    debian/libaccount-plugin-twitter.install:
+    add packages containing plugin modules.
+  * debian/account-plugin-facebook.install,
+    debian/account-plugin-flickr.install,
+    debian/account-plugin-twitter.install:
+    remove unneeded webkit-options files.
+
+ -- Alberto Mardegan <alberto.mardegan@canonical.com>  Tue, 05 Apr 2016 13:47:48 +0300
+
 account-plugins (0.12+16.04.20160126-0ubuntu1) xenial; urgency=medium
 
   [ Alberto Mardegan ]
