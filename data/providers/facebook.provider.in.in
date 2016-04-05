@@ -4,7 +4,7 @@
   <icon>facebook</icon>
   <translations>account-plugins</translations>
   <domains>.*facebook\.com</domains>
-  <plugin>generic-oauth</plugin>
+  <plugin>facebook</plugin>
   <single-account>true</single-account>
 
   <template>

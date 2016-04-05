@@ -6,6 +6,7 @@
 *.service
 *.substvars
 *.stamp
+*.trs
 INSTALL
 Makefile
 Makefile.in
@@ -50,7 +51,11 @@ stamp-h1
 .deps
 .dirstamp
 .libs
+/src/facebook.c
+/src/flickr.c
 /src/generic-oauth.c
 /src/google.c
+/src/twitter.c
+/test-driver
 /test-provider
 /test-service
