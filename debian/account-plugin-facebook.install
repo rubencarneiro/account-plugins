@@ -1,4 +1,3 @@
-etc/signon-ui/webkit-options.d/www.facebook.com.conf
 usr/share/accounts/services/facebook-sharing.service
 usr/share/accounts/services/facebook-microblog.service
 usr/share/accounts/providers/facebook.provider
