@@ -52,9 +52,10 @@ libflickr_la_LDFLAGS = $(plugin_ldflags)
 libflickr_la_SOURCES = \
 	src/flickr.vala
 
-libgoogle_la_CPPFLAGS = $(plugin_cppflags)
-libgoogle_la_LIBADD = $(plugin_libadd)
+libgoogle_la_CPPFLAGS = $(plugin_cppflags) $(RESTAPIS_CFLAGS)
+libgoogle_la_LIBADD = $(plugin_libadd) $(RESTAPIS_LIBS)
 libgoogle_la_LDFLAGS = $(plugin_ldflags)
+libgoogle_la_VALAFLAGS = --pkg libsoup-2.4 --pkg json-glib-1.0
 libgoogle_la_SOURCES = \
 	src/google.vala
 

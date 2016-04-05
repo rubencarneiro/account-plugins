@@ -31,18 +31,18 @@ public class FacebookPlugin : Ap.OAuthPlugin {
         Soup.URI destination_uri =
             new Soup.URI ("https://graph.facebook.com/me?access_token=" +
                           access_token);
-        var message = new Soup.Message.from_uri("GET", destination_uri);
+        var message = new Soup.Message.from_uri ("GET", destination_uri);
         session = new Soup.Session ();
         session.queue_message (message, (sess, msg) => {
             debug ("Got message reply");
             string body = (string) msg.response_body.data;
-            Json.Parser parser = new Json.Parser();
+            Json.Parser parser = new Json.Parser ();
             try {
-                parser.load_from_data(body);
+                parser.load_from_data (body);
 
-                Json.Node root = parser.get_root();
-                Json.Object response_object = root.get_object();
-                var username = response_object.get_string_member("name");
+                Json.Node root = parser.get_root ();
+                Json.Object response_object = root.get_object ();
+                var username = response_object.get_string_member ("name");
                 account.set_display_name (username);
             } catch (Error error) {
                 warning ("Could not parse reply: " + body);
