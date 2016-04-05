@@ -19,16 +19,21 @@
  *      Alberto Mardegan <alberto.mardegan@canonical.com>
  */
 
-public class FlickrPlugin : Ap.OAuthPlugin {
-    public FlickrPlugin (Ag.Account account) {
+public class TwitterPlugin : Ap.OAuthPlugin {
+    public TwitterPlugin (Ag.Account account) {
         Object (account: account);
     }
 
     protected override void query_username () {
         var reply = get_oauth_reply ();
-        Variant? v_name = reply.lookup_value ("username", null);
+        Variant? v_name = reply.lookup_value ("ScreenName", null);
         if (v_name != null) {
             account.set_display_name (v_name.get_string ());
+        } else {
+            v_name = reply.lookup_value ("UserId", null);
+            if (v_name != null) {
+                account.set_display_name (v_name.get_string ());
+            }
         }
 
         store_account ();
@@ -37,5 +42,5 @@ public class FlickrPlugin : Ap.OAuthPlugin {
 
 public GLib.Type ap_module_get_object_type ()
 {
-    return typeof (FlickrPlugin);
+    return typeof (TwitterPlugin);
 }

@@ -8,9 +8,10 @@ DISTCHECK_CONFIGURE_FLAGS = \
 if ENABLE_LIBACCOUNT_PLUGIN
 # Binary account plugins.
 plugin_LTLIBRARIES = \
-	libflickr.la
+	libflickr.la \
 	libgeneric-oauth.la \
-	libgoogle.la
+	libgoogle.la \
+	libtwitter.la
 
 VALAFLAGS = \
 	--vapidir $(top_srcdir)/src \
@@ -37,17 +38,23 @@ plugin_ldflags = \
 	-no-undefined \
 	-export-symbols-regex '^ap_module_get_object_type'
 
+libflickr_la_CPPFLAGS = $(plugin_cppflags)
+libflickr_la_LIBADD = $(plugin_libadd)
+libflickr_la_LDFLAGS = $(plugin_ldflags)
+libflickr_la_SOURCES = \
+	src/flickr.vala
+
 libgoogle_la_CPPFLAGS = $(plugin_cppflags)
 libgoogle_la_LIBADD = $(plugin_libadd)
 libgoogle_la_LDFLAGS = $(plugin_ldflags)
 libgoogle_la_SOURCES = \
 	src/google.vala
 
-libflickr_la_CPPFLAGS = $(plugin_cppflags)
-libflickr_la_LIBADD = $(plugin_libadd)
-libflickr_la_LDFLAGS = $(plugin_ldflags)
-libflickr_la_SOURCES = \
-	src/flickr.vala
+libtwitter_la_CPPFLAGS = $(plugin_cppflags)
+libtwitter_la_LIBADD = $(plugin_libadd)
+libtwitter_la_LDFLAGS = $(plugin_ldflags)
+libtwitter_la_SOURCES = \
+	src/twitter.vala
 
 libgeneric_oauth_la_CPPFLAGS = $(plugin_cppflags)
 libgeneric_oauth_la_LIBADD = $(plugin_libadd)
@@ -111,7 +118,6 @@ dist_webkitoptions_DATA = \
 	data/webkit-options/api.instagram.com.conf \
 	data/webkit-options/api.weibo.com.conf \
 	data/webkit-options/api.t.sohu.com.conf \
-	data/webkit-options/api.twitter.com.conf \
 	data/webkit-options/foursquare.com.conf \
 	data/webkit-options/identi.ca.conf \
 	data/webkit-options/login.live.com.conf \

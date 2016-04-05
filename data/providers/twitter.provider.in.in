@@ -3,7 +3,7 @@
   <name>Twitter</name>
   <icon>twitter</icon>
   <translations>account-plugins</translations>
-  <plugin>generic-oauth</plugin>
+  <plugin>twitter</plugin>
   <domains>.*twitter\.com</domains>
 
   <template>
