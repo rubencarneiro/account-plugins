@@ -31,6 +31,7 @@ compile
 /debian/account-plugin-sohu/
 /debian/account-plugin-tools/
 /debian/account-plugin-twitter/
+/debian/account-plugin-vk/
 /debian/account-plugin-windows-live/
 /debian/autoreconf.after
 /debian/autoreconf.before

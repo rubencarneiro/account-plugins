@@ -121,6 +121,13 @@ Depends: ${misc:Depends},
 Description: GNOME Control Center account plugin for single signon - Instagram
  GNOME Control Center account plugins for single signon
 
+Package: account-plugin-vk
+Architecture: all
+Depends: ${misc:Depends},
+         libaccount-plugin-generic-oauth | ubuntu-system-settings-online-accounts,
+Description: GNOME Control Center account plugin for single signon - VKontakte
+ GNOME Control Center account plugins for single signon
+
 Package: account-plugin-tools
 Architecture: all
 Depends: ${misc:Depends},

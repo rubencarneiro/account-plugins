@@ -225,6 +225,14 @@ AC_ARG_WITH(sohu-client-secret,
 AC_SUBST(SOHU_CLIENT_ID, ["$sohu_client_id"])
 AC_SUBST(SOHU_CLIENT_SECRET, ["$sohu_client_secret"])
 
+# Set VK client id
+AC_ARG_WITH(vk-client-id,
+            [AS_HELP_STRING([--with-vk-client-id],
+                            [VK client ID])],
+                            [vk_client_id=$withval],
+                            [vk_client_id="5404010"])
+AC_SUBST(VK_CLIENT_ID, ["$vk_client_id"])
+
 # Set Windows Live client id
 AC_ARG_WITH(windows-live-client-id,
             [AS_HELP_STRING([--with-windows-live-client-id],
@@ -244,6 +252,7 @@ AC_CONFIG_FILES([
 	data/providers/sina.provider.in
 	data/providers/sohu.provider.in
 	data/providers/twitter.provider.in
+	data/providers/vk.provider.in
 	data/providers/windows-live.provider.in
 	Makefile
 	po/Makefile.in
