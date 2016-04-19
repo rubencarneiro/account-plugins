@@ -12,6 +12,9 @@ Column {
     anchors.margins: units.gu(1)
     spacing: units.gu(1)
 
+    property string __host: ""
+    property bool __busy: false
+
     Label {
         anchors { left: parent.left; right: parent.right }
         text: i18n.dtr("account-plugins", "URL:")
@@ -22,6 +25,7 @@ Column {
         anchors { left: parent.left; right: parent.right }
         placeholderText: i18n.dtr("account-plugins", "http://example.org")
         focus: true
+        enabled: !__busy
 
         inputMethodHints: Qt.ImhUrlCharactersOnly
     }
@@ -35,6 +39,7 @@ Column {
         id: usernameField
         anchors { left: parent.left; right: parent.right }
         placeholderText: i18n.dtr("account-plugins", "Your username")
+        enabled: !__busy
 
         KeyNavigation.tab: passwordField
     }
@@ -49,8 +54,10 @@ Column {
         anchors { left: parent.left; right: parent.right }
         placeholderText: i18n.tr("Your password")
         echoMode: TextInput.Password
+        enabled: !__busy
 
         inputMethodHints: Qt.ImhSensitiveData
+        Keys.onReturnPressed: login()
     }
 
     Row {
@@ -72,13 +79,8 @@ Column {
             color: "#cc3300"
             height: parent.height
             width: (parent.width / 2) - 0.5 * parent.spacing
-            onClicked: {
-                account.updateDisplayName(usernameField.text + '@' + urlField.text)
-
-                creds.userName = usernameField.text
-                creds.secret = passwordField.text
-                creds.sync()
-            }
+            onClicked: login()
+            enabled: !__busy
         }
     }
 
@@ -96,6 +98,63 @@ Column {
         autoSync: false
     }
 
+    function login() {
+        __host = checkURL(urlField.text)
+        var username = usernameField.text
+        var password = passwordField.text
+
+        __busy = true
+        checkAccount(__host, username, password, function(success) {
+            console.log("callback called: " + success)
+            if (success) {
+                var strippedHost = __host.replace(/^https?:\/\//, '')
+                account.updateDisplayName(username + '@' + strippedHost)
+                creds.userName = username
+                creds.secret = password
+                creds.sync()
+            }
+            __busy = false
+        })
+    }
+
+    function findChild(node, tagName) {
+        if (!node) return node;
+        var children = node.childNodes
+        for (var i = 0; i < children.length; i++) {
+            if (children[i].nodeName == tagName) {
+                return children[i]
+            }
+        }
+        return null
+    }
+
+    function checkAccount(host, username, password, callback) {
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+            if (request.readyState === XMLHttpRequest.DONE) {
+                console.log("response: " + request.responseText)
+                if (request.status == 200) {
+                    var root = request.responseXML.documentElement
+                    var metaElement = findChild(root, "meta")
+                    var statusElement = findChild(metaElement, "status")
+                    if (statusElement && statusElement.childNodes.length > 0 &&
+                        statusElement.childNodes[0].nodeValue == "ok") {
+                        callback(true)
+                    } else {
+                        callback(false)
+                    }
+                } else {
+                    callback(false)
+                }
+            }
+        }
+        request.open("POST", host + "/ocs/v1.php/person/check", true);
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        var body = "login=" + username + "&password=" + password
+        request.send(body);
+
+    }
+
     function credentialsStored() {
         console.log("Credentials stored, id: " + creds.credentialsId)
         if (creds.credentialsId == 0) return
@@ -103,7 +162,7 @@ Column {
         globalAccountSettings.updateServiceEnabled(true)
         globalAccountSettings.credentials = creds
         globalAccountSettings.updateSettings({
-            "host": checkURL(urlField.text)
+            "host": __host
         })
         account.synced.connect(finished)
         account.sync()
@@ -111,13 +170,13 @@ Column {
 
     // check host url for http
     function checkURL(url) {
+        var host = url.trim()
         // if the URL doesn't contain HTTP(S) then add it!
-        if (url.indexOf('http') >= 0) {
-            return urlField.text
-        } else {
-            console.debug("added http")
-            return 'http://' + urlField.text
+        if (!host.indexOf('http') == 0) {
+            host = 'http://' + host
         }
+        // if the user typed trailing '/' or "index.php", strip that
+        return host.replace(/\/(index.php)?\/*$/, '')
     }
 
 }
