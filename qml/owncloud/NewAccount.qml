@@ -54,6 +54,7 @@ Item {
             anchors { left: parent.left; right: parent.right }
             placeholderText: i18n.dtr("account-plugins", "Your username")
             enabled: !__busy
+            inputMethodHints: Qt.ImhNoAutoUppercase + Qt.ImhNoPredictiveText + Qt.ImhPreferLowercase
 
             KeyNavigation.tab: passwordField
         }
