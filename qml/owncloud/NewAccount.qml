@@ -13,11 +13,21 @@ Item {
     property var __account: account
     property string __host: ""
     property bool __busy: false
+    property string __hostError: i18n.dtr("account-plugins", "Invalid host URL")
 
     Column {
         id: contents
         anchors { left: parent.left; right: parent.right }
         spacing: units.gu(1)
+
+        Label {
+            id: errorLabel
+            anchors { left: parent.left; right: parent.right }
+            font.bold: true
+            color: UbuntuColors.red
+            wrapMode: Text.Wrap
+            visible: !__busy && text != ""
+        }
 
         Label {
             anchors { left: parent.left; right: parent.right }
@@ -56,7 +66,7 @@ Item {
         TextField {
             id: passwordField
             anchors { left: parent.left; right: parent.right }
-            placeholderText: i18n.tr("Your password")
+            placeholderText: i18n.dtr("account-plugins", "Your password")
             echoMode: TextInput.Password
             enabled: !__busy
 
@@ -71,16 +81,15 @@ Item {
             spacing: units.gu(1)
             Button {
                 id: btnCancel
-                text: i18n.tr("Cancel")
-                color: "#1c091a"
+                text: i18n.dtr("account-plugins", "Cancel")
                 height: parent.height
                 width: (parent.width / 2) - 0.5 * parent.spacing
                 onClicked: finished()
             }
             Button {
                 id: btnContinue
-                text: i18n.tr("Continue")
-                color: "#cc3300"
+                text: i18n.dtr("account-plugins", "Continue")
+                color: UbuntuColors.green
                 height: parent.height
                 width: (parent.width / 2) - 0.5 * parent.spacing
                 onClicked: login()
@@ -113,6 +122,7 @@ Item {
         var username = usernameField.text
         var password = passwordField.text
 
+        errorLabel.text = ""
         __busy = true
         var host = __host
         var tryHttp = false
@@ -162,16 +172,25 @@ Item {
             if (request.readyState === XMLHttpRequest.DONE) {
                 console.log("response: " + request.responseText)
                 if (request.status == 200) {
-                    var root = request.responseXML.documentElement
+                    var root = request.responseXML ? request.responseXML.documentElement : null
                     var metaElement = findChild(root, "meta")
                     var statusElement = findChild(metaElement, "status")
                     if (statusElement && statusElement.childNodes.length > 0 &&
                         statusElement.childNodes[0].nodeValue == "ok") {
                         callback(true)
                     } else {
+                        var statusCodeElement = findChild(metaElement, "statuscode")
+                        var statusCode = (statusCodeElement && statusCodeElement.childNodes.length > 0) ?
+                            statusCodeElement.childNodes[0].nodeValue : "999"
+                        if (statusCode == "999") {
+                            showError(__hostError)
+                        } else {
+                            showError(i18n.dtr("account-plugins", "Invalid username or password"))
+                        }
                         callback(false)
                     }
                 } else {
+                    showError(__hostError)
                     callback(false)
                 }
             }
@@ -180,7 +199,10 @@ Item {
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         var body = "login=" + username + "&password=" + password
         request.send(body);
+    }
 
+    function showError(message) {
+        if (!errorLabel.text) errorLabel.text = message
     }
 
     function credentialsStored() {
