@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<provider id="mcloud">
+  <name>MCloud</name>
+  <icon>mcloud</icon>
+  <translations>MCloud</translations>
+  <domains>.*10086\.cn</domains>
+  <plugin>generic-oauth</plugin>
+  <single-account>true</single-account>
+  <template>
+    <group name="auth">
+      <setting name="method">oauth2</setting>
+      <setting name="mechanism">user_agent</setting>
+      <group name="oauth2">
+        <group name="user_agent">
+          <setting name="Host">caiyun.feixin.10086.cn</setting>
+          <setting name="AuthPath">authorize.jsp</setting>
+          <setting name="TokenPath">access_token</setting>
+          <setting name="RedirectUri">http://developer.ubuntu.com/en/</setting>
+          <setting name="ResponseType">code</setting>
+          <setting name="ClientId">@MCLOUD_CLIENT_ID@</setting>
+          <setting type="as" name="Scope">['nd_cloud']</setting>          
+          <setting name="ForceClientAuthViaRequestBody" type="b">true</setting>
+          <setting name="DisableStateParameter" type="b">true</setting>
+          <setting type="as" name="AllowedSchemes">['https', 'http']</setting>
+        </group>
+      </group>
+    </group>
+  </template>
+</provider>

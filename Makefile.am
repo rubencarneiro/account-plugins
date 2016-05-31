@@ -66,6 +66,7 @@ providers_in_in_files = \
 	data/providers/identica.provider.in.in \
 	data/providers/linkedin.provider.in.in \
 	data/providers/instagram.provider.in.in \
+	data/providers/mcloud.provider.in.in \
 	data/providers/owncloud.provider.in.in \
 	data/providers/sina.provider.in.in \
 	data/providers/sohu.provider.in.in \
@@ -119,6 +120,7 @@ dist_webkitoptions_DATA = \
 # https://bugs.launchpad.net/bugs/1571587
 iconsdir = $(datadir)/icons/hicolor/32x32/apps
 dist_icons_DATA = \
+	data/icons/mcloud.png \
 	data/icons/owncloud.png \
 	data/icons/vk.png
 

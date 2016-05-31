@@ -121,6 +121,14 @@ Depends: ${misc:Depends},
 Description: GNOME Control Center account plugin for single signon - Instagram
  GNOME Control Center account plugins for single signon
 
+Package: account-plugin-mcloud
+Architecture: all
+Depends: ${misc:Depends},
+         ubuntu-system-settings-online-accounts,
+Description: Account plugin for online accounts - mCloud
+ Online Accounts plugin provide the user interface to create accounts for
+ third party services.
+
 Package: account-plugin-owncloud
 Architecture: all
 Depends: ${misc:Depends},
