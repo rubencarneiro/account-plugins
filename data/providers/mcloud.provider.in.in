@@ -20,7 +20,6 @@
           <setting name="ClientId">@MCLOUD_CLIENT_ID@</setting>
           <setting name="ClientSecret">@MCLOUD_CLIENT_SECRET@</setting>
           <setting type="as" name="Scope">['nd_cloud']</setting>          
-          <setting name="DisableStateParameter" type="b">true</setting>
           <setting type="as" name="AllowedSchemes">['https', 'http']</setting>
         </group>
       </group>
