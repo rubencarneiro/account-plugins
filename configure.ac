@@ -252,6 +252,7 @@ AC_CONFIG_FILES([
 	data/providers/identica.provider.in
 	data/providers/linkedin.provider.in
 	data/providers/instagram.provider.in
+	data/providers/owncloud.provider.in
 	data/providers/sina.provider.in
 	data/providers/sohu.provider.in
 	data/providers/twitter.provider.in

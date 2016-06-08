@@ -1,0 +1,3 @@
+usr/share/accounts/providers/owncloud.provider
+usr/share/accounts/qml-plugins/owncloud/*.qml
+usr/share/icons/hicolor/32x32/apps/owncloud.png

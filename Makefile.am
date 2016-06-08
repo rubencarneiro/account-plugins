@@ -89,6 +89,7 @@ providers_in_in_files = \
 	data/providers/identica.provider.in.in \
 	data/providers/linkedin.provider.in.in \
 	data/providers/instagram.provider.in.in \
+	data/providers/owncloud.provider.in.in \
 	data/providers/sina.provider.in.in \
 	data/providers/sohu.provider.in.in \
 	data/providers/twitter.provider.in.in \
@@ -133,9 +134,12 @@ dist_webkitoptions_DATA = \
 	data/webkit-options/login.live.com.conf \
 	data/webkit-options/www.linkedin.com.conf
 
-# Temporary until https://bugs.launchpad.net/bugs/1567908 is fixed
+# Temporary until these bugs are fixed:
+# https://bugs.launchpad.net/bugs/1567908
+# https://bugs.launchpad.net/bugs/1571587
 iconsdir = $(datadir)/icons/hicolor/32x32/apps
 dist_icons_DATA = \
+	data/icons/owncloud.png \
 	data/icons/vk.png
 
 dist_bin_SCRIPTS = \
