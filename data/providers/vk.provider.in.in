@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<provider id="vk">
+  <name>VKontakte</name>
+  <icon>vk</icon>
+  <translations>account-plugins</translations>
+  <domains>.*vk\.com</domains>
+
+  <template>
+    <group name="auth">
+      <setting name="method">oauth2</setting>
+      <setting name="mechanism">user_agent</setting>
+      <group name="oauth2">
+        <group name="user_agent">
+          <setting name="Host">oauth.vk.com</setting>
+          <setting name="AuthPath">authorize</setting>
+          <setting name="TokenPath">access_token</setting>
+          <setting name="RedirectUri">https://oauth.vk.com/blank.html</setting>
+          <setting name="ResponseType">token</setting>
+          <setting name="ClientId">@VK_CLIENT_ID@</setting>
+          <setting type="as" name="Scope">['offline']</setting>
+          <setting type="s" name="v">5.50</setting>
+        </group>
+      </group>
+    </group>
+  </template>
+</provider>

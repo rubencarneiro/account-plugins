@@ -21,7 +21,8 @@ override_dh_auto_configure:
 		--with-linkedin-consumer-key="34gnzrg96iq5" \
 		--with-linkedin-consumer-secret="BazRki2LE8eZtcqh" \
 		--with-instagram-client-id="01c3df41a2274a14882adea8e8ebbd46" \
-		--with-instagram-client-secret="4751ccdc39c648719ea83cfb1c866c26" 
+		--with-instagram-client-secret="4751ccdc39c648719ea83cfb1c866c26" \
+		--with-vk-client-id="5402699"
 
 override_dh_install:
 	rm -f debian/*/usr/lib/*/*/*.la

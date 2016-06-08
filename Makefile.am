@@ -92,6 +92,7 @@ providers_in_in_files = \
 	data/providers/sina.provider.in.in \
 	data/providers/sohu.provider.in.in \
 	data/providers/twitter.provider.in.in \
+	data/providers/vk.provider.in.in \
 	data/providers/windows-live.provider.in.in
 
 providers_DATA = \
@@ -131,6 +132,11 @@ dist_webkitoptions_DATA = \
 	data/webkit-options/identi.ca.conf \
 	data/webkit-options/login.live.com.conf \
 	data/webkit-options/www.linkedin.com.conf
+
+# Temporary until https://bugs.launchpad.net/bugs/1567908 is fixed
+iconsdir = $(datadir)/icons/hicolor/32x32/apps
+dist_icons_DATA = \
+	data/icons/vk.png
 
 dist_bin_SCRIPTS = \
 	tools/account-console
