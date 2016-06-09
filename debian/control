@@ -26,10 +26,7 @@ Package: libaccount-plugin-generic-oauth
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
          signon-plugin-oauth2,
-Replaces: account-plugin-generic-oauth (<< 0.10bzr13.04.30)
-Breaks: account-plugin-generic-oauth (<< 0.10bzr13.04.30)
-Conflicts: account-plugin-generic-oauth (<< 0.10bzr13.04.30),
-           account-plugin-windows-live,
+Conflicts: account-plugin-windows-live,
 Description: GNOME Control Center account plugin for single signon - generic OAuth
  GNOME Control Center account plugins for single signon
 
@@ -37,9 +34,6 @@ Package: libaccount-plugin-google
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
          signon-plugin-oauth2,
-Replaces: account-plugin-google (<< 0.10bzr13.04.30)
-Breaks: account-plugin-google (<< 0.10bzr13.04.30)
-Conflicts: account-plugin-google (<< 0.10bzr13.04.30)
 Description: GNOME Control Center account plugin for single signon - Google Auth
  GNOME Control Center account plugins for single signon
 
