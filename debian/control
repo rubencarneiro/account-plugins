@@ -152,16 +152,17 @@ Package: account-plugin-owncloud
 Architecture: all
 Depends: ${misc:Depends},
          ubuntu-system-settings-online-accounts,
-Description: Account plugin for online accounts - ownCloud
- Online Accounts plugin provide the user interface to create accounts for
- third party services.
+Description: Online account plugin for Unity - ownCloud
+ This plugin adds support for creating ownCloud accounts in the Unity Control
+ Center
 
 Package: account-plugin-vk
 Architecture: all
 Depends: ${misc:Depends},
          libaccount-plugin-generic-oauth | ubuntu-system-settings-online-accounts,
-Description: GNOME Control Center account plugin for single signon - VKontakte
- GNOME Control Center account plugins for single signon
+Description: Online account plugin for Unity - VKontakte
+ This plugin adds support for creating VKontakte accounts in the Unity Control
+ Center
 
 Package: account-plugin-tools
 Architecture: all
