@@ -28,10 +28,12 @@ compile
 /debian/account-plugin-google/
 /debian/account-plugin-icons/
 /debian/account-plugin-identica/
+/debian/account-plugin-owncloud/
 /debian/account-plugin-sina/
 /debian/account-plugin-sohu/
 /debian/account-plugin-tools/
 /debian/account-plugin-twitter/
+/debian/account-plugin-vk/
 /debian/account-plugin-windows-live/
 /debian/autoreconf.after
 /debian/autoreconf.before
