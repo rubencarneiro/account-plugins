@@ -27,8 +27,8 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
          signon-plugin-oauth2,
 Conflicts: account-plugin-windows-live,
-Description: GNOME Control Center account plugin for single signon - generic OAuth
- GNOME Control Center account plugins for single signon
+Description: Online account plugin support lib for Unity 7 - generic OAuth
+ Support library for the Unity 7 OAuth-based online account plugins
 
 Package: libaccount-plugin-google
 Architecture: any
