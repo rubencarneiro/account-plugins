@@ -1,9 +1,9 @@
-account-plugins (0.13+16.10.20160608-0ubuntu2) UNRELEASED; urgency=medium
+account-plugins (0.13+16.10.20160614-0ubuntu1) yakkety; urgency=medium
 
   * debian/control:
     Update package descriptions for all account plugins (LP: #1590786) 
 
- -- Alberto Mardegan <alberto.mardegan@canonical.com>  Mon, 13 Jun 2016 15:10:28 +0300
+ -- Alberto Mardegan <mardy@users.sourceforge.net>  Tue, 14 Jun 2016 09:07:28 +0000
 
 account-plugins (0.13+16.10.20160608-0ubuntu1) yakkety; urgency=medium
 
