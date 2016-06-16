@@ -7,9 +7,11 @@ Build-Depends: debhelper (>= 9),
                gobject-introspection,
                python3,
                pkg-config,
+               libaccount-plugin-1.0-dev (>= 0.1.9),
                libaccounts-glib-dev (>= 1.10),
+               libjson-glib-dev,
                libsignon-glib-dev,
-               libaccount-plugin-1.0-dev (>= 0.1.3),
+               libsoup2.4-dev,
                valac (>= 0.16),
                gnome-common,
                dh-autoreconf,
@@ -24,102 +26,127 @@ Package: libaccount-plugin-generic-oauth
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
          signon-plugin-oauth2,
-Replaces: account-plugin-generic-oauth (<< 0.10bzr13.04.30)
-Breaks: account-plugin-generic-oauth (<< 0.10bzr13.04.30)
-Conflicts: account-plugin-generic-oauth (<< 0.10bzr13.04.30),
-           account-plugin-windows-live,
-Description: GNOME Control Center account plugin for single signon - generic OAuth
- GNOME Control Center account plugins for single signon
+Conflicts: account-plugin-windows-live,
+Description: Online account plugin support lib for Unity 7 - generic OAuth
+ Support library for the Unity 7 OAuth-based online account plugins
 
 Package: libaccount-plugin-google
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
          signon-plugin-oauth2,
-Replaces: account-plugin-google (<< 0.10bzr13.04.30)
-Breaks: account-plugin-google (<< 0.10bzr13.04.30)
-Conflicts: account-plugin-google (<< 0.10bzr13.04.30)
-Description: GNOME Control Center account plugin for single signon - Google Auth
- GNOME Control Center account plugins for single signon
+Description: Online account plugin support lib for Unity 7 - Google
+ Support library for the Unity 7 online account plugin
 
 Package: account-plugin-google
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends},
          libaccount-plugin-google | ubuntu-system-settings-online-accounts,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Description: GNOME Control Center account plugin for single signon
- GNOME Control Center account plugins for single signon
+Description: Online account plugin for Unity - Google
+ This plugin adds support for creating Google accounts in the Unity Control
+ Center
+
+Package: libaccount-plugin-facebook
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         signon-plugin-oauth2,
+Description: Online account plugin support lib for Unity 7 - Facebook
+ Support library for the Unity 7 online account plugin
 
 Package: account-plugin-facebook
 Architecture: all
 Depends: ${misc:Depends},
-         libaccount-plugin-generic-oauth | ubuntu-system-settings-online-accounts,
+         libaccount-plugin-facebook | ubuntu-system-settings-online-accounts,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Description: GNOME Control Center account plugin for single signon - facebook
- GNOME Control Center account plugins for single signon
+Description: Online account plugin for Unity - Facebook
+ This plugin adds support for creating Facebook accounts in the Unity Control
+ Center
+
+Package: libaccount-plugin-twitter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         signon-plugin-oauth2,
+Description: Online account plugin support lib for Unity 7 - Twitter
+ Support library for the Unity 7 online account plugin
 
 Package: account-plugin-twitter
 Architecture: all
 Depends: ${misc:Depends},
-         libaccount-plugin-generic-oauth | ubuntu-system-settings-online-accounts,
+         libaccount-plugin-twitter | ubuntu-system-settings-online-accounts,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Description: GNOME Control Center account plugin for single signon - twitter
- GNOME Control Center account plugins for single signon
+Description: Online account plugin for Unity - Twitter
+ This plugin adds support for creating Twitter accounts in the Unity Control
+ Center
+
+Package: libaccount-plugin-flickr
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         signon-plugin-oauth2,
+Description: Online account plugin support lib for Unity 7 - Flickr
+ Support library for the Unity 7 online account plugin
 
 Package: account-plugin-flickr
 Architecture: all
 Depends: ${misc:Depends},
-         libaccount-plugin-generic-oauth | ubuntu-system-settings-online-accounts,
+         libaccount-plugin-flickr | ubuntu-system-settings-online-accounts,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Description: GNOME Control Center account plugin for single signon - flickr
- GNOME Control Center account plugins for single signon
+Description: Online account plugin for Unity - Flickr
+ This plugin adds support for creating Flickr accounts in the Unity Control
+ Center
 
 Package: account-plugin-identica
 Architecture: all
 Depends: ${misc:Depends},
          libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Description: GNOME Control Center account plugin for single signon - identica
- GNOME Control Center account plugins for single signon
+Description: Online account plugin for Unity - identi.ca
+ This plugin adds support for creating identi.ca accounts in the Unity Control
+ Center
 
 Package: account-plugin-foursquare
 Architecture: all
 Depends: ${misc:Depends},
          libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Description: GNOME Control Center account plugin for single signon - foursquare
- GNOME Control Center account plugins for single signon
+Description: Online account plugin for Unity - FourSquare
+ This plugin adds support for creating FourSquare accounts in the Unity
+ Control Center
 
 Package: account-plugin-sohu
 Architecture: all
 Depends: ${misc:Depends},
          libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Description: GNOME Control Center account plugin for single signon - sohu
- GNOME Control Center account plugins for single signon
+Description: Online account plugin for Unity - Sohu
+ This plugin adds support for creating Sohu accounts in the Unity Control
+ Center
 
 Package: account-plugin-sina
 Architecture: all
 Depends: ${misc:Depends},
          libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Description: GNOME Control Center account plugin for single signon - sina
- GNOME Control Center account plugins for single signon
+Description: Online account plugin for Unity - Sina
+ This plugin adds support for creating Sina accounts in the Unity Control
+ Center
 
 Package: account-plugin-linkedin
 Architecture: all
 Depends: ${misc:Depends},
          libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Description: GNOME Control Center account plugin for single signon - LinkedIn
- GNOME Control Center account plugins for single signon
+Description: Online account plugin for Unity - LinkedIn
+ This plugin adds support for creating LinkedIn accounts in the Unity Control
+ Center
 
 Package: account-plugin-instagram
 Architecture: all
 Depends: ${misc:Depends},
          libaccount-plugin-generic-oauth,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Description: GNOME Control Center account plugin for single signon - Instagram
- GNOME Control Center account plugins for single signon
+Description: Online account plugin for Unity - Instagram
+ This plugin adds support for creating Instagram accounts in the Unity Control
+ Center
 
 Package: account-plugin-mcloud
 Architecture: all
@@ -133,16 +160,17 @@ Package: account-plugin-owncloud
 Architecture: all
 Depends: ${misc:Depends},
          ubuntu-system-settings-online-accounts,
-Description: Account plugin for online accounts - ownCloud
- Online Accounts plugin provide the user interface to create accounts for
- third party services.
+Description: Online account plugin for Unity - ownCloud
+ This plugin adds support for creating ownCloud accounts in the Unity Control
+ Center
 
 Package: account-plugin-vk
 Architecture: all
 Depends: ${misc:Depends},
          libaccount-plugin-generic-oauth | ubuntu-system-settings-online-accounts,
-Description: GNOME Control Center account plugin for single signon - VKontakte
- GNOME Control Center account plugins for single signon
+Description: Online account plugin for Unity - VKontakte
+ This plugin adds support for creating VKontakte accounts in the Unity Control
+ Center
 
 Package: account-plugin-tools
 Architecture: all
@@ -154,12 +182,5 @@ Depends: ${misc:Depends},
          gir1.2-accounts-1.0,
          signon-plugin-oauth2,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
-Description: GNOME Control Center account plugins for single signon - tools
- GNOME Control Center account plugins for single signon
-
-Package: account-plugin-icons
-Depends: unity-asset-pool, ${misc:Depends}
-Architecture: all
-Section: oldlibs
-Description: transitional dummy package
- This is a transitional dummy package. It can safely be removed.
+Description: Online account plugins for Unity - tools
+ Command line tools for managing Online Accounts.

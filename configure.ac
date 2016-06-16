@@ -41,7 +41,10 @@ AS_IF([test "x$enable_libaccount_plugin" != "xno"],
       [have_libaccount_plugin=no])
 
 AS_IF([test "x$have_libaccount_plugin" = "xyes"],
-      [PKG_CHECK_MODULES([ACCOUNT_PLUGINS], [account-plugin >= 0.1.3])],
+      [
+        PKG_CHECK_MODULES([ACCOUNT_PLUGINS], [account-plugin >= 0.1.3])
+        PKG_CHECK_MODULES([RESTAPIS], [libsoup-2.4 json-glib-1.0])
+      ],
       [AS_IF([test "x$enable_libaccount_plugin" = "xyes"],
              [AC_MSG_ERROR([libaccount-plugin support enabled but required dependencies were not found])])])
 

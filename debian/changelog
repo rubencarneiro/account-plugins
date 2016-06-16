@@ -1,3 +1,37 @@
+account-plugins (0.13+16.10.20160614-0ubuntu1) yakkety; urgency=medium
+
+  * debian/control:
+    Update package descriptions for all account plugins (LP: #1590786) 
+
+ -- Alberto Mardegan <mardy@users.sourceforge.net>  Tue, 14 Jun 2016 09:07:28 +0000
+
+account-plugins (0.13+16.10.20160608-0ubuntu1) yakkety; urgency=medium
+
+  [ Alberto Mardegan ]
+  * Add account plugin for vk.com (LP: #1564883)
+  * Add ownCloud plugin (LP: #1570986)
+
+ -- David Barth <david.barth@canonical.com>  Wed, 08 Jun 2016 12:09:10 +0000
+
+account-plugins (0.13+16.04.20160405-0ubuntu1) xenial; urgency=medium
+
+  [ Alberto Mardegan ]
+  * After the authentication, retrieve the username in Google, Facebook,
+    Flickr and Twitter plugins (LP: #1565772)
+  * debian/control, debian/libaccount-plugin-facebook.install,
+    debian/libaccount-plugin-flickr.install,
+    debian/libaccount-plugin-twitter.install:
+    add packages containing plugin modules.
+  * debian/account-plugin-facebook.install,
+    debian/account-plugin-flickr.install,
+    debian/account-plugin-twitter.install:
+    remove unneeded webkit-options files.
+
+  [ CI Train Bot ]
+  * No-change rebuild.
+
+ -- David Barth <david.barth@canonical.com>  Tue, 05 Apr 2016 12:57:47 +0000
+
 account-plugins (0.12+16.04.20160126-0ubuntu1) xenial; urgency=medium
 
   [ Alberto Mardegan ]
