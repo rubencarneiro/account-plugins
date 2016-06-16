@@ -152,9 +152,9 @@ Package: account-plugin-mcloud
 Architecture: all
 Depends: ${misc:Depends},
          ubuntu-system-settings-online-accounts,
-Description: Account plugin for online accounts - mCloud
- Online Accounts plugin provide the user interface to create accounts for
- third party services.
+Description: Online account plugin for Unity - mCloud
+ This plugin adds support for creating mCloud accounts in the Unity Control
+ Center
 
 Package: account-plugin-owncloud
 Architecture: all
