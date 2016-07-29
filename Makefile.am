@@ -138,7 +138,7 @@ dist_webkitoptions_DATA = \
 # https://bugs.launchpad.net/bugs/1567908
 # https://bugs.launchpad.net/bugs/1571587
 iconsdir = $(datadir)/icons/hicolor/32x32/apps
-svg_iconsdir = $(datadir)/hicolor/scalable/apps
+svg_iconsdir = $(datadir)/icons/hicolor/scalable/apps
 dist_icons_DATA = \
 	data/icons/owncloud.png \
 	data/icons/vk.png
