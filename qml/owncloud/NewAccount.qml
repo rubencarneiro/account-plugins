@@ -17,8 +17,12 @@ Item {
 
     Column {
         id: contents
-        anchors { left: parent.left; right: parent.right }
-        spacing: units.gu(1)
+        anchors {
+            left: parent.left
+            right: parent.right
+            margins: units.gu(2)
+        }
+        spacing: units.gu(2)
 
         Label {
             id: errorLabel
