@@ -7,7 +7,6 @@ Item {
 
     signal finished
 
-    anchors.margins: units.gu(1)
     height: contents.height
 
     property var __account: account
@@ -18,6 +17,8 @@ Item {
     Column {
         id: contents
         anchors {
+            top: parent.top
+            topMargin: untis.gu(2)
             left: parent.left
             right: parent.right
             margins: units.gu(2)
