@@ -42,7 +42,7 @@ Item {
         TextField {
             id: urlField
             anchors { left: parent.left; right: parent.right }
-            placeholderText: i18n.dtr("account-plugins", "http://example.org")
+            placeholderText: i18n.dtr("account-plugins", "http://myserver.com/owncloud")
             focus: true
             enabled: !__busy
 
