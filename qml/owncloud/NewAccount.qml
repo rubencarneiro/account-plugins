@@ -18,7 +18,6 @@ Item {
         id: contents
         anchors {
             top: parent.top
-            topMargin: untis.gu(2)
             left: parent.left
             right: parent.right
             margins: units.gu(2)
