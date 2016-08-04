@@ -1,3 +1,9 @@
+account-plugins (0.13+16.10.20160804-0ubuntu1) yakkety; urgency=medium
+
+  * Update owncloud login screen.
+
+ -- Renato Araujo Oliveira Filho <renato.filho@canonical.com>  Thu, 04 Aug 2016 13:40:08 +0000
+
 account-plugins (0.13+16.10.20160614-0ubuntu1) yakkety; urgency=medium
 
   * debian/control:
