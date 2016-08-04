@@ -7,7 +7,6 @@ Item {
 
     signal finished
 
-    anchors.margins: units.gu(1)
     height: contents.height
 
     property var __account: account
@@ -17,8 +16,13 @@ Item {
 
     Column {
         id: contents
-        anchors { left: parent.left; right: parent.right }
-        spacing: units.gu(1)
+        anchors {
+            top: parent.top
+            left: parent.left
+            right: parent.right
+            margins: units.gu(2)
+        }
+        spacing: units.gu(2)
 
         Label {
             id: errorLabel
@@ -37,7 +41,7 @@ Item {
         TextField {
             id: urlField
             anchors { left: parent.left; right: parent.right }
-            placeholderText: i18n.dtr("account-plugins", "http://example.org")
+            placeholderText: i18n.dtr("account-plugins", "http://myserver.com/owncloud")
             focus: true
             enabled: !__busy
 
