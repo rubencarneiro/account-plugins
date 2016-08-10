@@ -1,3 +1,10 @@
+account-plugins (0.13+16.10.20160810-0ubuntu1) yakkety; urgency=medium
+
+  [ Florian Boucault ]
+  * Make account-plugin-tools Multi-Arch: foreign
+
+ -- Alberto Mardegan <mardy@users.sourceforge.net>  Wed, 10 Aug 2016 07:37:52 +0000
+
 account-plugins (0.13+16.10.20160804-0ubuntu1) yakkety; urgency=medium
 
   * Update owncloud login screen.
