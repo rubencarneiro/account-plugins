@@ -166,6 +166,7 @@ Description: Online account plugin for Unity - VKontakte
 
 Package: account-plugin-tools
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends},
          ${python3:Depends},
          python3-gi,
