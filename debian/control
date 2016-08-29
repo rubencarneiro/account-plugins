@@ -151,6 +151,7 @@ Description: Online account plugin for Unity - Instagram
 Package: account-plugin-owncloud
 Architecture: all
 Depends: ${misc:Depends},
+         signon-plugin-password,
          ubuntu-system-settings-online-accounts,
 Description: Online account plugin for Unity - ownCloud
  This plugin adds support for creating ownCloud accounts in the Unity Control
