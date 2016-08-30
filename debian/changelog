@@ -1,3 +1,9 @@
+account-plugins (0.13+16.10.20160830.1-0ubuntu1) yakkety; urgency=medium
+
+  * Have account-plugin-owncloud depend on signon-plugin-password
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 30 Aug 2016 08:18:02 +0000
+
 account-plugins (0.13+16.10.20160817-0ubuntu1) yakkety; urgency=medium
 
   * Update owncloud icon
