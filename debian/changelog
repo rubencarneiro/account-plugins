@@ -1,3 +1,13 @@
+account-plugins (0.13+16.10.20160831-0ubuntu1) yakkety; urgency=medium
+
+  [ Alberto Mardegan, Gary.Wang ]
+  * Add account plugin for MCloud (LP: #1587282)
+
+  [ Gary.Wzl ]
+  * Add a fixed userAgent. (LP: #1586938, #1587282)
+
+ -- Alberto Mardegan <mardy@users.sourceforge.net>  Wed, 31 Aug 2016 06:51:10 +0000
+
 account-plugins (0.13+16.10.20160830.1-0ubuntu1) yakkety; urgency=medium
 
   * Have account-plugin-owncloud depend on signon-plugin-password
