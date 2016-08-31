@@ -228,6 +228,20 @@ AC_ARG_WITH(sohu-client-secret,
 AC_SUBST(SOHU_CLIENT_ID, ["$sohu_client_id"])
 AC_SUBST(SOHU_CLIENT_SECRET, ["$sohu_client_secret"])
 
+# Set Mcloud client id/secret
+AC_ARG_WITH(mcloud-client-id,
+            [AS_HELP_STRING([--with-mcloud-client-id],
+                            [Mcloud client id])],
+                            [mcloud_client_id=$withval],
+                            [mcloud_client_id="APP1ZtqoN3R0002"])
+AC_ARG_WITH(mcloud-client-secret,
+            [AS_HELP_STRING([--with-mcloud-client-secret],
+                            [Mcloud client secret])],
+                            [mcloud_client_secret=$withval],
+                            [mcloud_client_secret="A70EFCDC91456349E7FDECF0A33574AC"])
+AC_SUBST(MCLOUD_CLIENT_ID, ["$mcloud_client_id"])
+AC_SUBST(MCLOUD_CLIENT_SECRET, ["$mcloud_client_secret"])
+
 # Set VK client id
 AC_ARG_WITH(vk-client-id,
             [AS_HELP_STRING([--with-vk-client-id],
@@ -252,6 +266,7 @@ AC_CONFIG_FILES([
 	data/providers/identica.provider.in
 	data/providers/linkedin.provider.in
 	data/providers/instagram.provider.in
+	data/providers/mcloud.provider.in
 	data/providers/owncloud.provider.in
 	data/providers/sina.provider.in
 	data/providers/sohu.provider.in

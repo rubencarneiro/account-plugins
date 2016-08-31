@@ -148,6 +148,14 @@ Description: Online account plugin for Unity - Instagram
  This plugin adds support for creating Instagram accounts in the Unity Control
  Center
 
+Package: account-plugin-mcloud
+Architecture: all
+Depends: ${misc:Depends},
+         ubuntu-system-settings-online-accounts,
+Description: Online account plugin for Unity - mCloud
+ This plugin adds support for creating mCloud accounts in the Unity Control
+ Center
+
 Package: account-plugin-owncloud
 Architecture: all
 Depends: ${misc:Depends},

@@ -1,0 +1,4 @@
+usr/share/accounts/providers/mcloud.provider
+usr/share/accounts/qml-plugins/mcloud/*.qml
+usr/share/icons/hicolor/32x32/apps/mcloud.png
+

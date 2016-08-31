@@ -28,6 +28,7 @@ compile
 /debian/account-plugin-google/
 /debian/account-plugin-icons/
 /debian/account-plugin-identica/
+/debian/account-plugin-mcloud/
 /debian/account-plugin-owncloud/
 /debian/account-plugin-sina/
 /debian/account-plugin-sohu/
