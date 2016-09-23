@@ -202,7 +202,7 @@ Item {
         }
         request.open("POST", host + "/ocs/v1.php/person/check", true);
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        var body = "login=" + username + "&password=" + password
+        var body = "login=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password)
         request.send(body);
     }
 
