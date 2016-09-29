@@ -1,3 +1,10 @@
+account-plugins (0.13+16.10.20160929.1-0ubuntu1) yakkety; urgency=medium
+
+  * Owncloud: properly encode username and password in POST request (LP:
+    #1626454)
+
+ -- Alberto Mardegan <mardy@users.sourceforge.net>  Thu, 29 Sep 2016 09:23:40 +0000
+
 account-plugins (0.13+16.10.20160831-0ubuntu1) yakkety; urgency=medium
 
   [ Alberto Mardegan, Gary.Wang ]
