@@ -24,6 +24,7 @@ override_dh_auto_configure:
 		--with-instagram-client-secret="4751ccdc39c648719ea83cfb1c866c26" \
 		--with-mcloud-client-id="APP1ZtqoN3R0002" \
 		--with-mcloud-client-secret="A70EFCDC91456349E7FDECF0A33574AC" \
+		--with-onedrive-client-id="478797ed-02c1-442b-bebd-709401131e7d" \
 		--with-vk-client-id="5402699"
 
 override_dh_install:

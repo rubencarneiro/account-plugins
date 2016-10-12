@@ -242,6 +242,14 @@ AC_ARG_WITH(mcloud-client-secret,
 AC_SUBST(MCLOUD_CLIENT_ID, ["$mcloud_client_id"])
 AC_SUBST(MCLOUD_CLIENT_SECRET, ["$mcloud_client_secret"])
 
+# Set onedrive client id
+AC_ARG_WITH(onedrive-client-id,
+            [AS_HELP_STRING([--with-onedrive-client-id],
+                            [OneDrive client id])],
+                            [onedrive_client_id=$withval],
+                            [onedrive_client_id="478797ed-02c1-442b-bebd-709401131e7d"])
+AC_SUBST(ONEDRIVE_CLIENT_ID, ["$onedrive_client_id"])
+
 # Set VK client id
 AC_ARG_WITH(vk-client-id,
             [AS_HELP_STRING([--with-vk-client-id],
@@ -267,6 +275,7 @@ AC_CONFIG_FILES([
 	data/providers/linkedin.provider.in
 	data/providers/instagram.provider.in
 	data/providers/mcloud.provider.in
+	data/providers/onedrive.provider.in
 	data/providers/owncloud.provider.in
 	data/providers/sina.provider.in
 	data/providers/sohu.provider.in
