@@ -1,0 +1,3 @@
+usr/share/accounts/providers/microsoft.provider
+usr/share/accounts/qml-plugins/microsoft/*.qml
+usr/share/icons/hicolor/32x32/apps/microsoft.png

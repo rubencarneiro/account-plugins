@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<provider id="onedrive">
-  <name>OneDrive</name>
-  <icon>onedrive</icon>
-  <translations>OneDrive</translations>
+<provider id="microsoft">
+  <name>Microsoft</name>
+  <icon>microsoft</icon>
+  <translations>Microsoft</translations>
   <domains>.*live\.com</domains>
   <plugin>generic-oauth</plugin>
   <single-account>true</single-account>
@@ -16,7 +16,7 @@
           <setting name="AuthPath">oauth20_authorize.srf</setting>
           <setting name="RedirectUri">https://developer.ubuntu.com/en/</setting>
           <setting name="ResponseType">token</setting>
-          <setting name="ClientId">@ONEDRIVE_CLIENT_ID@</setting>
+          <setting name="ClientId">@MICROSOFT_CLIENT_ID@</setting>
           <setting type="as" name="Scope">['onedrive.readwrite onedrive.appfolder']</setting>          
           <setting type="as" name="AllowedSchemes">['https', 'http']</setting>
           <setting type="b" name="DisableStateParameter">true</setting>

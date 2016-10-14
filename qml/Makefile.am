@@ -3,7 +3,7 @@ nobase_dist_qmlplugins_DATA = \
 	flickr/Main.qml \
 	google/Main.qml \
 	mcloud/Main.qml \
-	onedrive/Main.qml \
+	microsoft/Main.qml \
 	owncloud/Main.qml \
 	owncloud/NewAccount.qml \
 	twitter/Main.qml \
