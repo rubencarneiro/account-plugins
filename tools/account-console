@@ -2,6 +2,10 @@
 
 import argparse
 import sys
+import gi
+
+gi.require_version('Accounts', '1.0')
+gi.require_version('Signon', '1.0')
 
 from gi.repository import GLib
 from gi.repository import GObject
