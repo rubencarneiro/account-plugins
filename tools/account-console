@@ -33,7 +33,7 @@ class AccountConsole:
         self.args = args
         account = self.manager.get_account(args.account)
         if not account:
-            print >> sys.stderr, 'Account "%s" not found' % args.account
+            print('Account "%s" not found' % args.account, file=sys.stderr)
             sys.exit(1)
 
         enabledness = 'enabled' if account.get_enabled() else 'disabled'
@@ -65,14 +65,14 @@ class AccountConsole:
         self.args = args
         account = self.manager.get_account(args.account)
         if not account:
-            print >> sys.stderr, 'Account "%s" not found' % args.account
+            print('Account "%s" not found' % args.account, file=sys.stderr)
             sys.exit(1)
         self.account = account
 
         if args.service:
             service = self.manager.get_service(args.service)
             if not service:
-                print >> sys.stderr, 'Service "%s" not found' % args.service
+                print('Service "%s" not found' % args.service, file=sys.stderr)
                 sys.exit(1)
             account.select_service(service)
 
@@ -105,7 +105,7 @@ class AccountConsole:
 
     def on_info_ready(self, identity, info, error, userdata):
         if error:
-            print >> sys.stderr, 'Couldn\'t get identity info'
+            print('Couldn\'t get identity info', file=sys.stderr)
             sys.exit(1)
 
         self.write_signon_info(info)
@@ -132,7 +132,7 @@ class AccountConsole:
         self.args = args
         account = self.manager.get_account(args.account)
         if not account:
-            print >> sys.stderr, 'Account "%s" not found' % args.account
+            print('Account "%s" not found' % args.account, file=sys.stderr)
             sys.exit(1)
 
         account.delete()
@@ -152,7 +152,7 @@ class AccountConsole:
         self.args = args
         account = self.manager.get_account(args.account)
         if not account:
-            print >> sys.stderr, 'Account "%s" not found' % args.account
+            print('Account "%s" not found' % args.account, file=sys.stderr)
             sys.exit(1)
         self.account = account
 
@@ -160,7 +160,7 @@ class AccountConsole:
         if args.service:
             service = self.manager.get_service(args.service)
             if not service:
-                print >> sys.stderr, 'Service "%s" not found' % args.service
+                print('Service "%s" not found' % args.service, file=sys.stderr)
                 sys.exit(1)
 
         account_service = Accounts.AccountService.new(account, service)
@@ -211,7 +211,7 @@ class AccountConsole:
 
     def login_process_cb(self, session, reply, error, userdata):
         if error:
-            print >> sys.stderr, 'Got authentication error:', error.message
+            print('Got authentication error: %s' % error.message, file=sys.stderr)
             sys.exit(1)
 
         print('Got reply: ', reply)
@@ -222,7 +222,7 @@ class AccountConsole:
         if not error:
             print('OK')
         else:
-            print >> sys.stderr, 'Error occurred: ', error.message
+            print('Error occurred: %s' % error.message, file=sys.stderr)
         main_loop.quit()
 
     def on_account_stored(self, account, error, userdata):
@@ -232,7 +232,7 @@ class AccountConsole:
             else:
                 print('OK %s' % (account.id))
         else:
-            print >> sys.stderr, 'Error occurred: ', error.message
+            print('Error occurred: %s' % error.message, file=sys.stderr)
         main_loop.quit()
 
     def enumerate_settings(self, iterator):
