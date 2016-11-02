@@ -29,7 +29,7 @@ override_dh_auto_configure:
 override_dh_install:
 	rm -f debian/*/usr/lib/*/*/*.la
 	# the service is not valid anymore so we don't ship those
-	rm debian/tmp/etc/signon-ui/webkit-options.d/login.live.com.conf debian/tmp/usr/share/accounts/providers/windows-live.provider
+	rm debian/tmp/etc/signon-ui/webkit-options.d/login.live.com.conf
 	mkdir -p debian/tmp/usr/share/account-plugins/tools
 	dh_install --fail-missing
 
