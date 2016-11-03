@@ -17,7 +17,7 @@
           <setting name="RedirectUri">https://login.live.com/oauth20_desktop.srf</setting>
           <setting name="ResponseType">token</setting>
           <setting name="ClientId">@MICROSOFT_CLIENT_ID@</setting>
-          <setting type="as" name="Scope">['onedrive.readwrite onedrive.appfolder']</setting>          
+          <setting type="as" name="Scope">['User.Read', 'Files.ReadWrite']</setting>          
           <setting type="b" name="DisableStateParameter">true</setting>
         </group>
       </group>
