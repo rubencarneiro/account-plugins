@@ -26,7 +26,7 @@ OAuthMain {
                         var folders = getFirstChildByTagName(disk, 'catalogList') 
                         var folder = folders.childNodes[0]
                         var owner = getFirstChildByTagName(folder, "owner") 
-                        callback("Phone number: " + owner.childNodes[0].nodeValue);
+                        callback(owner.childNodes[0].nodeValue);
                     } else {
                         console.log("error: " + http.status);
                         console.log("response text: " + http.responseText);
