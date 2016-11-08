@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <provider id="mcloud">
-  <name>MCloud</name>
+  <name>mcloud</name>
   <icon>mcloud</icon>
-  <translations>MCloud</translations>
+  <translations>mcloud</translations>
   <domains>.*10086\.cn</domains>
   <plugin>generic-oauth</plugin>
   <single-account>true</single-account>
