@@ -90,12 +90,12 @@ providers_in_in_files = \
 	data/providers/linkedin.provider.in.in \
 	data/providers/instagram.provider.in.in \
 	data/providers/mcloud.provider.in.in \
+	data/providers/microsoft.provider.in.in \
 	data/providers/owncloud.provider.in.in \
 	data/providers/sina.provider.in.in \
 	data/providers/sohu.provider.in.in \
 	data/providers/twitter.provider.in.in \
-	data/providers/vk.provider.in.in \
-	data/providers/windows-live.provider.in.in
+	data/providers/vk.provider.in.in
 
 providers_DATA = \
 	$(providers_in_in_files:.provider.in.in=.provider)
@@ -141,6 +141,7 @@ dist_webkitoptions_DATA = \
 iconsdir = $(datadir)/icons/hicolor/32x32/apps
 dist_icons_DATA = \
 	data/icons/mcloud.png \
+	data/icons/microsoft.png \
 	data/icons/owncloud.png \
 	data/icons/vk.png
 

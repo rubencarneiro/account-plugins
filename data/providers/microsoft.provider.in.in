@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<provider id="microsoft">
+  <name>Microsoft</name>
+  <icon>microsoft</icon>
+  <translations>account-plugins</translations>
+  <domains>.*live\.com</domains>
+  <plugin>generic-oauth</plugin>
+  <single-account>true</single-account>
+  <template>
+    <group name="auth">
+      <setting name="method">oauth2</setting>
+      <setting name="mechanism">user_agent</setting>
+      <group name="oauth2">
+        <group name="user_agent">
+          <setting name="Host">login.live.com</setting>
+          <setting name="AuthPath">oauth20_authorize.srf</setting>
+          <setting name="RedirectUri">https://login.live.com/oauth20_desktop.srf</setting>
+          <setting name="ResponseType">token</setting>
+          <setting name="ClientId">@MICROSOFT_CLIENT_ID@</setting>
+          <setting type="as" name="Scope">['User.Read', 'Files.ReadWrite']</setting>          
+          <setting type="b" name="DisableStateParameter">true</setting>
+        </group>
+      </group>
+    </group>
+  </template>
+</provider>

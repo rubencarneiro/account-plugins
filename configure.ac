@@ -242,6 +242,14 @@ AC_ARG_WITH(mcloud-client-secret,
 AC_SUBST(MCLOUD_CLIENT_ID, ["$mcloud_client_id"])
 AC_SUBST(MCLOUD_CLIENT_SECRET, ["$mcloud_client_secret"])
 
+# Set microsoft client id
+AC_ARG_WITH(microsoft-client-id,
+            [AS_HELP_STRING([--with-microsoft-client-id],
+                            [Microsoft client id])],
+                            [microsoft_client_id=$withval],
+                            [microsoft_client_id="478797ed-02c1-442b-bebd-709401131e7d"])
+AC_SUBST(MICROSOFT_CLIENT_ID, ["$microsoft_client_id"])
+
 # Set VK client id
 AC_ARG_WITH(vk-client-id,
             [AS_HELP_STRING([--with-vk-client-id],
@@ -249,14 +257,6 @@ AC_ARG_WITH(vk-client-id,
                             [vk_client_id=$withval],
                             [vk_client_id="5404010"])
 AC_SUBST(VK_CLIENT_ID, ["$vk_client_id"])
-
-# Set Windows Live client id
-AC_ARG_WITH(windows-live-client-id,
-            [AS_HELP_STRING([--with-windows-live-client-id],
-                            [Windows Live client ID])],
-                            [windows_live_client_id=$withval],
-                            [windows_live_client_id="00000000480CBF28"])
-AC_SUBST(WINDOWS_LIVE_CLIENT_ID, ["$windows_live_client_id"])
 
 AC_CONFIG_FILES([
 	data/providers/facebook.provider.in
@@ -267,12 +267,12 @@ AC_CONFIG_FILES([
 	data/providers/linkedin.provider.in
 	data/providers/instagram.provider.in
 	data/providers/mcloud.provider.in
+	data/providers/microsoft.provider.in
 	data/providers/owncloud.provider.in
 	data/providers/sina.provider.in
 	data/providers/sohu.provider.in
 	data/providers/twitter.provider.in
 	data/providers/vk.provider.in
-	data/providers/windows-live.provider.in
 	Makefile
 	po/Makefile.in
 	qml/Makefile

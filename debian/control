@@ -26,7 +26,6 @@ Package: libaccount-plugin-generic-oauth
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
          signon-plugin-oauth2,
-Conflicts: account-plugin-windows-live,
 Description: Online account plugin support lib for Unity 7 - generic OAuth
  Support library for the Unity 7 OAuth-based online account plugins
 
@@ -154,6 +153,14 @@ Depends: ${misc:Depends},
          ubuntu-system-settings-online-accounts,
 Description: Online account plugin for Unity - mCloud
  This plugin adds support for creating mCloud accounts in the Unity Control
+ Center
+
+Package: account-plugin-microsoft
+Architecture: all
+Depends: ${misc:Depends},
+         ubuntu-system-settings-online-accounts,
+Description: Online account plugin for Unity - Microsoft
+ This plugin adds support for creating microsoft accounts in the Unity Control
  Center
 
 Package: account-plugin-owncloud
