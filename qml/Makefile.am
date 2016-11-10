@@ -4,6 +4,8 @@ nobase_dist_qmlplugins_DATA = \
 	google/Main.qml \
 	mcloud/Main.qml \
 	microsoft/Main.qml \
+	nextcloud/Main.qml \
+	nextcloud/NewAccount.qml \
 	owncloud/Main.qml \
 	owncloud/NewAccount.qml \
 	twitter/Main.qml \

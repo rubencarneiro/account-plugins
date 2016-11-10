@@ -91,6 +91,7 @@ providers_in_in_files = \
 	data/providers/instagram.provider.in.in \
 	data/providers/mcloud.provider.in.in \
 	data/providers/microsoft.provider.in.in \
+	data/providers/nextcloud.provider.in.in \
 	data/providers/owncloud.provider.in.in \
 	data/providers/sina.provider.in.in \
 	data/providers/sohu.provider.in.in \
@@ -137,12 +138,12 @@ dist_webkitoptions_DATA = \
 
 # Temporary until these bugs are fixed:
 # https://bugs.launchpad.net/bugs/1567908
-# https://bugs.launchpad.net/bugs/1571587
+# https://bugs.launchpad.net/bugs/1640704
 iconsdir = $(datadir)/icons/hicolor/32x32/apps
 dist_icons_DATA = \
 	data/icons/mcloud.png \
 	data/icons/microsoft.png \
-	data/icons/owncloud.png \
+	data/icons/nextcloud.png \
 	data/icons/vk.png
 
 dist_bin_SCRIPTS = \

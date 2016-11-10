@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<provider id="nextcloud">
+  <name>Nextcloud</name>
+  <icon>nextcloud</icon>
+  <translations>account-plugins</translations>
+
+  <template>
+    <group name="auth">
+      <setting name="method">password</setting>
+      <setting name="mechanism">password</setting>
+    </group>
+  </template>
+</provider>

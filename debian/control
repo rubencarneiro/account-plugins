@@ -163,6 +163,15 @@ Description: Online account plugin for Unity - Microsoft
  This plugin adds support for creating microsoft accounts in the Unity Control
  Center
 
+Package: account-plugin-nextcloud
+Architecture: all
+Depends: ${misc:Depends},
+         signon-plugin-password,
+         ubuntu-system-settings-online-accounts,
+Description: Online account plugin for Unity - Nextcloud
+ This plugin adds support for creating Nextcloud accounts in the Unity Control
+ Center
+
 Package: account-plugin-owncloud
 Architecture: all
 Depends: ${misc:Depends},
