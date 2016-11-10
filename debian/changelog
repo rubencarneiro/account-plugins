@@ -1,12 +1,22 @@
-account-plugins (0.13+16.10.20160929.1-0ubuntu2) UNRELEASED; urgency=medium
+account-plugins (0.13+17.04.20161110.1-0ubuntu1) zesty; urgency=medium
 
+  [ Alberto Mardegan ]
   * debian/account-plugin-owncloud.install:
     - remove owncloud icon, it's now provided by the theme
   * debian/control,debian/account-plugin-nextcloud.install:
     - add Nextcloud account plugin
   * Add account plugin for Nextcloud (LP: #1639175)
+  * Fix error handling in account-console (LP: #1309433)
 
- -- Alberto Mardegan <alberto.mardegan@canonical.com>  Thu, 10 Nov 2016 11:43:37 +0300
+  [ Gary.Wzl ]
+  * support to display user id(phone number) for mcloud.
+  * Add onedrive account plugin. (LP: #1632585)
+
+  [ Numan Demirdöğen ]
+  * account-console: Specify module version with GI imports to avoid
+    warnings. (fix #1633760) (LP: #1633760)
+
+ -- Alberto Mardegan <mardy@users.sourceforge.net>  Thu, 10 Nov 2016 13:55:57 +0000
 
 account-plugins (0.13+16.10.20160929.1-0ubuntu1) yakkety; urgency=medium
 
