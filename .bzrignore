@@ -21,6 +21,7 @@ config.sub
 configure
 compile
 /data/providers/*.provider.in
+/debian/*-stamp
 /debian/account-plugin-facebook/
 /debian/account-plugin-flickr/
 /debian/account-plugin-foursquare/
@@ -28,7 +29,11 @@ compile
 /debian/account-plugin-google/
 /debian/account-plugin-icons/
 /debian/account-plugin-identica/
+/debian/account-plugin-instagram/
+/debian/account-plugin-linkedin/
 /debian/account-plugin-mcloud/
+/debian/account-plugin-microsoft/
+/debian/account-plugin-nextcloud/
 /debian/account-plugin-owncloud/
 /debian/account-plugin-sina/
 /debian/account-plugin-sohu/
@@ -39,6 +44,11 @@ compile
 /debian/autoreconf.after
 /debian/autoreconf.before
 /debian/files
+/debian/libaccount-plugin-facebook/
+/debian/libaccount-plugin-flickr/
+/debian/libaccount-plugin-generic-oauth/
+/debian/libaccount-plugin-google/
+/debian/libaccount-plugin-twitter/
 /debian/tmp/
 depcomp
 install-sh

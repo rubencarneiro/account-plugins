@@ -1,0 +1,3 @@
+usr/share/accounts/providers/nextcloud.provider
+usr/share/accounts/qml-plugins/nextcloud/*.qml
+usr/share/icons/hicolor/32x32/apps/nextcloud.png

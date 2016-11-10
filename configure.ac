@@ -268,6 +268,7 @@ AC_CONFIG_FILES([
 	data/providers/instagram.provider.in
 	data/providers/mcloud.provider.in
 	data/providers/microsoft.provider.in
+	data/providers/nextcloud.provider.in
 	data/providers/owncloud.provider.in
 	data/providers/sina.provider.in
 	data/providers/sohu.provider.in
