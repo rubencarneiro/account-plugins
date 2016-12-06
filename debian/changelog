@@ -1,3 +1,9 @@
+account-plugins (0.13+17.04.20161206-0ubuntu1) zesty; urgency=medium
+
+  * Remove unused webkit options file for Google (LP: #1565772)
+
+ -- Alberto Mardegan <mardy@users.sourceforge.net>  Tue, 06 Dec 2016 14:23:36 +0000
+
 account-plugins (0.13+17.04.20161110.1-0ubuntu1) zesty; urgency=medium
 
   [ Alberto Mardegan ]
