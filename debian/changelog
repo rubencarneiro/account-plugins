@@ -8,6 +8,7 @@ account-plugins (0.13-0ubuntu1) UNRELEASED; urgency=medium
     add packages containing plugin modules.
   * debian/account-plugin-facebook.install,
     debian/account-plugin-flickr.install,
+    debian/account-plugin-google.install,
     debian/account-plugin-twitter.install:
     remove unneeded webkit-options files.
 
