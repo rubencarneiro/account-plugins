@@ -1,4 +1,3 @@
-etc/signon-ui/webkit-options.d/accounts.google.com.conf
 usr/share/accounts/services/google-drive.service
 usr/share/accounts/services/google-im.service
 usr/share/accounts/services/picasa.service
