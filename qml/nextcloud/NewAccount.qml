@@ -202,6 +202,7 @@ Item {
         }
         request.open("POST", host + "/ocs/v1.php/person/check", true);
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.setRequestHeader("OCS-APIRequest", "true");
         var body = "login=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password)
         request.send(body);
     }
