@@ -2,75 +2,7 @@ SUBDIRS = \
 	po
 
 DISTCHECK_CONFIGURE_FLAGS = \
-	--enable-libaccount-plugin \
 	--enable-tests
-
-if ENABLE_LIBACCOUNT_PLUGIN
-# Binary account plugins.
-plugin_LTLIBRARIES = \
-	libfacebook.la \
-	libflickr.la \
-	libgeneric-oauth.la \
-	libgoogle.la \
-	libtwitter.la
-
-VALAFLAGS = \
-	--vapidir $(top_srcdir)/src \
-	--pkg config \
-	--pkg AccountPlugin \
-	--pkg libaccounts-glib \
-	--pkg posix \
-	--pkg signon \
-	--pkg gtk+-3.0 \
-	--pkg gmodule-2.0
-
-plugin_cppflags = \
-	$(ACCOUNT_PLUGINS_CFLAGS) \
-	-include $(top_builddir)/config.h \
-	$(WARN_CFLAGS)
-
-plugin_libadd = \
-	$(ACCOUNT_PLUGINS_LIBS)
-
-plugin_ldflags = \
-	-export_dynamic \
-	-avoid-version \
-	-module \
-	-no-undefined \
-	-export-symbols-regex '^ap_module_get_object_type'
-
-libfacebook_la_CPPFLAGS = $(plugin_cppflags) $(RESTAPIS_CFLAGS)
-libfacebook_la_LIBADD = $(plugin_libadd) $(RESTAPIS_LIBS)
-libfacebook_la_LDFLAGS = $(plugin_ldflags)
-libfacebook_la_VALAFLAGS = --pkg libsoup-2.4 --pkg json-glib-1.0
-libfacebook_la_SOURCES = \
-	src/facebook.vala
-
-libflickr_la_CPPFLAGS = $(plugin_cppflags)
-libflickr_la_LIBADD = $(plugin_libadd)
-libflickr_la_LDFLAGS = $(plugin_ldflags)
-libflickr_la_SOURCES = \
-	src/flickr.vala
-
-libgoogle_la_CPPFLAGS = $(plugin_cppflags) $(RESTAPIS_CFLAGS)
-libgoogle_la_LIBADD = $(plugin_libadd) $(RESTAPIS_LIBS)
-libgoogle_la_LDFLAGS = $(plugin_ldflags)
-libgoogle_la_VALAFLAGS = --pkg libsoup-2.4 --pkg json-glib-1.0
-libgoogle_la_SOURCES = \
-	src/google.vala
-
-libtwitter_la_CPPFLAGS = $(plugin_cppflags)
-libtwitter_la_LIBADD = $(plugin_libadd)
-libtwitter_la_LDFLAGS = $(plugin_ldflags)
-libtwitter_la_SOURCES = \
-	src/twitter.vala
-
-libgeneric_oauth_la_CPPFLAGS = $(plugin_cppflags)
-libgeneric_oauth_la_LIBADD = $(plugin_libadd)
-libgeneric_oauth_la_LDFLAGS = $(plugin_ldflags)
-libgeneric_oauth_la_SOURCES = \
-	src/generic-oauth.vala
-endif # ENABLE_LIBACCOUNT_PLUGIN
 
 if ENABLE_QML_PLUGINS
 SUBDIRS += qml
@@ -149,8 +81,7 @@ dist_bin_SCRIPTS = \
 	tools/account-console
 
 dist_noinst_DATA = \
-	$(services_in_files) \
-	src/config.vapi
+	$(services_in_files)
 
 if HAVE_XMLLINT
 TESTS = \
