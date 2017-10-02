@@ -57,16 +57,6 @@ services_in_files = \
 services_DATA = \
 	$(services_in_files:.service.in=.service)
 
-webkitoptionsdir = $(sysconfdir)/signon-ui/webkit-options.d
-dist_webkitoptions_DATA = \
-	data/webkit-options/api.instagram.com.conf \
-	data/webkit-options/api.weibo.com.conf \
-	data/webkit-options/api.t.sohu.com.conf \
-	data/webkit-options/foursquare.com.conf \
-	data/webkit-options/identi.ca.conf \
-	data/webkit-options/login.live.com.conf \
-	data/webkit-options/www.linkedin.com.conf
-
 # Temporary until these bugs are fixed:
 # https://bugs.launchpad.net/bugs/1567908
 # https://bugs.launchpad.net/bugs/1640704
