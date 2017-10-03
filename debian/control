@@ -4,16 +4,9 @@ Priority: optional
 Maintainer: Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>
 Build-Depends: debhelper (>= 9),
                autotools-dev,
-               gobject-introspection,
-               python3,
                pkg-config,
-               libaccount-plugin-1.0-dev (>= 0.1.9),
                libaccounts-glib-dev (>= 1.10),
-               libjson-glib-dev,
-               libsignon-glib-dev,
-               libsoup2.4-dev,
-               valac (>= 0.16),
-               gnome-common,
+               libonline-accounts-plugin-dev,
                dh-autoreconf,
                libxml2-utils,
 Standards-Version: 3.9.4
@@ -21,20 +14,6 @@ Homepage: https://launchpad.net/account-plugins
 # If you aren't a member of ~online-accounts but need to upload packaging changes,
 # just go ahead.  ~online-accounts will notice and sync up the code again.
 Vcs-Bzr: https://code.launchpad.net/~online-accounts/account-plugins/trunk
-
-Package: libaccount-plugin-generic-oauth
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-         signon-plugin-oauth2,
-Description: Online account plugin support lib for Unity 7 - generic OAuth
- Support library for the Unity 7 OAuth-based online account plugins
-
-Package: libaccount-plugin-google
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-         signon-plugin-oauth2,
-Description: Online account plugin support lib for Unity 7 - Google
- Support library for the Unity 7 online account plugin
 
 Package: account-plugin-google
 Architecture: all
@@ -45,13 +24,6 @@ Description: Online account plugin for Unity - Google
  This plugin adds support for creating Google accounts in the Unity Control
  Center
 
-Package: libaccount-plugin-facebook
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-         signon-plugin-oauth2,
-Description: Online account plugin support lib for Unity 7 - Facebook
- Support library for the Unity 7 online account plugin
-
 Package: account-plugin-facebook
 Architecture: all
 Depends: ${misc:Depends},
@@ -61,13 +33,6 @@ Description: Online account plugin for Unity - Facebook
  This plugin adds support for creating Facebook accounts in the Unity Control
  Center
 
-Package: libaccount-plugin-twitter
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-         signon-plugin-oauth2,
-Description: Online account plugin support lib for Unity 7 - Twitter
- Support library for the Unity 7 online account plugin
-
 Package: account-plugin-twitter
 Architecture: all
 Depends: ${misc:Depends},
@@ -76,13 +41,6 @@ Depends: ${misc:Depends},
 Description: Online account plugin for Unity - Twitter
  This plugin adds support for creating Twitter accounts in the Unity Control
  Center
-
-Package: libaccount-plugin-flickr
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends},
-         signon-plugin-oauth2,
-Description: Online account plugin support lib for Unity 7 - Flickr
- Support library for the Unity 7 online account plugin
 
 Package: account-plugin-flickr
 Architecture: all
