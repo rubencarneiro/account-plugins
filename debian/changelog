@@ -1,4 +1,4 @@
-account-plugins (0.13+17.04.20170314-0ubuntu1) zesty; urgency=medium
+account-plugins (0.13+ubports1) vivid; urgency=medium
 
   * NextCloud/OwnCloud: fix account creation on newer releases (LP:
     #1651938)
