@@ -4,12 +4,18 @@ Priority: optional
 Maintainer: Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>
 Build-Depends: debhelper (>= 9),
                autotools-dev,
+               gobject-introspection,
+               python3,
                pkg-config,
+               libaccount-plugin-1.0-dev (>= 0.1.9),
                libaccounts-glib-dev (>= 1.10),
-               libonline-accounts-plugin-dev,
+               libjson-glib-dev,
+               libsignon-glib-dev,
+               libsoup2.4-dev,
+               valac (>= 0.16),
+               gnome-common,
                dh-autoreconf,
-               libxml2-utils,
-               python3-all,
+libxml2-utils,
 Standards-Version: 3.9.4
 Homepage: https://launchpad.net/account-plugins
 # If you aren't a member of ~online-accounts but need to upload packaging changes,
