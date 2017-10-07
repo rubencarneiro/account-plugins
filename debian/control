@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>
 Build-Depends: debhelper (>= 9),
                autotools-dev,
+               intltool,
                pkg-config,
                libaccounts-glib-dev (>= 1.10),
                libonline-accounts-plugin-dev,
