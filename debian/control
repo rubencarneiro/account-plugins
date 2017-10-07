@@ -9,6 +9,7 @@ Build-Depends: debhelper (>= 9),
                libonline-accounts-plugin-dev,
                dh-autoreconf,
                libxml2-utils,
+               python3-all,
 Standards-Version: 3.9.4
 Homepage: https://launchpad.net/account-plugins
 # If you aren't a member of ~online-accounts but need to upload packaging changes,
