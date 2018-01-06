@@ -1,3 +1,9 @@
+account-plugins (0.13+ubports2) xenial; urgency=medium
+
+  * No change rebuild for ubports xenial repo 
+
+ -- Dan Chapman <dan@ubports.com>  Sat, 06 Jan 2018 09:46:36 +0000
+
 account-plugins (0.13+ubports1) vivid; urgency=medium
 
   * NextCloud/OwnCloud: fix account creation on newer releases (LP:
