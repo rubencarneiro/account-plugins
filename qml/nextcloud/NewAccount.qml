@@ -207,7 +207,7 @@ Item {
         }
         var url = host + "/ocs/v2.php/cloud/user";
         request.open("GET", url, true);
-        request.setRequestHeader("Authorization", "Basic " + Qt.btoa(encodeURIComponent(username) + ":" + encodeURIComponent(password)));
+        request.setRequestHeader("Authorization", "Basic " + Qt.btoa(encodeURIComponent(username) + ":" + password));
         request.setRequestHeader("OCS-APIRequest", "true");
         request.send(null);
     }
