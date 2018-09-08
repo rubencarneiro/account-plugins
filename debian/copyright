@@ -7,10 +7,6 @@ Files: *
 Copyright: 2012 Canonical Ltd.
 License: GPL-2+
 
-Files: src/windows-live.vala
-Copyright: 2012 Collabora Ltd.
-License: GPL-2+
-
 Files: debian/*
 Copyright: 2012 Ken VanDine <ken.vandine@canonical.com>
 License: GPL-2+
