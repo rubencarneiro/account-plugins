@@ -13,6 +13,7 @@ Item {
     property string __host: ""
     property bool __busy: false
     property string __hostError: i18n.dtr("account-plugins", "Invalid host URL")
+    property string __usernameError: i18n.dtr("account-plugins", "Invalid username or password")
 
     Column {
         id: contents
@@ -190,12 +191,16 @@ Item {
                         if (statusCode == "999") {
                             showError(__hostError)
                         } else {
-                            showError(i18n.dtr("account-plugins", "Invalid username or password"))
+                            showError(i18n.dtr("account-plugins", __usernameError))
                         }
                         callback(false)
                     }
                 } else {
-                    showError(__hostError)
+                    if (request.status == 401) {
+                        showError(i18n.dtr("account-plugins", __usernameError))
+                    } else {
+                        showError(__hostError)
+                    }
                     callback(false)
                 }
             }
