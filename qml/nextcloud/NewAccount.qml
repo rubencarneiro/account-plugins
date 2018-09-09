@@ -191,13 +191,13 @@ Item {
                         if (statusCode == "999") {
                             showError(__hostError)
                         } else {
-                            showError(i18n.dtr("account-plugins", __usernameError))
+                            showError(__usernameError)
                         }
                         callback(false)
                     }
                 } else {
                     if (request.status == 401) {
-                        showError(i18n.dtr("account-plugins", __usernameError))
+                        showError(__usernameError)
                     } else {
                         showError(__hostError)
                     }
