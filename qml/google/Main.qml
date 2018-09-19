@@ -9,7 +9,7 @@ OAuthMain {
         function getUserName(reply, callback) {
             console.log("Access token: " + reply.AccessToken)
             var http = new XMLHttpRequest()
-            var url = "https://www.googleapis.com/oauth2/v3/userinfo";
+            var url = "https://www.googleapis.com/oauth2/v3/userinfo?alt=json";
             http.open("POST", url, true);
             http.setRequestHeader("Authorization", "Bearer " + reply.AccessToken)
             http.onreadystatechange = function() {
@@ -25,7 +25,7 @@ OAuthMain {
                 }
             };
 
-            http.send(null);
+            http.send("");
             return true
         }
     }
