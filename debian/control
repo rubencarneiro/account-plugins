@@ -18,7 +18,7 @@ Vcs-Bzr: https://code.launchpad.net/~online-accounts/account-plugins/trunk
 Package: account-plugin-google
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         libaccount-plugin-google | ubuntu-system-settings-online-accounts,
+         ubuntu-system-settings-online-accounts,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: Online account plugin for Unity - Google
  This plugin adds support for creating Google accounts in the Unity Control
@@ -27,7 +27,7 @@ Description: Online account plugin for Unity - Google
 Package: account-plugin-facebook
 Architecture: all
 Depends: ${misc:Depends},
-         libaccount-plugin-facebook | ubuntu-system-settings-online-accounts,
+         ubuntu-system-settings-online-accounts,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: Online account plugin for Unity - Facebook
  This plugin adds support for creating Facebook accounts in the Unity Control
@@ -36,7 +36,7 @@ Description: Online account plugin for Unity - Facebook
 Package: account-plugin-twitter
 Architecture: all
 Depends: ${misc:Depends},
-         libaccount-plugin-twitter | ubuntu-system-settings-online-accounts,
+         ubuntu-system-settings-online-accounts,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: Online account plugin for Unity - Twitter
  This plugin adds support for creating Twitter accounts in the Unity Control
@@ -45,7 +45,7 @@ Description: Online account plugin for Unity - Twitter
 Package: account-plugin-flickr
 Architecture: all
 Depends: ${misc:Depends},
-         libaccount-plugin-flickr | ubuntu-system-settings-online-accounts,
+         ubuntu-system-settings-online-accounts,
          unity-asset-pool (>> 0.8.24daily12.12.05-0ubuntu1),
 Description: Online account plugin for Unity - Flickr
  This plugin adds support for creating Flickr accounts in the Unity Control
@@ -142,7 +142,7 @@ Description: Online account plugin for Unity - ownCloud
 Package: account-plugin-vk
 Architecture: all
 Depends: ${misc:Depends},
-         libaccount-plugin-generic-oauth | ubuntu-system-settings-online-accounts,
+         ubuntu-system-settings-online-accounts,
 Description: Online account plugin for Unity - VKontakte
  This plugin adds support for creating VKontakte accounts in the Unity Control
  Center
