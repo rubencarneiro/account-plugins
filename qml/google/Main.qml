@@ -19,15 +19,14 @@ OAuthMain {
                         console.log("response text: " + http.responseText)
                         var response = JSON.parse(http.responseText)
                         callback(response.email)
-                        return true
                     } else {
-                        console.log("error: " + http.status)
-                        return false
+                        callback("", http.responseText)
                     }
                 }
             };
 
             http.send(null);
+            return true
         }
     }
 }
