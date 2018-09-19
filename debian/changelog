@@ -1,3 +1,13 @@
+account-plugins (0.14~0ubports1) xenial; urgency=medium
+
+  * debian/changelog:
+    - new versioning scheme
+  * debian/control:
+    - remove references to deleted packages
+  * Google: fix retrieval of username and error reporting.
+
+ -- Alberto Mardegan <mardy@users.sourceforge.net>  Wed, 19 Sep 2018 18:24:51 +0300
+
 account-plugins (0.13+ubports2) xenial; urgency=medium
 
   * No change rebuild for ubports xenial repo 
