@@ -42,11 +42,11 @@ Item {
         TextField {
             id: urlField
             anchors { left: parent.left; right: parent.right }
-            placeholderText: i18n.dtr("account-plugins", "http://myserver.com/nextcloud")
+            placeholderText: i18n.dtr("account-plugins", "https://myserver.com/nextcloud")
             focus: true
             enabled: !__busy
 
-            inputMethodHints: Qt.ImhUrlCharactersOnly
+            inputMethodHints: Qt.ImhUrlCharactersOnly + Qt.ImhNoAutoUppercase + Qt.ImhPreferLowercase + Qt.ImhNoPredictiveText
         }
 
         Label {
