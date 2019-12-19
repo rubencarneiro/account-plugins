@@ -17,9 +17,9 @@
                order to return a refresh token -->
           <setting name="AuthPath">o/oauth2/auth?access_type=offline</setting>
           <setting name="TokenPath">o/oauth2/token</setting>
-          <setting name="RedirectUri">https://wiki.ubuntu.com/</setting>
+          <setting name="RedirectUri">https://ubports.com/oauth/callback</setting>
           <setting name="ResponseType">code</setting>
-          <setting name="Scope" type="as">['https://docs.google.com/feeds/','https://www.googleapis.com/auth/googletalk','email','profile','https://picasaweb.google.com/data/','https://mail.google.com/','https://www.google.com/m8/feeds/','https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/carddav']</setting>
+          <setting name="Scope" type="as">['email','profile','https://www.google.com/m8/feeds/','https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/carddav']</setting>
           <setting name="ClientId">@GOOGLE_CLIENT_ID@</setting>
           <setting name="ClientSecret">@GOOGLE_CLIENT_SECRET@</setting>
           <setting name="AllowedSchemes" type="as">['https','http']</setting>
