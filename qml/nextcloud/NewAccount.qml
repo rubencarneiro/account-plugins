@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.9
 import Ubuntu.Components 1.3
 import Ubuntu.OnlineAccounts 0.1
 
@@ -29,7 +29,7 @@ Item {
             id: errorLabel
             anchors { left: parent.left; right: parent.right }
             font.bold: true
-            color: UbuntuColors.red
+            color: theme.palette.normal.negative
             wrapMode: Text.Wrap
             visible: !__busy && text != ""
         }
@@ -88,15 +88,13 @@ Item {
             Button {
                 id: btnCancel
                 text: i18n.dtr("account-plugins", "Cancel")
-                height: parent.height
                 width: (parent.width / 2) - 0.5 * parent.spacing
                 onClicked: finished()
             }
             Button {
                 id: btnContinue
                 text: i18n.dtr("account-plugins", "Continue")
-                color: UbuntuColors.green
-                height: parent.height
+                color: theme.palette.normal.positive
                 width: (parent.width / 2) - 0.5 * parent.spacing
                 onClicked: login()
                 enabled: !__busy
