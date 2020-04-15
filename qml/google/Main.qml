@@ -6,7 +6,7 @@ OAuthMain {
             "AuthPath": "o/oauth2/auth?access_type=offline&approval_prompt=force"
         }
 
-        userAgent: "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
+        userAgent: "Mozilla/5.0 (Linux; Android 5.1.1; Nexus 4 Build/LMY48T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.89 Mobile Safari/537.36"
 
         function getUserName(reply, callback) {
             console.log("Access token: " + reply.AccessToken)
